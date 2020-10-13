@@ -1,3 +1,4 @@
-.aux
-.log
-.toc
+*.aux
+*.log
+*.toc
+DS_Store
