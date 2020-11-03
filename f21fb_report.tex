@@ -1,0 +1,676 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{color}
+\newcounter{subsubsubsection}[subsubsection]
+\titleformat{\subsubsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	literate={∧}{{$\land$}}1,
+	tabsize=3
+}
+\graphicspath{{/home/sahil/Desktop/Foundations2/f29fb-coursework-1/images/}}
+
+\begin{document}
+\title{Coursework 1 - Turing Machines
+\\ \large F29FB\\}
+\author{Sahil Pattni | H00285050}
+\date{February 11, 2020}
+\maketitle
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\section{Overview}
+This document is my official submission for the F29FB Coursework. This document contains the Turing Machine graph, along with an explanation of its workings, as well as an in depth analysis of the code implementation of the machine. 
+\newline
+The code implementation of the Turing Machine can be found in the appendix of this document, in section \ref{code}. The output of the test cases run on this code can also be found in the appendix.
+\newpage
+\section{Turing Machine Graph}
+\label{graph}
+For this Turing Machine, the following symbols have been used:
+\begin{itemize}
+	\item 1: Unary Object
+	\item $\land$: Empty
+	\item \$: Separator
+	\item \#: Separator
+	\item Y: Placeholder
+	\item Z: Placeholder
+\end{itemize}
+\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.37]{TuringMachine}
+	\caption{Turing Machine Graph}
+	\label{fig:sec}
+\end{figure}
+
+\section{Logical Breakdown}
+The Turing Machine illustrated in Figure \ref{fig:sec} takes in two unary numbers: \textit{m} and \textit{n}, and returns a third unary number which is the product of \textit{m} and \textit{n}.
+The machine does this by creating a copy of \textit{n} after the last separator (i.e. \#) for every unary element in \textit{m}.
+\subsection{Algorithm}
+The logic of this graph can be broken down into five steps:
+\begin{enumerate}
+	\item Mark an element in \textit{m}.
+	\item Make a copy of \textit{n} using the following steps:
+	\begin{itemize}
+		\item Mark an element in \textit{n}.
+		\item Copy this element to the first free cell after the \# separator.
+		\item Repeat until all elements in \textit{n} have been marked (i.e. a full copy of \textit{n} has been made.)
+	\end{itemize}
+	\item Move back to the first unmarked element in \textit{m}, converting all marked elements in \textit{n} back to 1 along the way.
+	\item Repeat Step 1 until all elements in \textit{m} have been marked.
+	\item Convert all elements in \textit{m} back to 1, leaving the head at the first element in \textit{m}.
+\end{enumerate}
+When marking elements in \textit{m}, they are changed from 1 to Z, whereas when marking elements in \textit{n}, they are changed to Y.
+
+\subsection{Copying \textit{n}}
+Copies of \textit{n} are made by copying each element from \textit{n} to the first free space after the last separator (\#). States \textit{q2}, \textit{q3}, \textit{q4} and \textit{q5} are responsible for copying an element from \textit{n}, and these states have been shaded blue for visual reference.
+To keep track of how many copies have been made (and therefore, how many are remaining), an element from \textit{m} is changed from 1 to Z before a copy is made. While making a copy, an element of \textit{n} is changed to Y before it is copied over, which allows the machine to keep track of how many remaining elements have to be copied. After a full copy of \textit{n} is made, state \textit{q2} transitions to \textit{q6}. State \textit{q6} shifts the head back to the first remaining 1 in \textit{m} (if it exists, else the first separator). During this process, all Ys are changed back to 1, effectively resetting the copy marker for \textit{n}.
+\subsection{Pre-Terminate}
+After all copies are made, the state \textit{q6} will place the head at the index of the first separator as it transitions to state \textit{q0}. This will allow \textit{q0} to initiate the transition to \textit{q7}, which replaces all occurrences of Z in \textit{m} with 1, setting \textit{m} back to its original form, and setting the head at the index of the first element of \textit{m}.
+
+\subsection{Reasoning}
+At a fundamental level, multiplying $n$ by $m$ is simply $n_1 + n_2 +... + n_m$. So I created a machine that loops $m$ times, and creates a copy of $n$ at each loop. I used self-looping states (such as $q1, q5$ and $q6$) to minimize the number of states in the machine. At the time of writing, I do not believe the number of states can be reduced further.
+
+\subsubsection{Number of Symbols}
+Aside from the unary operator 1 and the blank symbol $\land$, I have used the symbol \$ as a separator between \textit{m} and \textit{n}, the symbol \# as a separator between \textit{n} and the answer, and the symbols Y and Z as placeholders.
+While it is true that I could have used one placeholder instead of 2, having a distinct placeholder for each unary number makes it easier to create dedicated transitions and also makes it easier to read when debugging. 
+
+\section{Analysis}
+\subsection{Limit Cases}
+In the case of \textit{m} being 0 (i.e. no 1's in \textit{m}), the state \textit{q0} will transition directly to state \textit{q7}, since the head is at the \$ separator, and finally transition to \textit{qF}, since no copies need to be made.
+Instead, if \textit{n} was 0, the state \textit{q2} will transition directly to state \textit{q6}, which will traverse back to the beginning of the input, changing any marked elements in \textit{m} back from Z to 1. Since \textit{q2} does not transition to \textit{q3}, no copies will be made, as none need to be. Similarly, if both \textit{m} and \textit{n} are 0, then the machine will transition directly from \textit{q0} to \textit{q7} and then to the final state, where the machine terminates.
+So far, the machine has been tested with a maximum of 50 unary digits for both \textit{m} and \textit{n}. When both have been initialized to 50, the output is 2500 (i.e. 2500 1's), and 6,387,752 steps to compute. This is the largest value for \textit{m} and \textit{n} that I have computed.
+\newpage
+\subsection{State Change}
+\label{analysis}
+Figure \ref{fig:initial} illustrates the initial state of the tape, where the two unary numbers are 2 and 3, respectively. The head of the tape is at index 0 and the starting state is \textit{q0}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Initial}
+	\caption{Initial Tape State}
+	\label{fig:initial}
+\end{figure}
+
+Transitioning from \textit{q0} to \textit{q1}, the item at index 0 is changed from 1 to Z. \textit{q1} then transitions to \textit{q2}, moving past the \$ separator. At state \textit{q2} and index 3, the value is 1, and so \textit{q2} transitions to \textit{q3}, changing the first occurrence of 1 in \textit{n} to Y, and shifting the head to the right, to index 4. State \textit{q3} traverses through the remaining ones, until it arrives at the empty cell $\land$ at index 6. Upon reading the empty cell, it transitions to state \textit{q4}, changing the $\land$ to the separator \#, and shifting the head to the right, at index 7. Upon reading the $\land$ symbol, state \textit{q4} transitions to state \textit{q5}, changing the $\land$ to 1. The first element of \textit{n} has been successfully copied.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{State2}
+	\caption{First Copy (in progress)}
+	\label{fig:state2}
+\end{figure}
+
+State \textit{q5} will traverse back to the last instance of Y, which is at index 3. Upon reading the Y, \textit{q5} transitions to \textit{q2}, shifting the head to the right at index 4, which begins the the copy sequence for the second element in \textit{n}. This repeats until all elements in \textit{n} have been converted to Y (i.e. the first copy of \textit{n} is fully complete). After the final element of \textit{n} has been copied, the program will be at state \textit{q2} and at index 6.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{State3}
+	\caption{After First Copy}
+	\label{fig:state3}
+\end{figure}
+Upon reading the \# separator, state \textit{q2} transitions to state \textit{q5}, shifting the head to the left at index 5.
+At this point, \textit{q5} changes all Y's back to 1's on it's way back to \textit{m}. Upon reaching the last Z in \textit{m}, it transitions to \textit{q0}, shifting the head to the right. The process of copying \textit{n} will repeat again from \textit{q0} for the remaining 1's in \textit{m}. Figure \ref{fig:state4} represents the tape after both copies have been made, and no more are remaining. The head is at index 2 and at state \textit{q0}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{State4}
+	\caption{All Copies Complete}
+	\label{fig:state4}
+\end{figure}
+When \textit{q0} reads the separator symbol $\land$, it transitions to state \textit{q7}, which replaces all occurrences of Z back to 1 from right to left until it finds a blank cell ($\land$). Reading the $\land$ symbol initiates a transition from \textit{q7} to \textit{qF}, which is the final state, shifting the head right, onto index 0 and then terminating the machine.
+Figure \ref{fig:final} is the state of the tape after the machine terminates.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{final}
+	\caption{Final Tape State}
+	\label{fig:final}
+\end{figure}
+\newpage
+\section{Code Implementation}
+\subsection{Overview}
+The Turing Machine has been implemented in Python and can be found in the file \textit{TuringMachine.py}, a copy of which can be found in the appendix of this document in Section \ref{code} on page \pageref{code}. I have chosen to implement the Turing Machine in Python as it is the language I am most familiar in, and because of how semantically similar the code is to English, making it easier to explain.
+
+\subsection{Test Analysis}
+\subsubsection{Transitional Counts}
+Initially, I ran 49 tests, testing the values of both \textit{m} and \textit{n} from 0 to 6. Figure \ref{fig:transitions} is a matrix that maps out the number of transitions it takes the machine to calculate the product of \textit{m} and \textit{n}. You'll notice the matrix isn't symmetrical. For example, with $m=2, n=3$, the machine takes 94 transitions to compute the result. However, if you were to swap the values (i.e. $m=3, n=2$), the machine takes 98 steps to compute the product, although the final result is identical.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{transitions}
+	\caption{Number of Transitions to calculate \textit{m} x \textit{n}}
+	\label{fig:transitions}
+\end{figure}
+
+Based on this observation, I hypothesized that it may be more efficient to have the lesser of the two numbers positioned at \textit{m} rather than \textit{n}. To test if this hypothesis was correct, I replaced the values in Figure \ref{fig:transitions} with the relative difference beteen pairs that had the same values (e.g. (2,3) and (3,2)). 
+The relative difference is the difference of the pairs divided by their average and is calculated as such:
+\begin{equation}
+heatmap(m,n) = \frac{2(p-q)}{p+q}
+\end{equation}
+where $p = transition(m,n)$ and $q = transitions(n,m)$\newline
+The resulting heatmap is illustrated in Figure \ref{fig:heatmap}, which shows that the difference is most apparent when the values of \textit{m} and small, and diminishes as they get larger. This means that as \textit{m} and \textit{n} get larger, the difference in the number of transitions it takes to compute the product relative to the size of \textit{m} and \textit{n} is insignificant.
+\begin{figure}[H]
+%	\centering
+	\includegraphics[scale=0.6]{heatmap1}
+	\caption{Heatmap of Relative Difference.}
+	\label{fig:heatmap}
+\end{figure}
+\subsubsection{Transition Sum Formula}
+To further prove that the difference diminishes as \textit{m} and \textit{n} get bigger, I wanted to run this test again, but with the values of \textit{m} and \textit{n} ranging from 0 up to 100. However this would mean running the test 10,201 times ($101\times101$), which would be extremely inefficient, and so I needed to derive a function $f(m,n)$ that would calculate the number of transitions required for any given \textit{m} and \textit{n}.
+To derive the formula, I needed to know how many times each section of the tape was transitioned over in respect to \textit{m} and \textit{n}. The division of these sections has been specified below in Figure \ref{fig:divisions}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{divisions}
+	\caption{Section Divisions}
+	\label{fig:divisions}
+\end{figure}
+After careful analysis, I arrived at the following values for each section:
+\begin{table}[H]
+\centering
+\begin{tabular}{|c c|}
+	\hline
+	Section & Transitions Count \\
+	\hline
+	$\land$@0 & 1\\
+	m\_count & $m^2 + 2m$\\
+	\$\_count & $2m + 1$\\
+	n\_count & $m(n^2 + 2n)$\\
+	\#\_count & $m(2n-1)$\\
+	res\_count & $m^2 \cdot n^2$\\
+	\hline
+\end{tabular}
+\caption{Transition Counts for Tape Sections}
+\label{tab:sections}
+\end{table}
+
+The sum of all equations specified in Table \ref{tab:sections} is the total number of transitions made. The equation for the sum is defined as:
+\begin{equation}
+f(m,n) = 1 + (m^2 + 2m) + (2m + 1) + m(m^2 + 2n) + m(2n-1) + (m^2 \cdot n^2)
+\end{equation}
+which can be simplified to:
+\begin{equation}
+\sum transitions = f(m,n) = m(n^2(m+1) + 4n + m + 5) + 2
+\label{eq1}
+\end{equation}
+\newline
+Equation (\ref{eq1}) was tested against the 49 values manually computed in Figure \ref{fig:transitions} and results from the equation were the same as Figure \ref{fig:transitions} for all values of \textit{m} and \textit{n}.
+Using Equation (\ref{eq1}), I recreated the heatmap from Figure \ref{fig:heatmap} with a range of 0 to 100 for the values of \textit{m} and \textit{n}. The resulting heatmap is illustrated in Figure \ref{fig:heatmap2}.
+
+\begin{figure}[H]
+	%	\centering
+	\includegraphics[scale=0.6]{heatmap2}
+	\caption{Heatmap of Relative Difference (Expanded).}
+	\label{fig:heatmap2}
+\end{figure}
+
+As we can see in Figure \ref{fig:heatmap2}, the difference between the transition counts for the pairs \textit{(m,n)} and \textit{(n,m)} do diminish as both \textit{m} and \textit{n} get bigger, and therefore swapping the position of \textit{m} and \textit{n} to improve performance is futile.
+\subsubsection{Time Complexity}
+This still leaves to question how efficient the program at arriving at the product $q$ - the result of multiplying $m$ and $n$ (We can infer from Equation (\ref{eq1}) that the time complexity of the Turing Machine is approximately $O(n^2)$). Since there are multiple factors $m$ and $n$ that would result in $q$, I decided to plot out the average number of steps it would take to calculate $q$. For example, if $q$ was 6:
+transitions(1,6), transitions(6,1), transitions(2,3) and transitions(3,2) would all result in 6, and therefore the average of all their steps is taken as the efficiency in calculating 6. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{average}
+	\caption{Scatter Plot of Average Transitions.}
+	\label{fig:averages}
+\end{figure}
+Figure \ref{fig:averages} is a scatter plot that identifies the relation between the product of $m$ and $n$ (i.e. $q$), and the average number of transitions needed to calculate $q$. The correlation between these variables was calculated using Pearson's Correlation Coefficient $\rho_{X,Y}$:
+\begin{equation}
+\rho_{X,Y} = \frac{covariance(X,Y)}{\sigma X \sigma Y}
+\label{pearson}
+\end{equation}
+where $X = q$ and $Y = \overline{transitions(m,n)}$ for all $m$ and $n$ where $m \cdot n = q$.
+\newline
+Using Equation (\ref{pearson}), the Pearson's Correlation Coefficient for Figure \ref{fig:averages} is 0.956, which proves there is a strong upwards correlation between $q$ and the number of transitions it takes on average to calculate $q$. Using this value, we can determine that there is a strong exponential trend between the value of $q$ and the number of steps needed to calculate $q$. This further backs up the claim made at the start of this section that the time complexity of the program is $O(n^2)$.
+Figure \ref{fig:timemap} is a matrix that maps out the time (in seconds) it took the Turing Machine to compute $m\times n$ for all \textit{m's} and \textit{n's} in the range of 0 to 6.
+\newline
+To check how long the program actually takes to compute the sum of $m$ and $n$, I ran all 49 tests from Figure \ref{fig:heatmap} with a timer and recorded the results, which are displayed in Figure \ref{fig:timemap}.
+The Python code was executed on a Dell Inspiron 15-3567 with 4 gigabytes of RAM and an Intel i3-7020U CPU at 2.3GHZ, which runs Lubuntu as its primary and only operating system.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{timecom}
+	\caption{Seconds to Compute $m*n$}
+	\label{fig:timemap}
+\end{figure}
+The first thing to note is that the computation time for all these values are approximately $100^{th}$ of a second, and are therefore - to the human experience - too insignificant for performance increases to matter.
+The maximum value found was 0.0392 seconds, the minimum was 0.0000436 seconds, and the average time was 0.0126 seconds.
+\newpage
+\section{Cube Machine}
+It is possible to modify the Turing Machine in Figure \ref{fig:sec} on page \pageref{fig:sec} to compute, instead, $n^3$, given $n$ as input.
+$n^3$ can be written as $n^2 \cdot n^1$. We already that our Turing Machine can multiply numbers and copy them too. We can represent $n^2$ by making a copy of $n$ called $o$, and multiplying $n$ and $o$ to get $n^2$. We can then multiply $n$ with $n^2$ to get $n^3$.
+
+\newpage
+\section{Appendix}
+\subsection{Code}
+\label{code}
+\textit{TuringMachine.py}
+\begin{lstlisting}
+import time
+
+full_output = False
+# Used to time the machine
+start = time.time()
+"""
+--- TAPE CONSTANTS ---
+These are the constants which make up the contents
+of the tape. They are declared as constants instead of
+directly being used so that the code is more readable.
+"""
+ONE = '1'
+EMPTY = '∧'
+DOLLAR_SEPARATOR = '$'
+HASH_SEPARATOR = '#'
+Y = 'Y'
+Z = 'Z'
+
+"""
+--- MOVE CONSTANTS ---
+These constants are passed as the argument 'move' 
+in the 'transition' function. For the same reason as above,
+these constants have been declared to make the code more readable.
+"""
+LEFT = -1
+RIGHT = 1
+STAY = 0
+
+"""
+--- Global Variables ---
+
+'tape' is a list which emulates a Turing Tape, and is where our data 
+will be stored. Since the tape simulates a Turing Tape from the index -1, 
+the variable 'index' has been declared as 1 so that the initial state reads 
+the second element (i.e. our simulated index 0) instead of the first (our simulated 
+index -1).
+'steps' counts the number of transitions taken between the initial state and final state of the 
+tape, and is incremented every time 'transition' is called.
+
+'states' is a Python dictionary which represents the states of the machine. Each key in the states 
+dictionary is the name of a state, who's value is another dictionary. In this nested dictionary, the keys are 
+the read symbol, and the value is a tuple containing the symbol to replace the read symbol with, the direction
+to move, and the next state to go to, respectively.
+"""
+# GLOBAL VARIABLES
+tape = []
+index = 1
+steps = 0
+states = {
+    'q0': {
+        ONE: (Z, RIGHT, 'q1'),
+        DOLLAR_SEPARATOR: (DOLLAR_SEPARATOR, LEFT, 'q7'),
+        EMPTY: (EMPTY, STAY, 'qF')
+    },
+    'q1': {
+        ONE: (ONE, RIGHT, 'q1'),
+        DOLLAR_SEPARATOR: (DOLLAR_SEPARATOR, RIGHT, 'q2')
+    },
+    'q2': {
+        ONE: (Y, RIGHT, 'q3'),
+        HASH_SEPARATOR: (HASH_SEPARATOR, LEFT, 'q6'),
+        EMPTY: (EMPTY, LEFT, 'q6')
+    },
+    'q3': {
+        ONE: (ONE, RIGHT, 'q3'),
+        HASH_SEPARATOR: (HASH_SEPARATOR, RIGHT, 'q4'),
+        EMPTY: (HASH_SEPARATOR, RIGHT, 'q4')
+    },
+    'q4': {
+        ONE: (ONE, RIGHT, 'q4'),
+        EMPTY: (ONE, LEFT, 'q5')
+    },
+    'q5': {
+        ONE: (ONE, LEFT, 'q5'),
+        HASH_SEPARATOR: (HASH_SEPARATOR, LEFT, 'q5'),
+        Y: (Y, RIGHT, 'q2')
+    },
+    'q6': {
+        DOLLAR_SEPARATOR: (DOLLAR_SEPARATOR, LEFT, 'q6'),
+        ONE: (ONE, LEFT, 'q6'),
+        Y: (ONE, LEFT, 'q6'),
+        EMPTY: (EMPTY, RIGHT, 'q0'),
+        Z: (Z, RIGHT, 'q0')
+    },
+    'q7': {
+        Z: (ONE, LEFT, 'q7'),
+        EMPTY: (EMPTY, RIGHT, 'qF')
+    }
+
+}
+# TESTING PURPOSES
+m_val = None
+n_val = None
+
+# OUTPUT TEXT
+output = ""
+
+
+def load_tape(m, n):
+    """
+    :param m: Integer value for first number
+    :param n: Integer value for second number
+    :return: None
+    This function takes in two integers, 'm' and 'n'
+    and populates the tape with m and n in unary format
+    with a dollar separator between them. Since I want the
+    tape to also include the index -1, an EMPTY symbol is
+    appended at the start.
+    """
+    global tape
+    tape.append(EMPTY)
+    for x in range(m):
+        tape.append(ONE)
+    tape.append(DOLLAR_SEPARATOR)
+    for x in range(n):
+        tape.append(ONE)
+
+    global m_val, n_val
+    m_val = m
+    n_val = n
+
+
+def transition(state):
+    """
+    :param state: the current state
+    :return: the next state
+    This function reads in the value of the
+    tape at the current index, and changes it
+    to the corresponding value it should be replaced
+    by, given the current state. It then increments the
+    tape index by the direction to move (i.e. -1,0,1)
+    and finally, returns the next state to transition to.
+
+    At every call of transition, the display tape is called,
+    which adds the tape state, the location of the head and the transition
+    to occur to the output.
+    """
+    global index, tape, steps
+    steps += 1
+    if index > len(tape) - 1:
+        tape.append(EMPTY)
+
+    current_value = tape[index]
+    move = states[state][current_value]
+    if steps == 1 and not full_output or full_output:
+        display_tape(state, tape[index], move[0], move[1], move[2])
+    # tracker_bar()
+    tape[index] = move[0]
+    index += move[1]
+    return move[2]
+
+
+def play(state='q0'):
+    """
+    :param state: The start state
+    :return:
+
+    This method takes in a start state (by
+    default, this is q0) and keeps updating
+    the next_state variable via the transition
+    function until the state qF is reached.
+
+    It then calls the display_tape function where the
+    qF argument is set to True, and adds the number of steps
+    and the time taken to the output file, before calling the
+    write_out function to write the output out to a text file.
+    """
+    global output
+    next_state = transition(state)
+    while next_state != 'qF':
+        next_state = transition(next_state)
+    display_tape(None, None, None, None, None, True)
+    output += ("STEPS: {}\n".format(steps))
+    end = (time.time() - start)
+    output += ("TIME: {} seconds\n".format(end))
+    print(end)
+    write_out()
+
+
+def write_out():
+    """
+    This function writes out output of each transition
+    into a text file.
+    :return:
+    """
+    global output
+    filename = 'output/{}x{}.txt'.format(m_val, n_val)
+    file = open(filename, 'w+')
+    file.write(output)
+    file.close()
+
+
+def calc(m_val, n_val):
+    """
+    :param m_val: integer value of input m
+    :param n_val: integer value of input n
+    :return: number of transitions needed to calculate m * n
+
+    This function represents Equation (3) and calculates the number of transitions
+    needed for the machine to calculate the product of m and n.
+    """
+    return m_val * ((m_val + 1) * pow(n_val, 2) + m_val + 4 * n_val + 5) + 2
+
+
+def tracker_bar():
+    """
+    This function adds a tracker bar that uses the steps counter
+    and the calc function to determine what percentage of the total
+    transitions required have executed, and returns a progress bar
+    that represents this information.
+    """
+    global m_val, n_val, steps
+    exp = calc(m_val, n_val)
+    percent = (steps / exp) * 100
+    progress = int(percent / 5)
+    status = []
+    for x in range(20):
+        status.append('.')
+    for x in range(progress):
+        status[x] = '#'
+    listToStr = "Progress: "
+    listToStr += ' '.join([str(elem) for elem in status])
+    listToStr += ' | {}%'.format(round(percent, 2))
+    print(listToStr)
+
+
+def format_move(move):
+    """
+    :param move: MOVE CONSTANT (integer)
+    :return: String representation of move
+
+    This function takes in a move constant (1, -1 or 0) and
+    returns the String representation of the constant.
+
+    e.g. -1 --> LEFT
+    """
+    if move == LEFT:
+        return "L"
+    elif move == RIGHT:
+        return "R"
+    elif move == STAY:
+        return "-"
+
+
+def display_tape(curr_state, read, replace, move, next, qf=False):
+    global index, output
+    """
+    :param state: A String argument that gets printed out, indicating
+    the latest operation on the tape.
+    :return:
+
+    This function simply prints out the current index position
+    and the state of the tape in a neat format.
+    (Remember, since we're treating index 0 of the
+    tape as index -1, we decrement the value of 'index'
+    before printing it to see what simulated index we're on)
+    """
+    temp_output = ""
+    wall = '|'
+    for x in range(len(tape)):
+        if x == 0:
+            temp_output += wall
+        temp_output += " {} ".format(tape[x])
+        temp_output += wall
+    if not qf:
+        output += ("CURRENT STATE: {} "
+                   "| TRANSITION: {} -> ({}, {}, {}) -> {} "
+                   "| HEAD at INDEX: {}\n".format(curr_state, curr_state, read, replace, format_move(move), next,
+                                                  index - 1))
+
+    else:
+        output += ("FINAL STATE: qF | HEAD at INDEX: {}\n".format(index - 1))
+    output += temp_output
+    output += '\n\n'
+
+
+if __name__ == '__main__':
+    load_tape(2,3)
+    play()
+
+
+\end{lstlisting}
+
+\newpage
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{black},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	literate={∧}{{$\land$}}1,
+	tabsize=3
+}
+\subsection{Tests}
+The output of these tests have been generated by the \textit{display\_tape} function and the \textit{write\_out()} function, which records each transition and outputs it into a .txt file. The code has a variable called \textit{full\_output} which is set to $False$ by default. 
+The tests in this subsection display the tape's initial and final state. To view all intermediate tape states, set \textit{full\_output} to $True$ and re-run the code. I will have set this variable to $True$ when I demo this code to illustrate all intermediate steps.
+\newline
+It should be noted that the first element of the tape is at the index  \textbf{-1}.
+
+\subsubsection{0x0 \textbar Steps: 2}
+\begin{lstlisting}
+CURRENT STATE: q0 | TRANSITION: q0 -> ($, $, L) -> q7 | HEAD at INDEX: 0
+| ∧ | $ |
+
+FINAL STATE: qF | HEAD at INDEX: 0
+| ∧ | $ |
+
+STEPS: 2
+TIME: 0.00011587142944335938 seconds
+\end{lstlisting}
+%SEP
+\subsubsection{0x1 \textbar Steps: 2}
+\begin{lstlisting}
+CURRENT STATE: q0 | TRANSITION: q0 -> ($, $, L) -> q7 | HEAD at INDEX: 0
+| ∧ | $ | 1 |
+
+FINAL STATE: qF | HEAD at INDEX: 0
+| ∧ | $ | 1 |
+
+STEPS: 2
+TIME: 9.775161743164062e-05 seconds
+
+\end{lstlisting}
+%SEP
+\subsubsection{1x0 \textbar Steps: 8}
+\begin{lstlisting}
+CURRENT STATE: q0 | TRANSITION: q0 -> (1, Z, R) -> q1 | HEAD at INDEX: 0
+| ∧ | 1 | $ |
+
+FINAL STATE: qF | HEAD at INDEX: 0
+| ∧ | 1 | $ | ∧ |
+
+STEPS: 8
+TIME: 0.00012493133544921875 seconds
+\end{lstlisting}
+%SEP
+\subsubsection{1x2 \textbar Steps: 24}
+\begin{lstlisting}
+CURRENT STATE: q0 | TRANSITION: q0 -> (1, Z, R) -> q1 | HEAD at INDEX: 0
+| ∧ | 1 | $ | 1 | 1 |
+
+FINAL STATE: qF | HEAD at INDEX: 0
+| ∧ | 1 | $ | 1 | 1 | # | 1 | 1 |
+
+STEPS: 24
+TIME: 0.0001957416534423828 seconds
+
+\end{lstlisting}
+%SEP
+\subsubsection{2x1 \textbar Steps: 30}
+\begin{lstlisting}
+CURRENT STATE: q0 | TRANSITION: q0 -> (1, Z, R) -> q1 | HEAD at INDEX: 0
+| ∧ | 1 | 1 | $ | 1 |
+
+FINAL STATE: qF | HEAD at INDEX: 0
+| ∧ | 1 | 1 | $ | 1 | # | 1 | 1 |
+
+STEPS: 30
+TIME: 0.0003800392150878906 seconds
+
+\end{lstlisting}
+%SEP
+\subsubsection{2x3 \textbar Steps: 94}
+\begin{lstlisting}
+CURRENT STATE: q0 | TRANSITION: q0 -> (1, Z, R) -> q1 | HEAD at INDEX: 0
+| ∧ | 1 | 1 | $ | 1 | 1 | 1 |
+
+FINAL STATE: qF | HEAD at INDEX: 0
+| ∧ | 1 | 1 | $ | 1 | 1 | 1 | # | 1 | 1 | 1 | 1 | 1 | 1 |
+
+STEPS: 94
+TIME: 0.0016448497772216797 seconds
+\end{lstlisting}
+%SEP
+\subsubsection{3x2 \textbar Steps: 98}
+\begin{lstlisting}
+CURRENT STATE: q0 | TRANSITION: q0 -> (1, Z, R) -> q1 | HEAD at INDEX: 0
+| ∧ | 1 | 1 | 1 | $ | 1 | 1 |
+
+FINAL STATE: qF | HEAD at INDEX: 0
+| ∧ | 1 | 1 | 1 | $ | 1 | 1 | # | 1 | 1 | 1 | 1 | 1 | 1 |
+
+STEPS: 98
+TIME: 0.0017552375793457031 seconds
+\end{lstlisting}
+%SEP
+\subsubsection{20x20 \textbar Steps: 170,102}
+\begin{lstlisting}
+CURRENT STATE: q0 | TRANSITION: q0 -> (1, Z, R) -> q1 | HEAD at INDEX: 0
+| ∧ | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | $ | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+FINAL STATE: qF | HEAD at INDEX: 0
+| ∧ | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | $ | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | # | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+STEPS: 170102
+TIME: 0.1427619457244873 seconds
+
+\end{lstlisting}
+%SEP
+%SEP
+\end{document}
