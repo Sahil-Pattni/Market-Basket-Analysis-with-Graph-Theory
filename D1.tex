@@ -1,13 +1,21 @@
 \documentclass[a4paper,11pt]{article}
-	\addtolength{\oddsidemargin}{-.875in}
-	\addtolength{\evensidemargin}{-.875in}
-	\addtolength{\textwidth}{1.75in}
 
-	\addtolength{\topmargin}{-.875in}
-	\addtolength{\textheight}{1.75in}
+% Padding Requirements
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
 	
-	\usepackage{setspace}
+% used for double spacing
+\usepackage{setspace}
 \doublespacing
+
+% Used for bibliograpgy
+\usepackage[style=numeric, sorting=none, backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+
 % Do we need a table of contents? I don't think so.
 \begin{document}
 \title{Deliverable 1: Final Year Dissertation}
@@ -18,7 +26,6 @@
 	}
 \date{\today}
 \maketitle
-\pagenumbering{roman}
 \pagenumbering{arabic}
 \newpage
 \section*{Declaration}
@@ -26,33 +33,32 @@ I, Sahil Pattni, confirm that this work submitted for assessment is my own and i
 \\
 Signed: SMP\\
 Date: \today
+
+
 \section*{Abstract}
-[Placeholder] This paper intends to explore an application of market basket analysis (MBA) using minimum spanning trees (MST). Further text later.
+The aim of this study is compare the effectiveness of this citation \cite{apriori}.
+
 
 \tableofcontents
 \newpage
 
 \section{Introduction}
-Hello there. General Kenobi.
 
 \section{Background}
-Look behind you.
 
 \section{Research Methodology}
-Lorem Ipsum.
-
-\section{Design (May Remove Later)}
-Hmmm.....
 
 \section{Evaluation Strategy}
-What have we here?
 
 \section{Project Management}
-To be added.....
 
-\section{References}
-Does anyone actually read these?
 
-\section{Appendix}
+% Keep references on new page
+\newpage
+\printbibliography
+
+% Keep appendix on new page
+\newpage
+\section*{Appendix}
 
 \end{document}
