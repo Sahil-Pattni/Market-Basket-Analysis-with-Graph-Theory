@@ -10,3 +10,9 @@
 *.ps
 *run.xml
 *.aux.**
+
+code/data/
+Journals/
+saved_websites/
+
+
