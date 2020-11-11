@@ -10,3 +10,6 @@ The code can be found under the `code` folder. Currently, all the code is writte
 
 Alternatively, you can run the `.ipynb` file in Google Colab for free.
 
+### Data Sources
+The data I use is the sales data from a chain of Brazilian gas-station stores, available [here on Kaggle](https://www.kaggle.com/marcio486/sales-data-for-a-chain-of-brazilian-stores).
+
