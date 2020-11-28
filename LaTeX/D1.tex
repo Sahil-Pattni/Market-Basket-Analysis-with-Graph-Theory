@@ -44,6 +44,13 @@ In this digital age, data is being generated at an exponential rate, with data a
 Given an undirected graph $G$ with edges $E$ and vertices $V$ (i.e. $G(E,V)$), a \textit{spanning tree} can be described as a subgraph that is a tree \cite{tree} which includes all the vertices $V$ of $G$ with the minimum number of edges required. A \textit{minimum spanning tree} is the spanning tree with the smallest sum of edge weights.
 
 \subsection{Context}
+For business which deal with the sale of a heterogeneous physical assets - such as groceries, hypermarkets and select retail outlets - operations such as inventory management and product placement play an instrumental role in determining the business' financial success. These involve asking questions such as:
+\begin{itemize}
+\item Which products should be placed at the entrance of the store? Which should be placed closer to the exit?
+\item Which products will benefit the most by being placed at eye-level?
+\item Which products should be placed next to each other to maximize the purchase volume?
+\end{itemize}
+One way to find optimal solutions for such questions is to employ the use of Association Rule Mining techniques. These techniques 
 Several algorithms and techniques exist for association rule mining, such as the Apriori Algorithm \cite{apriori} and FP-Growth \cite{fp_growth}.
 
 \subsection{Aims}
@@ -55,7 +62,7 @@ The research objectives for this project have been laid out below, in the order 
 \item Acquire a suitable dataset upon which the MST can be constructed.
 
 \item \label{optimal} Explore and evaluate MST extraction algorithms.
-\\(While Prim's \cite{prims}\cite{prims_og} and Kruskal's \cite{kruskal} are the most commonly used algorithms to extract the MST from a graph, research has been conducted on more efficient ways to extract the MST using machine learning techniques [CITATION NEEDED]).
+\\(While Prim's \cite{prims}\cite{prims_og} and Kruskal's \cite{kruskal} are the most commonly used algorithms to extract the MST from a graph, research has been conducted on more efficient ways to extract the MST using machine learning techniques such as Artificial Neural Networks \cite{ann_mst} and K-Nearest-Neighbors \cite{knn_mst}).
 
 \item Generate an undirected graph $G(E,V)$ where the edges $E$ are the correlation values between the product vertices.
 
@@ -79,9 +86,5 @@ The research objectives for this project have been laid out below, in the order 
 % Keep references on new page
 \newpage
 \printbibliography
-
-% Keep appendix on new page
-\newpage
-\section*{Appendix}
 
 \end{document}
