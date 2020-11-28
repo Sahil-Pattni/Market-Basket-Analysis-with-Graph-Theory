@@ -1,0 +1,1001 @@
+company_code,order_number,employee,product,product_category,client,city,sale_date_time,product_cost,discount_amount,amount,total,form_of_payment,date,basket_id
+39000,12,Stacy Day,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 04:10:00,3.05,0.0,5.642,20.02,Money,20170331,12no city20170331
+39000,21,Olive Stevenson,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 04:13:00,2.51,0.0,125.045,350.0,Debit Card,20170331,21no city20170331
+39000,38,Stacy Day,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 04:25:00,2.51,0.0,35.699,99.92,Money,20170331,38no city20170331
+39000,39,Olive Stevenson,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 04:26:00,7.409,0.0,1.0,13.0,Money,20170331,39no city20170331
+39000,39,Olive Stevenson,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 04:26:00,2.56,0.0,42.162,120.96,Money,20170331,39no city20170331
+39000,40,Stacy Day,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 04:27:00,3.05,0.0,2.739,9.72,Money,20170331,40no city20170331
+39000,46,Olive Stevenson,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 04:32:00,3.05,0.0,34.461,122.3,Credit Card,20170331,46no city20170331
+39000,50,Olive Stevenson,Special Diesel,Fuel,Arthur Mason,Froit,2017-03-31 04:35:00,2.51,0.0,17.864,50.0,Money,20170331,50froit20170331
+39000,51,Olive Stevenson,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 04:37:00,3.05,0.0,8.454,30.0,Credit Card,20170331,51no city20170331
+39000,52,Stacy Day,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 04:39:00,3.05,0.0,35.089,124.53,Credit Card,20170331,52no city20170331
+39000,55,Olive Stevenson,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 04:44:00,3.05,0.0,5.636,20.0,Money,20170331,55no city20170331
+39000,59,Stacy Day,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 04:48:00,3.05,0.0,2.821,10.01,Money,20170331,59no city20170331
+39000,62,Stacy Day,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 04:58:00,3.05,0.0,23.111,82.02,Debit Card,20170331,62no city20170331
+39000,74,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 05:18:00,3.05,0.0,1.9809999999999999,7.03,Money,20170331,74no city20170331
+39000,77,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 05:19:00,3.05,0.0,5.636,20.0,Money,20170331,77no city20170331
+39000,78,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 05:21:00,2.51,0.0,71.455,200.0,Pre-paid check / Pre- date check,20170331,78no city20170331
+39000,81,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 05:24:00,3.05,0.0,14.089,50.0,Credit Card,20170331,81no city20170331
+39000,87,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 05:43:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,87no city20170331
+39000,88,Curtis Newman,Special Diesel,Fuel,Laverne Logan,Agririe,2017-03-31 05:45:00,2.51,0.0,70.729,197.97,Debit Card,20170331,88agririe20170331
+39000,88,Curtis Newman,Lubricant,Lubricant,Laverne Logan,Agririe,2017-03-31 05:45:00,6.7379999999999995,0.0,1.0,11.0,Debit Card,20170331,88agririe20170331
+39000,93,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 05:48:00,2.51,0.0,17.864,50.0,Money,20170331,93no city20170331
+39000,93,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 05:48:00,2.51,0.0,32.155,90.0,Money,20170331,93no city20170331
+39000,96,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 05:52:00,3.05,0.0,27.89,98.98,Money,20170331,96no city20170331
+39000,98,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 05:56:00,3.05,0.0,28.177,100.0,Money,20170331,98no city20170331
+39000,100,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:00:00,3.05,0.0,1.409,5.0,Money,20170331,100no city20170331
+39000,102,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:01:00,3.05,0.0,5.642,20.02,Money,20170331,102no city20170331
+39000,106,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:10:00,3.05,0.0,6.199,22.0,Money,20170331,106no city20170331
+39000,110,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:16:00,3.05,0.0,7.045,25.0,Money,20170331,110no city20170331
+39000,111,Brandon Martin,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 06:17:00,2.56,0.0,59.262,170.02,Debit Card,20170331,111no city20170331
+39000,112,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:20:00,3.05,0.0,42.272,150.02,Debit Card,20170331,112no city20170331
+39000,113,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:21:00,3.05,0.0,11.975999999999999,42.5,Money,20170331,113no city20170331
+39000,113,Curtis Newman,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 06:21:00,4.061,0.0,1.0,7.5,Money,20170331,113no city20170331
+39000,114,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:22:00,3.05,0.0,2.818,10.0,Money,20170331,114no city20170331
+39000,115,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:24:00,3.05,0.0,14.089,50.0,Debit Card,20170331,115no city20170331
+39000,116,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:24:00,3.05,0.0,8.454,30.0,Money,20170331,116no city20170331
+39000,119,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:32:00,3.05,0.0,5.636,20.0,Money,20170331,119no city20170331
+39000,120,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:35:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,120no city20170331
+39000,121,Terri Tran,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 06:35:00,2.56,0.0,191.71200000000002,550.02,Debit Card,20170331,121no city20170331
+39000,124,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 06:39:00,2.51,0.0,17.864,50.0,Money,20170331,124no city20170331
+39000,126,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:40:00,3.05,0.0,14.089,50.0,Debit Card,20170331,126no city20170331
+39000,125,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:40:00,3.05,0.0,3.951,14.02,Money,20170331,125no city20170331
+39000,128,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:42:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,128no city20170331
+39000,129,Curtis Newman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 06:43:00,2.56,0.0,34.856,100.0,Debit Card,20170331,129no city20170331
+39000,131,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:45:00,3.05,0.0,14.089,50.0,Credit Card,20170331,131no city20170331
+39000,132,Donna Bailey,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 06:46:00,2.51,0.0,17.864,50.0,Debit Card,20170331,132no city20170331
+39000,134,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:48:00,3.05,0.0,4.227,15.0,Money,20170331,134no city20170331
+39000,135,Donna Bailey,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 06:49:00,2.51,0.0,35.728,100.0,Money,20170331,135no city20170331
+39000,136,Brandon Martin,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 06:51:00,2.51,0.0,89.318,250.0,Money,20170331,136no city20170331
+39000,137,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:51:00,3.05,0.0,42.26600000000001,150.0,Credit Card,20170331,137no city20170331
+39000,138,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 06:52:00,3.05,0.0,14.089,50.0,Money,20170331,138no city20170331
+39000,142,Donna Bailey,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 06:56:00,2.56,0.0,34.856,100.0,Debit Card,20170331,142no city20170331
+39000,143,Donna Bailey,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 06:58:00,2.56,0.0,43.521,124.86,Credit Card,20170331,143no city20170331
+39000,144,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:00:00,3.05,0.0,8.741,31.02,Money,20170331,144no city20170331
+39000,146,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:01:00,3.05,0.0,14.089,50.0,Credit Card,20170331,146no city20170331
+39000,148,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:03:00,3.05,0.0,14.089,50.0,Money,20170331,148no city20170331
+39000,148,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:03:00,3.05,0.0,14.089,50.0,Money,20170331,148no city20170331
+39000,148,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:03:00,3.05,0.0,14.089,50.0,Money,20170331,148no city20170331
+39000,151,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:05:00,3.05,0.0,46.641999999999996,165.53,Debit Card,20170331,151no city20170331
+39000,153,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:07:00,3.05,0.0,14.089,50.0,Money,20170331,153no city20170331
+39000,156,Rosie Mullins,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 07:11:00,2.51,0.0,35.728,100.0,Money,20170331,156no city20170331
+39000,159,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:12:00,3.05,0.0,5.636,20.0,Money,20170331,159no city20170331
+39000,159,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:12:00,3.05,0.0,28.177,100.0,Money,20170331,159no city20170331
+39000,161,Rosie Mullins,Special Diesel,Fuel,Elena Drake,Agririe,2017-03-31 07:14:00,2.51,0.0,53.591,150.0,Debit Card,20170331,161agririe20170331
+39000,162,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:15:00,3.05,0.0,45.45,161.3,Money,20170331,162no city20170331
+39000,164,Curtis Newman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:17:00,3.043,0.0,25.991,92.24,Money,20170331,164no city20170331
+39000,164,Curtis Newman,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 07:17:00,10.788,0.0,1.0,25.0,Money,20170331,164no city20170331
+39000,165,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:18:00,3.05,0.0,14.089,50.0,Debit Card,20170331,165no city20170331
+39000,166,Donna Bailey,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 07:19:00,2.56,0.0,97.595,280.0,Money,20170331,166no city20170331
+39000,167,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:19:00,3.05,0.0,2.818,10.0,Money,20170331,167no city20170331
+39000,167,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:19:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,167no city20170331
+39000,173,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:22:00,3.05,0.0,14.089,50.0,Money,20170331,173no city20170331
+39000,175,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:23:00,3.05,0.0,44.24100000000001,157.01,Credit Card,20170331,175no city20170331
+39000,176,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:24:00,3.05,0.0,16.907,60.0,Money,20170331,176no city20170331
+39000,179,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:25:00,3.05,0.0,13.249,47.02,Money,20170331,179no city20170331
+39000,178,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:25:00,3.05,0.0,28.177,100.0,Money,20170331,178no city20170331
+39000,182,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:26:00,3.05,0.0,5.636,20.0,Money,20170331,182no city20170331
+39000,181,Terri Richards,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 07:26:00,11.793,0.0,1.0,19.5,Money,20170331,181no city20170331
+39000,183,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:27:00,3.05,0.0,28.177,100.0,Credit Card,20170331,183no city20170331
+39000,185,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:29:00,3.05,0.0,5.636,20.0,Money,20170331,185no city20170331
+39000,187,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:31:00,3.05,0.0,46.50100000000001,165.03,Money,20170331,187no city20170331
+39000,188,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:32:00,3.05,0.0,1.973,7.0,Money,20170331,188no city20170331
+39000,188,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:32:00,3.05,0.0,4.227,15.0,Money,20170331,188no city20170331
+39000,189,Rosie Mullins,Diesel Auto Clean,Fuel,Lynn Vargas,Agririe,2017-03-31 07:33:00,2.56,0.0,34.856,100.0,Money,20170331,189agririe20170331
+39000,192,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:36:00,3.05,0.0,28.177,100.0,Money,20170331,192no city20170331
+39000,192,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:36:00,3.05,0.0,8.454,30.0,Money,20170331,192no city20170331
+39000,193,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:37:00,3.05,0.0,23.951,85.0,Credit Card,20170331,193no city20170331
+39000,194,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:37:00,3.05,0.0,2.818,10.0,Money,20170331,194no city20170331
+39000,197,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:40:00,3.05,0.0,39.561,140.4,Money,20170331,197no city20170331
+39000,199,Donna Bailey,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 07:43:00,2.56,0.0,33.11,94.99,Money,20170331,199no city20170331
+39000,199,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:43:00,3.05,0.0,14.089,50.0,Money,20170331,199no city20170331
+39000,199,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:43:00,3.05,0.0,8.454,30.0,Money,20170331,199no city20170331
+39000,200,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:44:00,3.05,0.0,39.448,140.0,Money,20170331,200no city20170331
+39000,202,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:46:00,3.05,0.0,14.089,50.0,Money,20170331,202no city20170331
+39000,203,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:47:00,3.05,0.0,42.951,152.43,Debit Card,20170331,203no city20170331
+39000,209,Rosie Mullins,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 07:49:00,2.56,0.0,4.6819999999999995,13.43,Money,20170331,209no city20170331
+39000,208,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:49:00,3.05,0.0,5.636,20.0,Money,20170331,208no city20170331
+39000,212,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:52:00,3.05,0.0,8.454,30.0,Money,20170331,212no city20170331
+39000,213,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:53:00,3.05,0.0,5.636,20.0,Money,20170331,213no city20170331
+39000,217,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:55:00,3.05,0.0,28.177,100.0,Credit Card,20170331,217no city20170331
+39000,218,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 07:57:00,3.05,0.0,18.316,65.0,Money,20170331,218no city20170331
+39000,219,Donna Bailey,Gasoline,Fuel,Rickey Castillo,Chiburgh,2017-03-31 07:59:00,3.043,0.0,15.002,53.24,Credit Card,20170331,219chiburgh20170331
+39000,219,Donna Bailey,Lubricant,Lubricant,Rickey Castillo,Chiburgh,2017-03-31 07:59:00,1.452,0.0,3.0,9.75,Credit Card,20170331,219chiburgh20170331
+39000,222,Donna Bailey,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 08:00:00,2.51,0.0,51.19,143.28,Credit Card,20170331,222no city20170331
+39000,226,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:02:00,3.05,0.0,14.089,50.0,Money,20170331,226no city20170331
+39000,226,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:02:00,3.05,0.0,4.227,15.0,Money,20170331,226no city20170331
+39000,226,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:02:00,3.05,0.0,16.907,60.0,Money,20170331,226no city20170331
+39000,229,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:04:00,3.05,0.0,11.55,40.99,Money,20170331,229no city20170331
+39000,231,Donna Bailey,Diesel Auto Clean,Fuel,Bernard Dixon,Agririe,2017-03-31 08:05:00,2.56,0.0,88.882,255.0,Debit Card,20170331,231agririe20170331
+39000,232,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:07:00,3.05,0.0,5.636,20.0,Money,20170331,232no city20170331
+39000,233,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:08:00,3.05,0.0,28.177,100.0,Debit Card,20170331,233no city20170331
+39000,234,Lester Zimmerman,Special Gasoline,Fuel,Vickie James,Agririe,2017-03-31 08:09:00,3.05,0.0,28.177,100.0,Debit Card,20170331,234agririe20170331
+39000,236,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:10:00,3.05,0.0,18.6,66.01,Debit Card,20170331,236no city20170331
+39000,241,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:11:00,3.05,0.0,14.089,50.0,Money,20170331,241no city20170331
+39000,241,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:11:00,3.05,0.0,5.636,20.0,Money,20170331,241no city20170331
+39000,239,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 08:11:00,2.51,0.0,17.864,50.0,Money,20170331,239no city20170331
+39000,240,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:11:00,3.05,0.0,14.089,50.0,Money,20170331,240no city20170331
+39000,249,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:17:00,3.05,0.0,55.089,195.51,Money,20170331,249no city20170331
+39000,248,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:17:00,3.05,0.0,5.636,20.0,Money,20170331,248no city20170331
+39000,250,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:18:00,3.05,0.0,19.724,70.0,Money,20170331,250no city20170331
+39000,255,Terri Tran,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 08:20:00,2.56,0.0,34.856,100.0,Credit Card,20170331,255no city20170331
+39000,257,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:20:00,3.05,0.0,5.636,20.0,Money,20170331,257no city20170331
+39000,258,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:22:00,3.05,0.0,37.29,132.34,Debit Card,20170331,258no city20170331
+39000,259,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:23:00,3.05,0.0,8.454,30.0,Money,20170331,259no city20170331
+39000,261,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:24:00,3.05,0.0,31.84,113.0,Debit Card,20170331,261no city20170331
+39000,262,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:25:00,3.05,0.0,25.36,90.0,Money,20170331,262no city20170331
+39000,264,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:28:00,3.05,0.0,28.177,100.0,Credit Card,20170331,264no city20170331
+39000,267,Devin Copeland,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 08:30:00,2.51,0.0,51.54,144.26,Debit Card,20170331,267no city20170331
+39000,270,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:31:00,3.05,0.0,2.821,10.01,Credit Card,20170331,270no city20170331
+39000,268,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:31:00,3.05,0.0,5.636,20.0,Money,20170331,268no city20170331
+39000,268,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:31:00,3.05,0.0,2.818,10.0,Money,20170331,268no city20170331
+39000,273,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:33:00,3.05,0.0,28.177,100.0,Money,20170331,273no city20170331
+39000,272,Kimberly Mullins,Several,Several,Customer not informed,No City,2017-03-31 08:33:00,3.534,0.0,3.0,18.0,Money,20170331,272no city20170331
+39000,276,Brandon Martin,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 08:34:00,2.51,0.0,53.591,150.0,Credit Card,20170331,276no city20170331
+39000,278,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:35:00,3.05,0.0,14.089,50.0,Money,20170331,278no city20170331
+39000,279,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:36:00,3.05,0.0,19.724,70.0,Money,20170331,279no city20170331
+39000,283,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:39:00,3.05,0.0,18.316,65.0,Money,20170331,283no city20170331
+39000,287,Lester Zimmerman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 08:40:00,2.51,0.0,10.722000000000001,30.01,Money,20170331,287no city20170331
+39000,289,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:42:00,3.05,0.0,5.636,20.0,Money,20170331,289no city20170331
+39000,289,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:42:00,3.05,0.0,14.089,50.0,Money,20170331,289no city20170331
+39000,291,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:45:00,3.05,0.0,8.454,30.0,Money,20170331,291no city20170331
+39000,291,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 08:45:00,2.51,0.0,35.728,100.0,Money,20170331,291no city20170331
+39000,294,Curtis Newman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 08:46:00,2.56,0.0,62.75100000000001,180.03,Credit Card,20170331,294no city20170331
+39000,299,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:48:00,3.05,0.0,14.089,50.0,Money,20170331,299no city20170331
+39000,302,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:50:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,302no city20170331
+39000,302,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 08:50:00,2.51,0.0,25.009,70.0,Money,20170331,302no city20170331
+39000,305,Lester Zimmerman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 08:54:00,2.51,0.0,53.591,150.0,Pre-paid check / Pre- date check,20170331,305no city20170331
+39000,307,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:55:00,3.05,0.0,28.177,100.0,Credit Card,20170331,307no city20170331
+39000,308,Brandon Martin,Special Gasoline,Fuel,Bennie Chavez,Agririe,2017-03-31 08:56:00,3.05,0.0,28.177,100.0,Money,20170331,308agririe20170331
+39000,311,Donna Bailey,Lubricant,Lubricant,Leona Harrison,Agririe,2017-03-31 08:58:00,6.605,0.0,1.0,14.0,Money,20170331,311agririe20170331
+39000,311,Donna Bailey,Filters,Filters,Leona Harrison,Agririe,2017-03-31 08:58:00,19.48,0.0,1.0,33.0,Money,20170331,311agririe20170331
+39000,311,Donna Bailey,Lubricant,Lubricant,Leona Harrison,Agririe,2017-03-31 08:58:00,14.946,0.0,3.0,75.0,Money,20170331,311agririe20170331
+39000,312,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 08:58:00,3.05,0.0,14.089,50.0,Money,20170331,312no city20170331
+39000,316,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:00:00,3.05,0.0,0.99,3.51,Money,20170331,316no city20170331
+39000,317,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:00:00,3.05,0.0,28.177,100.0,Credit Card,20170331,317no city20170331
+39000,319,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:01:00,3.05,0.0,4.227,15.0,Money,20170331,319no city20170331
+39000,319,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:01:00,3.05,0.0,5.636,20.0,Money,20170331,319no city20170331
+39000,319,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:01:00,3.05,0.0,5.636,20.0,Money,20170331,319no city20170331
+39000,318,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:01:00,3.05,0.0,39.451,140.01,Debit Card,20170331,318no city20170331
+39000,319,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:01:00,3.05,0.0,5.636,20.0,Money,20170331,319no city20170331
+39000,321,Terri Richards,Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:02:00,3.043,0.0,8.454,30.0,Money,20170331,321no city20170331
+39000,324,Jeannette Norman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 09:03:00,2.51,0.0,17.864,50.0,Money,20170331,324no city20170331
+39000,322,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:03:00,3.05,0.0,19.722,69.99,Credit Card,20170331,322no city20170331
+39000,327,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:05:00,3.05,0.0,34.461,122.3,Credit Card,20170331,327no city20170331
+39000,329,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:06:00,3.05,0.0,19.724,70.0,Money,20170331,329no city20170331
+39000,331,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:07:00,3.05,0.0,9.581,34.0,Money,20170331,331no city20170331
+39000,334,Jeannette Norman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 09:08:00,2.56,0.0,75.64,217.01,Credit Card,20170331,334no city20170331
+39000,336,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:11:00,3.05,0.0,14.089,50.0,Money,20170331,336no city20170331
+39000,337,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:12:00,3.05,0.0,40.341,143.17,Money,20170331,337no city20170331
+39000,340,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:14:00,3.05,0.0,14.089,50.0,Money,20170331,340no city20170331
+39000,340,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:14:00,3.05,0.0,14.089,50.0,Money,20170331,340no city20170331
+39000,342,Jeannette Norman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 09:15:00,2.51,0.0,55.599,155.62,Debit Card,20170331,342no city20170331
+39000,343,Donna Bailey,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 09:15:00,2.56,0.0,41.83,120.01,Debit Card,20170331,343no city20170331
+39000,347,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:17:00,3.05,0.0,5.636,20.0,Money,20170331,347no city20170331
+39000,347,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:17:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,347no city20170331
+39000,350,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:20:00,3.05,0.0,7.045,25.0,Debit Card,20170331,350no city20170331
+39000,351,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:20:00,3.05,0.0,28.177,100.0,Money,20170331,351no city20170331
+39000,355,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:23:00,3.05,0.0,14.089,50.0,Debit Card,20170331,355no city20170331
+39000,357,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:24:00,3.05,0.0,14.089,50.0,Money,20170331,357no city20170331
+39000,358,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:24:00,3.05,0.0,8.451,29.99,Money,20170331,358no city20170331
+39000,359,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:25:00,3.05,0.0,14.089,50.0,Money,20170331,359no city20170331
+39000,361,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:26:00,3.05,0.0,14.089,50.0,Credit Card,20170331,361no city20170331
+39000,366,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:28:00,3.05,0.0,14.089,50.0,Debit Card,20170331,366no city20170331
+39000,369,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:30:00,3.05,0.0,14.089,50.0,Money,20170331,369no city20170331
+39000,367,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:30:00,3.05,0.0,2.818,10.0,Money,20170331,367no city20170331
+39000,374,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:34:00,3.05,0.0,2.818,10.0,Money,20170331,374no city20170331
+39000,377,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:35:00,3.05,0.0,14.089,50.0,Debit Card,20170331,377no city20170331
+39000,381,Donna Bailey,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 09:38:00,2.51,0.0,71.455,200.0,Money,20170331,381no city20170331
+39000,383,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:38:00,3.05,0.0,14.089,50.0,Credit Card,20170331,383no city20170331
+39000,384,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:40:00,3.05,0.0,40.86,145.01,Debit Card,20170331,384no city20170331
+39000,386,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:41:00,3.05,0.0,2.818,10.0,Money,20170331,386no city20170331
+39000,387,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:41:00,3.05,0.0,5.636,20.0,Money,20170331,387no city20170331
+39000,387,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:41:00,3.05,0.0,5.636,20.0,Money,20170331,387no city20170331
+39000,386,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:41:00,3.05,0.0,5.636,20.0,Money,20170331,386no city20170331
+39000,386,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:41:00,3.05,0.0,5.636,20.0,Money,20170331,386no city20170331
+39000,388,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:42:00,3.05,0.0,2.821,10.01,Money,20170331,388no city20170331
+39000,391,Rosie Mullins,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 09:43:00,2.56,0.0,69.711,200.0,Money,20170331,391no city20170331
+39000,391,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:43:00,3.05,0.0,5.636,20.0,Money,20170331,391no city20170331
+39000,395,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:45:00,3.05,0.0,28.177,100.0,Money,20170331,395no city20170331
+39000,397,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:46:00,3.05,0.0,10.144,36.0,Money,20170331,397no city20170331
+39000,396,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:46:00,3.05,0.0,47.56,168.79,Credit Card,20170331,396no city20170331
+39000,398,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:46:00,3.05,0.0,5.636,20.0,Money,20170331,398no city20170331
+39000,400,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:47:00,3.05,0.0,8.454,30.0,Money,20170331,400no city20170331
+39000,404,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:50:00,3.05,0.0,8.454,30.0,Money,20170331,404no city20170331
+39000,407,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:52:00,3.05,0.0,14.089,50.0,Money,20170331,407no city20170331
+39000,408,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:55:00,3.05,0.0,52.41,186.0,Credit Card,20170331,408no city20170331
+39000,409,Donna Bailey,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 09:57:00,2.51,0.0,62.73,175.58,Debit Card,20170331,409no city20170331
+39000,409,Donna Bailey,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 09:57:00,2.51,0.0,20.261,56.71,Debit Card,20170331,409no city20170331
+39000,410,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:58:00,3.05,0.0,36.010999999999996,127.8,Debit Card,20170331,410no city20170331
+39000,411,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 09:58:00,3.05,0.0,14.089,50.0,Money,20170331,411no city20170331
+39000,415,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:02:00,3.05,0.0,14.089,50.0,Credit Card,20170331,415no city20170331
+39000,418,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:04:00,3.05,0.0,5.636,20.0,Money,20170331,418no city20170331
+39000,421,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:05:00,3.05,0.0,14.089,50.0,Money,20170331,421no city20170331
+39000,424,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:06:00,3.05,0.0,12.68,45.0,Money,20170331,424no city20170331
+39000,431,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:13:00,3.05,0.0,4.227,15.0,Money,20170331,431no city20170331
+39000,432,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:15:00,3.05,0.0,53.54,190.01,Money,20170331,432no city20170331
+39000,434,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:17:00,3.05,0.0,5.636,20.0,Debit Card,20170331,434no city20170331
+39000,435,Devin Copeland,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 10:18:00,2.56,0.0,17.428,50.0,Money,20170331,435no city20170331
+39000,435,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:18:00,3.05,0.0,5.636,20.0,Money,20170331,435no city20170331
+39000,439,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:20:00,3.05,0.0,14.089,50.0,Money,20170331,439no city20170331
+39000,438,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:20:00,3.05,0.0,5.636,20.0,Money,20170331,438no city20170331
+39000,441,Donna Bailey,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 10:22:00,2.56,0.0,34.856,100.0,Money,20170331,441no city20170331
+39000,444,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:24:00,3.05,0.0,5.636,20.0,Money,20170331,444no city20170331
+39000,447,Lester Zimmerman,Special Gasoline,Fuel,Lois Anderson,Agririe,2017-03-31 10:26:00,3.05,0.0,34.661,123.01,Credit Card,20170331,447agririe20170331
+39000,448,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:26:00,3.05,0.0,6.481,23.0,Money,20170331,448no city20170331
+39000,449,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:28:00,3.05,0.0,1.409,5.0,Money,20170331,449no city20170331
+39000,449,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:28:00,3.05,0.0,1.409,5.0,Money,20170331,449no city20170331
+39000,452,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:32:00,3.05,0.0,24.241,86.03,Money,20170331,452no city20170331
+39000,454,Donna Bailey,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 10:34:00,2.56,0.0,38.341,110.0,Credit Card,20170331,454no city20170331
+39000,455,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:35:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,455no city20170331
+39000,455,Lester Zimmerman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 10:35:00,2.51,0.0,17.864,50.0,Money,20170331,455no city20170331
+39000,460,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:37:00,3.05,0.0,28.177,100.0,Money,20170331,460no city20170331
+39000,463,Curtis Newman,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 10:38:00,6.647,0.0,1.0,14.0,Money,20170331,463no city20170331
+39000,464,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:38:00,3.05,0.0,22.539,79.99,Money,20170331,464no city20170331
+39000,465,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:38:00,3.05,0.0,5.636,20.0,Money,20170331,465no city20170331
+39000,464,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:38:00,3.05,0.0,22.541999999999998,80.0,Money,20170331,464no city20170331
+39000,468,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:39:00,3.05,0.0,14.089,50.0,Money,20170331,468no city20170331
+39000,470,Rosie Mullins,Special Diesel,Fuel,Arthur Mason,Froit,2017-03-31 10:41:00,2.51,0.0,142.909,400.0,Money,20170331,470froit20170331
+39000,475,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:46:00,3.05,0.0,56.354,200.0,Money,20170331,475no city20170331
+39000,480,Brandon Martin,Special Diesel,Fuel,Ruth Quinn,Agririe,2017-03-31 10:50:00,2.51,0.0,36.442,102.0,Credit Card,20170331,480agririe20170331
+39000,483,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:57:00,3.05,0.0,14.089,50.0,Money,20170331,483no city20170331
+39000,483,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:57:00,3.05,0.0,1.97,6.99,Money,20170331,483no city20170331
+39000,485,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 10:58:00,3.05,0.0,5.636,20.0,Money,20170331,485no city20170331
+39000,486,Rosie Mullins,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 10:59:00,2.51,0.0,17.864,50.0,Pre-paid check / Pre- date check,20170331,486no city20170331
+39000,486,Donna Bailey,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 10:59:00,2.56,0.0,31.37,90.0,Pre-paid check / Pre- date check,20170331,486no city20170331
+39000,493,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:02:00,3.05,0.0,3.1,11.0,Credit Card,20170331,493no city20170331
+39000,495,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:04:00,3.05,0.0,14.089,50.0,Money,20170331,495no city20170331
+39000,500,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 11:07:00,2.51,0.0,17.864,50.0,Money,20170331,500no city20170331
+39000,500,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:07:00,3.05,0.0,2.821,10.01,Money,20170331,500no city20170331
+39000,503,Jeannette Norman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 11:11:00,2.51,0.0,21.436999999999998,60.0,Money,20170331,503no city20170331
+39000,506,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:13:00,3.05,0.0,28.177,100.0,Money,20170331,506no city20170331
+39000,509,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:16:00,3.05,0.0,8.454,30.0,Credit Card,20170331,509no city20170331
+39000,516,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:26:00,3.05,0.0,53.472,189.77,Money,20170331,516no city20170331
+39000,518,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:27:00,3.05,0.0,41.141999999999996,146.01,Credit Card,20170331,518no city20170331
+39000,519,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:28:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,519no city20170331
+39000,519,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:28:00,3.05,0.0,2.818,10.0,Money,20170331,519no city20170331
+39000,519,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:28:00,3.05,0.0,14.089,50.0,Money,20170331,519no city20170331
+39000,521,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:29:00,3.05,0.0,2.818,10.0,Debit Card,20170331,521no city20170331
+39000,524,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:31:00,3.05,0.0,14.089,50.0,Money,20170331,524no city20170331
+39000,525,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:32:00,3.05,0.0,29.8,105.76,Credit Card,20170331,525no city20170331
+39000,527,Guy Rivera,Special Gasoline,Fuel,Melanie Ortega,Devale,2017-03-31 11:34:00,3.05,0.0,32.041,113.71,Money,20170331,527devale20170331
+39000,529,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:37:00,3.05,0.0,13.81,49.01,Money,20170331,529no city20170331
+39000,532,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:38:00,3.05,0.0,28.177,100.0,Money,20170331,532no city20170331
+39000,535,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:39:00,3.05,0.0,5.636,20.0,Money,20170331,535no city20170331
+39000,535,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:39:00,3.05,0.0,5.636,20.0,Money,20170331,535no city20170331
+39000,540,Jeannette Norman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 11:44:00,2.51,0.0,82.17299999999999,230.0,Pre-paid check / Pre- date check,20170331,540no city20170331
+39000,541,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:45:00,3.05,0.0,14.089,50.0,Money,20170331,541no city20170331
+39000,541,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:45:00,3.05,0.0,5.5089999999999995,19.55,Money,20170331,541no city20170331
+39000,543,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:47:00,3.05,0.0,14.089,50.0,Money,20170331,543no city20170331
+39000,547,Jeannette Norman,Diesel Auto Clean,Fuel,Arthur Mason,Froit,2017-03-31 11:49:00,2.56,0.0,644.999,1850.5,Extended payment plan/ In installments,20170331,547froit20170331
+39000,547,Jeannette Norman,Additives And Fluids,Additives And Fluids,Arthur Mason,Froit,2017-03-31 11:49:00,32.274,0.0,2.0,110.0,Extended payment plan/ In installments,20170331,547froit20170331
+39000,546,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:49:00,3.05,0.0,44.52,158.0,Money,20170331,546no city20170331
+39000,548,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:50:00,3.05,0.0,14.089,50.0,Debit Card,20170331,548no city20170331
+39000,549,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:51:00,3.05,0.0,6.199,22.0,Money,20170331,549no city20170331
+39000,555,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:54:00,3.05,0.0,28.177,100.0,Money,20170331,555no city20170331
+39000,557,Curtis Newman,Diesel Auto Clean,Fuel,Pearl Ramsey,Wadena,2017-03-31 11:54:00,2.56,0.0,64.59100000000001,185.31,Credit Card,20170331,557wadena20170331
+39000,555,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:54:00,3.05,0.0,42.26600000000001,150.0,Money,20170331,555no city20170331
+39000,555,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:54:00,3.05,0.0,5.642,20.02,Money,20170331,555no city20170331
+39000,559,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 11:55:00,3.05,0.0,7.045,25.0,Credit Card,20170331,559no city20170331
+39000,1417,Brandon Martin,Diesel Auto Clean,Fuel,Katrina Simpson,Sriaron,2017-03-31 12:15:00,2.56,0.0,50.541000000000004,145.0,Money,20170331,1417sriaron20170331
+39000,1420,Donna Bailey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:20:00,3.05,0.0,4.2410000000000005,15.05,Credit Card,20170331,1420no city20170331
+39000,1428,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:24:00,3.05,0.0,39.451,140.01,Money,20170331,1428no city20170331
+39000,1427,Devin Copeland,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 12:24:00,2.51,0.0,35.728,100.0,Money,20170331,1427no city20170331
+39000,1429,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:26:00,3.05,0.0,2.818,10.0,Money,20170331,1429no city20170331
+39000,1431,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:27:00,3.05,0.0,33.813,120.0,Money,20170331,1431no city20170331
+39000,1431,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:27:00,3.05,0.0,28.177,100.0,Money,20170331,1431no city20170331
+39000,1432,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:28:00,3.05,0.0,5.636,20.0,Money,20170331,1432no city20170331
+39000,1435,Devin Copeland,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:30:00,3.043,0.0,5.636,20.0,Money,20170331,1435no city20170331
+39000,1435,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:30:00,3.043,0.0,36.631,130.0,Money,20170331,1435no city20170331
+39000,1434,Donna Bailey,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:30:00,3.043,0.0,14.089,50.0,Money,20170331,1434no city20170331
+39000,1436,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:30:00,3.05,0.0,2.818,10.0,Money,20170331,1436no city20170331
+39000,1435,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:30:00,3.05,0.0,2.821,10.01,Money,20170331,1435no city20170331
+39000,1435,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:30:00,3.05,0.0,19.724,70.0,Money,20170331,1435no city20170331
+39000,1435,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:30:00,3.05,0.0,2.818,10.0,Money,20170331,1435no city20170331
+39000,1437,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:31:00,3.05,0.0,14.089,50.0,Money,20170331,1437no city20170331
+39000,1438,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:32:00,3.05,0.0,10.432,37.02,Money,20170331,1438no city20170331
+39000,1440,Donna Bailey,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 12:33:00,2.51,0.0,35.728,100.0,Money,20170331,1440no city20170331
+39000,1443,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:34:00,3.05,0.0,14.089,50.0,Money,20170331,1443no city20170331
+39000,1443,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:34:00,3.05,0.0,2.818,10.0,Money,20170331,1443no city20170331
+39000,1443,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:34:00,3.05,0.0,5.636,20.0,Money,20170331,1443no city20170331
+39000,1443,Donna Bailey,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:34:00,3.043,0.0,14.089,50.0,Money,20170331,1443no city20170331
+39000,1443,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:34:00,3.05,0.0,5.636,20.0,Money,20170331,1443no city20170331
+39000,1444,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:35:00,3.05,0.0,5.636,20.0,Money,20170331,1444no city20170331
+39000,1444,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:35:00,3.05,0.0,5.636,20.0,Money,20170331,1444no city20170331
+39000,1444,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:35:00,3.05,0.0,16.907,60.0,Money,20170331,1444no city20170331
+39000,1445,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:36:00,3.05,0.0,2.818,10.0,Money,20170331,1445no city20170331
+39000,1445,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:36:00,3.05,0.0,3.3819999999999997,12.0,Money,20170331,1445no city20170331
+39000,1445,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:36:00,3.05,0.0,8.454,30.0,Money,20170331,1445no city20170331
+39000,1445,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:36:00,3.043,0.0,4.227,15.0,Money,20170331,1445no city20170331
+39000,1445,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:36:00,3.043,0.0,5.636,20.0,Money,20170331,1445no city20170331
+39000,1447,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:37:00,3.05,0.0,28.177,100.0,Money,20170331,1447no city20170331
+39000,1447,Donna Bailey,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:37:00,3.043,0.0,5.642,20.02,Money,20170331,1447no city20170331
+39000,1448,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:37:00,3.043,0.0,16.907,60.0,Money,20170331,1448no city20170331
+39000,1447,Curtis Newman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:37:00,3.043,0.0,5.636,20.0,Money,20170331,1447no city20170331
+39000,1447,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:37:00,3.05,0.0,14.089,50.0,Money,20170331,1447no city20170331
+39000,1448,Devin Copeland,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 12:37:00,2.56,0.0,34.856,100.0,Money,20170331,1448no city20170331
+39000,1447,Brandon Martin,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 12:37:00,2.56,0.0,17.428,50.0,Money,20170331,1447no city20170331
+39000,1449,Brandon Martin,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 12:38:00,2.56,0.0,64.49,185.02,Money,20170331,1449no city20170331
+39000,1450,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:40:00,3.05,0.0,5.636,20.0,Money,20170331,1450no city20170331
+39000,1451,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:41:00,3.05,0.0,44.24100000000001,157.01,Money,20170331,1451no city20170331
+39000,1454,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:43:00,3.05,0.0,5.636,20.0,Money,20170331,1454no city20170331
+39000,1454,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:43:00,3.05,0.0,19.724,70.0,Money,20170331,1454no city20170331
+39000,1454,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:43:00,3.043,0.0,8.454,30.0,Money,20170331,1454no city20170331
+39000,1454,Terri Tran,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:43:00,3.043,0.0,5.636,20.0,Money,20170331,1454no city20170331
+39000,1455,Curtis Newman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:44:00,3.043,0.0,5.636,20.0,Money,20170331,1455no city20170331
+39000,1457,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:45:00,3.05,0.0,8.454,30.0,Money,20170331,1457no city20170331
+39000,1457,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:45:00,3.05,0.0,8.454,30.0,Money,20170331,1457no city20170331
+39000,1458,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:45:00,3.05,0.0,0.86,3.05,Money,20170331,1458no city20170331
+39000,1458,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:45:00,3.05,0.0,4.791,17.0,Money,20170331,1458no city20170331
+39000,1457,Brandon Martin,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 12:45:00,2.56,0.0,41.827,120.0,Money,20170331,1457no city20170331
+39000,1462,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:49:00,3.05,0.0,39.22,139.19,Credit Card,20170331,1462no city20170331
+39000,1463,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:50:00,3.05,0.0,14.089,50.0,Money,20170331,1463no city20170331
+39000,1465,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:52:00,3.05,0.0,11.270999999999999,40.0,Debit Card,20170331,1465no city20170331
+39000,1466,Guy Rivera,Gasoline,Fuel,Meghan Howell,Wadena,2017-03-31 12:53:00,3.043,0.0,40.0,144.2,Credit Card,20170331,1466wadena20170331
+39000,1467,Devin Copeland,Ethanol,Fuel,Samuel Walton,Agririe,2017-03-31 12:54:00,2.938,0.0,43.04,138.12,Credit Card,20170331,1467agririe20170331
+39000,1469,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:55:00,3.05,0.0,2.818,10.0,Money,20170331,1469no city20170331
+39000,1470,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:55:00,3.043,0.0,14.370999999999999,51.0,Money,20170331,1470no city20170331
+39000,1470,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:55:00,3.05,0.0,1.409,5.0,Money,20170331,1470no city20170331
+39000,1473,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:56:00,3.05,0.0,14.089,50.0,Money,20170331,1473no city20170331
+39000,1473,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:56:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,1473no city20170331
+39000,1472,Guy Rivera,Ethanol,Fuel,Customer not informed,No City,2017-03-31 12:56:00,2.938,0.0,43.57899999999999,135.05,Credit Card,20170331,1472no city20170331
+39000,1471,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:56:00,3.05,0.0,7.045,25.0,Money,20170331,1471no city20170331
+39000,1475,Terri Tran,Gasoline,Fuel,Sonia Mendez,Ruwell,2017-03-31 12:57:00,3.043,0.0,41.24,146.36,Extended payment plan/ In installments,20170331,1475ruwell20170331
+39000,1474,Ora Hall,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 12:57:00,10.435,0.0,1.0,18.0,Money,20170331,1474no city20170331
+39000,1476,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 12:58:00,3.043,0.0,28.177,100.0,Credit Card,20170331,1476no city20170331
+39000,1478,Lance West,Special Gasoline,Fuel,Toby Watts,Iwreridge,2017-03-31 13:00:00,3.05,0.0,36.909,130.99,Debit Card,20170331,1478iwreridge20170331
+39000,1479,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:01:00,3.05,0.0,8.454,30.0,Money,20170331,1479no city20170331
+39000,1480,Terri Tran,Diesel Auto Clean,Fuel,Mandy Lloyd,Agririe,2017-03-31 13:01:00,2.56,0.0,27.892,80.02,Money,20170331,1480agririe20170331
+39000,1482,Curtis Newman,Diesel Auto Clean,Fuel,Pearl Ramsey,Wadena,2017-03-31 13:02:00,2.56,0.0,273.381,784.33,Extended payment plan/ In installments,20170331,1482wadena20170331
+39000,1481,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:02:00,3.05,0.0,5.636,20.0,Money,20170331,1481no city20170331
+39000,1484,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:04:00,3.043,0.0,10.75,38.15,Debit Card,20170331,1484no city20170331
+39000,1488,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:05:00,3.043,0.0,45.288999999999994,160.73,Credit Card,20170331,1488no city20170331
+39000,1491,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:08:00,3.05,0.0,22.541999999999998,80.0,Credit Card,20170331,1491no city20170331
+39000,1492,Curtis Newman,Ethanol,Fuel,Customer not informed,No City,2017-03-31 13:11:00,2.938,0.0,43.568999999999996,135.02,Pre-paid check / Pre- date check,20170331,1492no city20170331
+39000,1492,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:11:00,3.05,0.0,0.37,1.31,Pre-paid check / Pre- date check,20170331,1492no city20170331
+39000,1494,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:12:00,3.05,0.0,8.454,30.0,Debit Card,20170331,1494no city20170331
+39000,1496,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:13:00,3.05,0.0,38.89,138.02,Debit Card,20170331,1496no city20170331
+39000,1495,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 13:13:00,2.51,0.0,53.591,150.0,Credit Card,20170331,1495no city20170331
+39000,1498,Devin Copeland,Ethanol,Fuel,Customer not informed,No City,2017-03-31 13:14:00,2.938,0.0,12.908,40.0,Debit Card,20170331,1498no city20170331
+39000,1498,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:14:00,3.05,0.0,5.636,20.0,Debit Card,20170331,1498no city20170331
+39000,1499,Curtis Newman,Gasoline,Fuel,Christina Francis,Agririe,2017-03-31 13:16:00,3.043,0.0,37.45,135.01,Credit Card,20170331,1499agririe20170331
+39000,1500,Lance West,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 13:17:00,2.56,0.0,47.052,134.99,Pre-paid check / Pre- date check,20170331,1500no city20170331
+39000,1504,Devin Copeland,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:19:00,3.043,0.0,2.37,8.41,Money,20170331,1504no city20170331
+39000,1505,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:20:00,3.05,0.0,26.709,94.79,Debit Card,20170331,1505no city20170331
+39000,1506,Terri Tran,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:20:00,3.043,0.0,14.089,50.0,Credit Card,20170331,1506no city20170331
+39000,1509,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:21:00,3.05,0.0,2.818,10.0,Money,20170331,1509no city20170331
+39000,1509,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:21:00,3.05,0.0,5.636,20.0,Money,20170331,1509no city20170331
+39000,1508,Guy Rivera,Ethanol,Fuel,Customer not informed,No City,2017-03-31 13:21:00,2.938,0.0,57.132,177.05,Debit Card,20170331,1508no city20170331
+39000,1510,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:22:00,3.05,0.0,5.636,20.0,Money,20170331,1510no city20170331
+39000,1510,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 13:22:00,2.51,0.0,71.455,200.0,Money,20170331,1510no city20170331
+39000,1510,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:22:00,3.043,0.0,14.089,50.0,Money,20170331,1510no city20170331
+39000,1510,Curtis Newman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:22:00,3.043,0.0,28.177,100.0,Money,20170331,1510no city20170331
+39000,1510,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:22:00,3.05,0.0,14.089,50.0,Money,20170331,1510no city20170331
+39000,1511,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:23:00,3.05,0.0,45.081,159.99,Credit Card,20170331,1511no city20170331
+39000,1512,Brandon Martin,Gasoline,Fuel,Jasmine Holloway,Wadena,2017-03-31 13:23:00,3.043,0.0,35.23,127.0,Credit Card,20170331,1512wadena20170331
+39000,1513,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 13:24:00,2.51,0.0,10.719000000000001,30.0,Money,20170331,1513no city20170331
+39000,1513,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:24:00,3.05,0.0,28.177,100.0,Money,20170331,1513no city20170331
+39000,1513,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:24:00,3.05,0.0,5.636,20.0,Money,20170331,1513no city20170331
+39000,1513,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 13:24:00,2.51,0.0,14.290999999999999,40.0,Money,20170331,1513no city20170331
+39000,1515,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:25:00,3.05,0.0,14.089,50.0,Money,20170331,1515no city20170331
+39000,1516,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:25:00,3.043,0.0,8.741,31.02,Money,20170331,1516no city20170331
+39000,1514,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:25:00,3.05,0.0,28.177,100.0,Credit Card,20170331,1514no city20170331
+39000,1516,Brandon Martin,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 13:25:00,14.946,0.0,1.0,25.0,Money,20170331,1516no city20170331
+39000,1517,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:27:00,3.05,0.0,28.177,100.0,Money,20170331,1517no city20170331
+39000,1517,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:27:00,3.05,0.0,2.818,10.0,Money,20170331,1517no city20170331
+39000,1517,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:27:00,3.05,0.0,5.636,20.0,Money,20170331,1517no city20170331
+39000,1517,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:27:00,3.05,0.0,3.43,12.17,Money,20170331,1517no city20170331
+39000,1517,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:27:00,3.05,0.0,1.973,7.0,Money,20170331,1517no city20170331
+39000,1519,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:28:00,3.05,0.0,14.089,50.0,Money,20170331,1519no city20170331
+39000,1518,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:28:00,3.05,0.0,9.862,35.0,Money,20170331,1518no city20170331
+39000,1522,Curtis Newman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:29:00,3.043,0.0,51.00100000000001,181.0,Credit Card,20170331,1522no city20170331
+39000,1521,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:29:00,3.05,0.0,14.089,50.0,Money,20170331,1521no city20170331
+39000,1521,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:29:00,3.043,0.0,2.818,10.0,Money,20170331,1521no city20170331
+39000,1521,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:29:00,3.043,0.0,2.818,10.0,Money,20170331,1521no city20170331
+39000,1521,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:29:00,3.043,0.0,7.045,25.0,Money,20170331,1521no city20170331
+39000,1521,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:29:00,3.043,0.0,33.821,120.03,Money,20170331,1521no city20170331
+39000,1520,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:29:00,3.05,0.0,19.724,70.0,Money,20170331,1520no city20170331
+39000,1520,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:29:00,3.05,0.0,2.818,10.0,Money,20170331,1520no city20170331
+39000,1523,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 13:32:00,2.51,0.0,53.591,150.0,Money,20170331,1523no city20170331
+39000,1525,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:33:00,3.043,0.0,28.177,100.0,Debit Card,20170331,1525no city20170331
+39000,1524,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:33:00,3.05,0.0,28.177,100.0,Money,20170331,1524no city20170331
+39000,1527,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:34:00,3.05,0.0,45.089,160.02,Credit Card,20170331,1527no city20170331
+39000,1529,Terri Tran,Diesel Auto Clean,Fuel,Rex Rodriguez,Agririe,2017-03-31 13:35:00,2.56,0.0,72.852,209.01,Credit Card,20170331,1529agririe20170331
+39000,1528,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:35:00,3.043,0.0,11.270999999999999,40.0,Money,20170331,1528no city20170331
+39000,1530,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:36:00,3.05,0.0,47.062,167.02,Debit Card,20170331,1530no city20170331
+39000,1533,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:37:00,3.043,0.0,8.454,30.0,Money,20170331,1533no city20170331
+39000,1533,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:37:00,3.05,0.0,14.089,50.0,Money,20170331,1533no city20170331
+39000,1533,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:37:00,3.05,0.0,5.636,20.0,Money,20170331,1533no city20170331
+39000,1533,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 13:37:00,2.51,0.0,53.591,150.0,Money,20170331,1533no city20170331
+39000,1533,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:37:00,3.043,0.0,16.907,60.0,Money,20170331,1533no city20170331
+39000,1534,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:38:00,3.05,0.0,44.292,157.19,Credit Card,20170331,1534no city20170331
+39000,1535,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:39:00,3.05,0.0,62.562,222.03,Debit Card,20170331,1535no city20170331
+39000,1536,Curtis Newman,Special Diesel,Fuel,Fannie Wong,Agririe,2017-03-31 13:40:00,2.51,0.0,17.864,50.0,Money,20170331,1536agririe20170331
+39000,1538,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:41:00,3.05,0.0,14.089,50.0,Money,20170331,1538no city20170331
+39000,1537,Curtis Newman,Special Diesel,Fuel,Elizabeth Kelly,Agririe,2017-03-31 13:41:00,2.51,0.0,42.88,120.02,Debit Card,20170331,1537agririe20170331
+39000,1539,Brandon Martin,Gasoline,Fuel,Meghan Howell,Wadena,2017-03-31 13:42:00,3.043,0.0,48.47,174.73,Credit Card,20170331,1539wadena20170331
+39000,1542,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:43:00,3.05,0.0,36.631,130.0,Credit Card,20170331,1542no city20170331
+39000,1544,Rodney Patton,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:44:00,3.043,0.0,15.081,53.52,Debit Card,20170331,1544no city20170331
+39000,1543,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:44:00,3.05,0.0,11.270999999999999,40.0,Debit Card,20170331,1543no city20170331
+39000,1546,Devin Copeland,Special Gasoline,Fuel,Freddie Burton,Agririe,2017-03-31 13:45:00,3.05,0.0,34.9,123.86,Debit Card,20170331,1546agririe20170331
+39000,1547,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:46:00,3.05,0.0,16.907,60.0,Money,20170331,1547no city20170331
+39000,1547,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:46:00,3.05,0.0,5.636,20.0,Money,20170331,1547no city20170331
+39000,1547,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:46:00,3.05,0.0,7.045,25.0,Money,20170331,1547no city20170331
+39000,1547,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:46:00,3.05,0.0,7.045,25.0,Money,20170331,1547no city20170331
+39000,1547,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:46:00,3.05,0.0,2.818,10.0,Money,20170331,1547no city20170331
+39000,1548,Terri Tran,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:47:00,3.043,0.0,28.177,100.0,Debit Card,20170331,1548no city20170331
+39000,1550,Devin Copeland,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:48:00,3.043,0.0,14.089,50.0,Money,20170331,1550no city20170331
+39000,1549,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:48:00,3.05,0.0,28.191999999999997,100.05,Credit Card,20170331,1549no city20170331
+39000,1552,Rodney Patton,Gasoline,Fuel,Meghan Howell,Wadena,2017-03-31 13:50:00,3.043,0.0,10.0,36.05,Credit Card,20170331,1552wadena20170331
+39000,1551,Rodney Patton,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 13:50:00,2.56,0.0,44.542,127.79,Credit Card,20170331,1551no city20170331
+39000,1553,Rodney Patton,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:52:00,3.043,0.0,4.999,17.74,Credit Card,20170331,1553no city20170331
+39000,1553,Rodney Patton,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 13:52:00,1.452,0.0,1.0,3.25,Credit Card,20170331,1553no city20170331
+39000,1556,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:53:00,3.043,0.0,5.636,20.0,Money,20170331,1556no city20170331
+39000,1555,Guy Rivera,Gasoline,Fuel,Orlando Mendoza,Agririe,2017-03-31 13:53:00,3.043,0.0,14.089,50.0,Extended payment plan/ In installments,20170331,1555agririe20170331
+39000,1556,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:53:00,3.05,0.0,4.227,15.0,Money,20170331,1556no city20170331
+39000,1556,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:53:00,3.05,0.0,16.907,60.0,Money,20170331,1556no city20170331
+39000,1556,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:53:00,3.043,0.0,4.227,15.0,Money,20170331,1556no city20170331
+39000,1557,Rodney Patton,Ethanol,Fuel,Customer not informed,No City,2017-03-31 13:54:00,2.938,0.0,5.002,15.5,Debit Card,20170331,1557no city20170331
+39000,1558,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:54:00,3.043,0.0,8.454,30.0,Money,20170331,1558no city20170331
+39000,1558,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:54:00,3.043,0.0,4.227,15.0,Money,20170331,1558no city20170331
+39000,1558,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:54:00,3.05,0.0,5.636,20.0,Money,20170331,1558no city20170331
+39000,1558,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:54:00,3.05,0.0,14.089,50.0,Money,20170331,1558no city20170331
+11848000,1069,Laverne Ray,Gasoline,Fuel,Barry Barrett,Ruwell,2017-03-31 13:55:00,2.95,0.0,69.626,236.66,Extended payment plan/ In installments,20170331,1069ruwell20170331
+39000,1560,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:55:00,3.05,0.0,30.721999999999998,109.03,Money,20170331,1560no city20170331
+39000,1561,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:56:00,3.05,0.0,2.818,10.0,Money,20170331,1561no city20170331
+39000,1561,Curtis Newman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 13:56:00,2.51,0.0,17.864,50.0,Money,20170331,1561no city20170331
+39000,1561,Brandon Martin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 13:56:00,3.043,0.0,9.862,35.0,Money,20170331,1561no city20170331
+39000,1563,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:01:00,3.05,0.0,63.401,225.01,Debit Card,20170331,1563no city20170331
+39000,1564,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:01:00,3.05,0.0,43.68,155.02,Check,20170331,1564no city20170331
+39000,1565,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:02:00,3.05,0.0,8.454,30.0,Money,20170331,1565no city20170331
+39000,1565,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:02:00,3.05,0.0,5.636,20.0,Money,20170331,1565no city20170331
+39000,1566,Terri Tran,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 14:03:00,7.721,0.0,1.0,13.0,Debit Card,20170331,1566no city20170331
+39000,1566,Terri Tran,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 14:03:00,7.721,0.0,1.0,13.0,Debit Card,20170331,1566no city20170331
+39000,1566,Terri Tran,Cigarettes,Cigarettes,Customer not informed,No City,2017-03-31 14:03:00,7.994,0.0,1.0,9.0,Debit Card,20170331,1566no city20170331
+39000,1566,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 14:03:00,2.51,0.0,71.455,200.0,Debit Card,20170331,1566no city20170331
+39000,1567,Rodney Patton,Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:04:00,3.043,0.0,14.089,50.0,Debit Card,20170331,1567no city20170331
+39000,1568,Lance West,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 14:05:00,2.51,0.0,17.864,50.0,Money,20170331,1568no city20170331
+39000,1569,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:06:00,3.05,0.0,45.089,160.02,Debit Card,20170331,1569no city20170331
+39000,1570,Lester Zimmerman,Gasoline,Fuel,Troy Keller,Agririe,2017-03-31 14:07:00,3.043,0.0,8.454,30.0,Money,20170331,1570agririe20170331
+39000,1572,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:08:00,3.05,0.0,14.089,50.0,Money,20170331,1572no city20170331
+39000,1573,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:09:00,3.043,0.0,11.270999999999999,40.0,Credit Card,20170331,1573no city20170331
+39000,1574,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:10:00,3.05,0.0,28.177,100.0,Money,20170331,1574no city20170331
+39000,1575,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:12:00,3.05,0.0,11.581,41.1,Money,20170331,1575no city20170331
+39000,1578,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:14:00,3.05,0.0,28.177,100.0,Credit Card,20170331,1578no city20170331
+39000,1580,Jeannette Norman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 14:15:00,2.56,0.0,26.142,75.0,Money,20170331,1580no city20170331
+39000,1582,Jeannette Norman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 14:17:00,2.56,0.0,17.428,50.0,Credit Card,20170331,1582no city20170331
+39000,1582,Jeannette Norman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 14:17:00,2.56,0.0,17.428,50.0,Credit Card,20170331,1582no city20170331
+39000,1582,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:17:00,3.05,0.0,14.089,50.0,Credit Card,20170331,1582no city20170331
+39000,1583,Rodney Patton,Accessories,Accessories,Horace Harvey,Sluotol,2017-03-31 14:18:00,6.888,0.0,1.0,11.5,Pre-paid check / Pre- date check,20170331,1583sluotol20170331
+39000,1583,Jeannette Norman,Diesel Auto Clean,Fuel,Horace Harvey,Sluotol,2017-03-31 14:18:00,2.56,0.0,62.74,180.0,Pre-paid check / Pre- date check,20170331,1583sluotol20170331
+39000,1584,Donna Bailey,Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:18:00,3.043,0.0,5.642,20.02,Money,20170331,1584no city20170331
+39000,1585,Devin Copeland,Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:19:00,3.043,0.0,45.089,160.02,Money,20170331,1585no city20170331
+39000,1586,Jeannette Norman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 14:19:00,2.56,0.0,4.999,14.34,Credit Card,20170331,1586no city20170331
+39000,1587,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:19:00,3.05,0.0,36.301,128.83,Credit Card,20170331,1587no city20170331
+39000,1588,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:20:00,3.05,0.0,14.089,50.0,Credit Card,20170331,1588no city20170331
+39000,1589,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:21:00,3.05,0.0,28.177,100.0,Money,20170331,1589no city20170331
+39000,1591,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:22:00,3.05,0.0,28.177,100.0,Money,20170331,1591no city20170331
+39000,1592,Rodney Patton,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 14:23:00,2.56,0.0,34.856,100.0,Money,20170331,1592no city20170331
+39000,1593,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:23:00,3.05,0.0,28.177,100.0,Credit Card,20170331,1593no city20170331
+39000,1594,Jeannette Norman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:23:00,3.043,0.0,5.636,20.0,Money,20170331,1594no city20170331
+39000,1592,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:23:00,3.05,0.0,12.68,45.0,Money,20170331,1592no city20170331
+39000,1596,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:24:00,3.05,0.0,28.177,100.0,Credit Card,20170331,1596no city20170331
+39000,1598,Devin Copeland,Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:25:00,3.043,0.0,28.177,100.0,Debit Card,20170331,1598no city20170331
+39000,1597,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:25:00,3.043,0.0,28.177,100.0,Money,20170331,1597no city20170331
+39000,1597,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:25:00,3.043,0.0,2.818,10.0,Money,20170331,1597no city20170331
+39000,1601,Donna Bailey,Filters,Filters,Leona Harrison,Agririe,2017-03-31 14:27:00,13.23,0.0,1.0,21.0,Money,20170331,1601agririe20170331
+39000,1601,Donna Bailey,Lubricant,Lubricant,Leona Harrison,Agririe,2017-03-31 14:27:00,6.605,0.0,1.0,14.0,Money,20170331,1601agririe20170331
+39000,1599,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 14:27:00,3.05,0.0,16.907,60.0,Credit Card,20170331,1599no city20170331
+39000,1600,Delores Richards,Ethanol,Fuel,Customer not informed,No City,2017-03-31 14:27:00,2.938,0.0,16.135,50.0,Money,20170331,1600no city20170331
+39000,1601,Donna Bailey,Lubricant,Lubricant,Leona Harrison,Agririe,2017-03-31 14:27:00,14.946,0.0,3.0,75.0,Money,20170331,1601agririe20170331
+39000,2583,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:00:00,3.05,0.0,48.748999999999995,173.01,Credit Card,20170331,2583no city20170331
+39000,2587,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:03:00,3.05,0.0,1.409,5.0,Money,20170331,2587no city20170331
+39000,2587,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:03:00,3.05,0.0,2.8289999999999997,10.04,Money,20170331,2587no city20170331
+39000,2587,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:03:00,3.043,0.0,1.409,5.0,Money,20170331,2587no city20170331
+39000,2587,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:03:00,3.043,0.0,2.818,10.0,Money,20170331,2587no city20170331
+39000,2588,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:04:00,3.043,0.0,14.089,50.0,Money,20170331,2588no city20170331
+39000,2590,Guy Rivera,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:05:00,2.938,0.0,32.269,100.0,Money,20170331,2590no city20170331
+39000,2591,Rosie Mullins,Diesel Auto Clean,Fuel,Jeanne Price,Agririe,2017-03-31 15:06:00,2.56,0.0,50.492,144.86,Credit Card,20170331,2591agririe20170331
+39000,2592,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:07:00,3.05,0.0,9.862,35.0,Money,20170331,2592no city20170331
+39000,2592,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:07:00,3.05,0.0,14.089,50.0,Money,20170331,2592no city20170331
+39000,2592,Devin Copeland,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:07:00,2.938,0.0,6.454,20.0,Money,20170331,2592no city20170331
+39000,2592,Lance West,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:07:00,2.938,0.0,16.135,50.0,Money,20170331,2592no city20170331
+39000,2592,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:07:00,3.05,0.0,8.454,30.0,Money,20170331,2592no city20170331
+39000,2594,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:08:00,3.05,0.0,36.631,130.0,Money,20170331,2594no city20170331
+39000,2593,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:08:00,3.05,0.0,13.48,47.84,Money,20170331,2593no city20170331
+39000,2594,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:08:00,3.05,0.0,19.724,70.0,Money,20170331,2594no city20170331
+39000,2594,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:08:00,3.05,0.0,3.945,14.0,Money,20170331,2594no city20170331
+39000,2594,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:08:00,3.05,0.0,14.089,50.0,Money,20170331,2594no city20170331
+39000,2595,Jeffery Dennis,Gasoline,Fuel,Meghan Howell,Wadena,2017-03-31 15:09:00,3.043,0.0,46.909,169.11,Credit Card,20170331,2595wadena20170331
+39000,2596,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:10:00,3.05,0.0,26.500999999999998,94.05,Money,20170331,2596no city20170331
+39000,2597,Lester Zimmerman,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:11:00,2.938,0.0,3.2310000000000003,10.01,Money,20170331,2597no city20170331
+39000,2597,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.05,0.0,3.072,10.9,Money,20170331,2597no city20170331
+39000,2599,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.043,0.0,8.454,30.0,Money,20170331,2599no city20170331
+39000,2597,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.05,0.0,2.818,10.0,Money,20170331,2597no city20170331
+39000,2597,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.05,0.0,14.089,50.0,Money,20170331,2597no city20170331
+39000,2599,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.05,0.0,4.227,15.0,Money,20170331,2599no city20170331
+39000,2599,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.05,0.0,16.907,60.0,Money,20170331,2599no city20170331
+39000,2598,Jeannette Norman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:11:00,2.56,0.0,82.301,236.12,Money,20170331,2598no city20170331
+39000,2597,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.05,0.0,8.451,29.99,Money,20170331,2597no city20170331
+39000,2599,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.05,0.0,19.724,70.0,Money,20170331,2599no city20170331
+39000,2599,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:11:00,3.05,0.0,14.089,50.0,Money,20170331,2599no city20170331
+39000,2601,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:12:00,3.05,0.0,28.177,100.0,Money,20170331,2601no city20170331
+39000,2601,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:12:00,3.043,0.0,1.409,5.0,Money,20170331,2601no city20170331
+39000,2600,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:12:00,3.05,0.0,49.922,177.17,Credit Card,20170331,2600no city20170331
+39000,2604,Rodney Patton,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:14:00,3.043,0.0,14.089,50.0,Money,20170331,2604no city20170331
+39000,2604,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:14:00,3.043,0.0,5.636,20.0,Money,20170331,2604no city20170331
+39000,2604,Rodney Patton,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:14:00,3.043,0.0,5.636,20.0,Money,20170331,2604no city20170331
+39000,2604,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:14:00,3.05,0.0,2.821,10.01,Money,20170331,2604no city20170331
+39000,2605,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:14:00,3.05,0.0,32.97,117.01,Credit Card,20170331,2605no city20170331
+39000,2604,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:14:00,3.043,0.0,14.089,50.0,Money,20170331,2604no city20170331
+39000,2607,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:15:00,3.05,0.0,16.907,60.0,Credit Card,20170331,2607no city20170331
+39000,2606,Rosie Mullins,Special Diesel,Fuel,Julian Sherman,Agririe,2017-03-31 15:15:00,2.51,0.0,207.21,579.98,Debit Card,20170331,2606agririe20170331
+39000,2608,Salvador Mccormick,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:16:00,2.56,0.0,38.341,110.0,Credit Card,20170331,2608no city20170331
+39000,2610,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:18:00,3.043,0.0,28.177,100.0,Money,20170331,2610no city20170331
+39000,2610,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:18:00,3.05,0.0,14.089,50.0,Money,20170331,2610no city20170331
+39000,2611,Rosie Mullins,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:18:00,2.56,0.0,36.71,105.32,Credit Card,20170331,2611no city20170331
+39000,2610,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:18:00,3.043,0.0,7.045,25.0,Money,20170331,2610no city20170331
+39000,2610,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:18:00,3.043,0.0,14.089,50.0,Money,20170331,2610no city20170331
+39000,2612,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:19:00,3.043,0.0,8.454,30.0,Money,20170331,2612no city20170331
+39000,2616,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:22:00,3.043,0.0,14.089,50.0,Money,20170331,2616no city20170331
+39000,2616,Terri Tran,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:22:00,3.043,0.0,28.177,100.0,Money,20170331,2616no city20170331
+39000,2616,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:22:00,3.05,0.0,5.636,20.0,Money,20170331,2616no city20170331
+39000,2616,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:22:00,3.05,0.0,7.062,25.06,Money,20170331,2616no city20170331
+39000,2618,Curtis Newman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:23:00,3.05,0.0,28.177,100.0,Money,20170331,2618no city20170331
+39000,2618,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:23:00,3.05,0.0,28.177,100.0,Money,20170331,2618no city20170331
+39000,2618,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:23:00,3.05,0.0,14.089,50.0,Money,20170331,2618no city20170331
+39000,2617,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:23:00,3.05,0.0,14.089,50.0,Credit Card,20170331,2617no city20170331
+39000,2618,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:23:00,3.05,0.0,5.636,20.0,Money,20170331,2618no city20170331
+39000,2618,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:23:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,2618no city20170331
+39000,2619,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:24:00,3.05,0.0,5.636,20.0,Money,20170331,2619no city20170331
+39000,2621,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:25:00,3.05,0.0,35.260999999999996,125.14,Debit Card,20170331,2621no city20170331
+39000,2620,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:25:00,3.043,0.0,26.38,93.62,Credit Card,20170331,2620no city20170331
+39000,2622,Terri Tran,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:26:00,3.043,0.0,5.636,20.0,Money,20170331,2622no city20170331
+39000,2622,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:26:00,3.043,0.0,5.636,20.0,Money,20170331,2622no city20170331
+39000,2622,Rodney Patton,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:26:00,3.043,0.0,2.818,10.0,Money,20170331,2622no city20170331
+39000,2622,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:26:00,3.05,0.0,4.5089999999999995,16.0,Money,20170331,2622no city20170331
+39000,2628,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:27:00,3.05,0.0,6.199,22.0,Money,20170331,2628no city20170331
+39000,2625,Lance West,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:27:00,2.51,0.0,17.864,50.0,Money,20170331,2625no city20170331
+39000,2625,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:27:00,2.51,0.0,17.864,50.0,Money,20170331,2625no city20170331
+39000,2625,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:27:00,3.05,0.0,8.454,30.0,Money,20170331,2625no city20170331
+39000,2625,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:27:00,3.05,0.0,10.144,36.0,Money,20170331,2625no city20170331
+39000,2625,Terri Tran,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:27:00,2.56,0.0,73.2,210.01,Money,20170331,2625no city20170331
+39000,2624,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:27:00,3.05,0.0,5.636,20.0,Money,20170331,2624no city20170331
+39000,2628,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:27:00,3.05,0.0,19.724,70.0,Money,20170331,2628no city20170331
+39000,2628,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:27:00,3.05,0.0,14.089,50.0,Money,20170331,2628no city20170331
+39000,2628,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:27:00,3.05,0.0,14.089,50.0,Money,20170331,2628no city20170331
+39000,2631,Brandon Martin,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:29:00,3.05,0.0,14.089,50.0,Money,20170331,2631no city20170331
+39000,2631,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:29:00,3.05,0.0,7.045,25.0,Money,20170331,2631no city20170331
+39000,2631,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:29:00,3.05,0.0,8.454,30.0,Money,20170331,2631no city20170331
+39000,2633,Lester Zimmerman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:30:00,2.56,0.0,55.071999999999996,158.0,Credit Card,20170331,2633no city20170331
+39000,2632,Jeannette Norman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:30:00,3.043,0.0,5.642,20.02,Money,20170331,2632no city20170331
+39000,2636,Jeannette Norman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:32:00,2.51,0.0,75.031,210.01,Credit Card,20170331,2636no city20170331
+39000,2635,Lance West,Diesel Auto Clean,Fuel,Pauline Douglas,Agririe,2017-03-31 15:32:00,2.56,0.0,90.56200000000001,259.82,Debit Card,20170331,2635agririe20170331
+39000,2637,Devin Copeland,Special Gasoline,Fuel,Jim Fuller,Agririe,2017-03-31 15:33:00,3.05,0.0,10.0,34.78,Extended payment plan/ In installments,20170331,2637agririe20170331
+39000,2638,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:33:00,3.05,0.0,33.931,120.42,Money,20170331,2638no city20170331
+39000,2639,Salvador Mccormick,Gasoline,Fuel,Jasmine Holloway,Wadena,2017-03-31 15:34:00,3.043,0.0,57.98,209.02,Credit Card,20170331,2639wadena20170331
+11848000,1074,Anna Massey,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:34:00,2.96,0.0,14.710999999999999,50.0,Money,20170331,1074no city20170331
+11848000,1073,Alison Austin,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:34:00,2.95,0.0,14.710999999999999,50.0,Money,20170331,1073no city20170331
+39000,2642,Jeffery Dennis,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:35:00,2.56,0.0,61.00100000000001,175.01,Debit Card,20170331,2642no city20170331
+11848000,1075,Rex Fletcher,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:35:00,2.96,0.0,14.710999999999999,50.0,Money,20170331,1075no city20170331
+39000,2643,Lester Zimmerman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:36:00,2.51,0.0,101.869,285.13,Debit Card,20170331,2643no city20170331
+11848000,1076,Darryl Boyd,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:36:00,2.8310000000000004,0.0,14.710999999999999,50.0,Money,20170331,1076no city20170331
+11848000,1077,Laverne Ray,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:37:00,2.96,0.0,14.710999999999999,50.0,Credit Card,20170331,1077no city20170331
+39000,2645,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:37:00,3.05,0.0,14.092,50.01,Money,20170331,2645no city20170331
+39000,2644,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:37:00,3.05,0.0,28.177,100.0,Credit Card,20170331,2644no city20170331
+39000,2649,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:38:00,3.05,0.0,42.272,150.02,Credit Card,20170331,2649no city20170331
+39000,2647,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:38:00,3.05,0.0,2.821,10.01,Money,20170331,2647no city20170331
+11848000,1079,Rex Fletcher,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:39:00,2.95,0.0,45.614,155.04,Credit Card,20170331,1079no city20170331
+39000,2653,Salvador Mccormick,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:42:00,2.938,0.0,36.141,112.0,Credit Card,20170331,2653no city20170331
+39000,2656,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:43:00,3.05,0.0,11.270999999999999,40.0,Money,20170331,2656no city20170331
+39000,2656,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:43:00,3.05,0.0,8.454,30.0,Money,20170331,2656no city20170331
+39000,2656,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:43:00,3.05,0.0,14.089,50.0,Money,20170331,2656no city20170331
+39000,2655,Delores Richards,Filters,Filters,Customer not informed,No City,2017-03-31 15:43:00,13.23,0.0,1.0,21.0,Credit Card,20170331,2655no city20170331
+39000,2654,Salvador Mccormick,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:43:00,2.938,0.0,6.454,20.0,Money,20170331,2654no city20170331
+39000,2654,Salvador Mccormick,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:43:00,2.938,0.0,9.681000000000001,30.0,Money,20170331,2654no city20170331
+39000,2655,Delores Richards,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 15:43:00,10.788,0.0,3.0,75.0,Credit Card,20170331,2655no city20170331
+39000,2654,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:43:00,3.05,0.0,14.089,50.0,Money,20170331,2654no city20170331
+39000,2654,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:43:00,3.05,0.0,30.0,106.47,Money,20170331,2654no city20170331
+39000,2656,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:43:00,3.05,0.0,4.227,15.0,Money,20170331,2656no city20170331
+39000,2654,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:43:00,3.05,0.0,14.089,50.0,Money,20170331,2654no city20170331
+39000,2658,Jeannette Norman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:44:00,2.51,0.0,14.290999999999999,40.0,Money,20170331,2658no city20170331
+39000,2659,Lester Zimmerman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:44:00,2.51,0.0,35.728,100.0,Money,20170331,2659no city20170331
+39000,2658,Jeannette Norman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:44:00,2.56,0.0,69.711,200.0,Money,20170331,2658no city20170331
+39000,2658,Jeannette Norman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:44:00,3.043,0.0,14.089,50.0,Money,20170331,2658no city20170331
+11848000,1085,Rex Fletcher,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:44:00,2.467,0.0,38.493,107.74,Debit Card,20170331,1085no city20170331
+39000,2657,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:44:00,3.05,0.0,39.31,139.51,Credit Card,20170331,2657no city20170331
+39000,2662,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:45:00,3.05,0.0,24.802,88.02,Debit Card,20170331,2662no city20170331
+39000,2661,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:45:00,3.05,0.0,3.21,11.39,Money,20170331,2661no city20170331
+39000,2661,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:45:00,3.05,0.0,14.089,50.0,Money,20170331,2661no city20170331
+39000,2661,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:45:00,3.05,0.0,2.818,10.0,Money,20170331,2661no city20170331
+39000,2661,Jeffery Dennis,Ethanol,Fuel,Customer not informed,No City,2017-03-31 15:45:00,2.938,0.0,2.001,6.2,Money,20170331,2661no city20170331
+39000,2661,Salvador Mccormick,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:45:00,2.56,0.0,24.399,70.0,Money,20170331,2661no city20170331
+39000,2663,Devin Copeland,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:46:00,3.043,0.0,2.818,10.0,Money,20170331,2663no city20170331
+39000,2664,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:46:00,3.05,0.0,8.454,30.0,Debit Card,20170331,2664no city20170331
+39000,2663,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:46:00,3.05,0.0,5.636,20.0,Money,20170331,2663no city20170331
+39000,2663,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:46:00,3.05,0.0,28.18,100.01,Money,20170331,2663no city20170331
+39000,2663,Salvador Mccormick,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:46:00,2.51,0.0,17.864,50.0,Money,20170331,2663no city20170331
+39000,2665,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:47:00,3.043,0.0,14.089,50.0,Money,20170331,2665no city20170331
+39000,2665,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:47:00,3.043,0.0,5.881,20.87,Money,20170331,2665no city20170331
+39000,2665,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:47:00,3.05,0.0,2.818,10.0,Money,20170331,2665no city20170331
+39000,2665,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:47:00,3.05,0.0,2.818,10.0,Money,20170331,2665no city20170331
+39000,2665,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:47:00,3.05,0.0,14.089,50.0,Money,20170331,2665no city20170331
+39000,2667,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:48:00,3.05,0.0,5.636,20.0,Money,20170331,2667no city20170331
+39000,2668,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:48:00,3.05,0.0,43.802,155.45,Money,20170331,2668no city20170331
+39000,2667,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:48:00,3.05,0.0,14.089,50.0,Money,20170331,2667no city20170331
+39000,2667,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:48:00,3.05,0.0,28.177,100.0,Money,20170331,2667no city20170331
+39000,2669,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:49:00,3.05,0.0,14.089,50.0,Money,20170331,2669no city20170331
+39000,2671,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:50:00,3.043,0.0,2.818,10.0,Money,20170331,2671no city20170331
+39000,2670,Devin Copeland,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:50:00,3.043,0.0,37.741,133.94,Debit Card,20170331,2670no city20170331
+39000,2671,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:50:00,3.05,0.0,1.421,5.04,Money,20170331,2671no city20170331
+39000,2672,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:51:00,3.05,0.0,28.177,100.0,Debit Card,20170331,2672no city20170331
+39000,2676,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:52:00,3.043,0.0,2.021,7.17,Money,20170331,2676no city20170331
+39000,2676,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:52:00,2.96,0.0,43.68,155.02,Money,20170331,2676no city20170331
+39000,2676,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:52:00,2.96,0.0,8.454,30.0,Money,20170331,2676no city20170331
+39000,2675,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:52:00,3.05,0.0,14.089,50.0,Credit Card,20170331,2675no city20170331
+39000,2676,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:52:00,3.05,0.0,37.76,134.01,Money,20170331,2676no city20170331
+39000,2677,Rosie Mullins,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:53:00,2.51,0.0,100.0,279.9,Debit Card,20170331,2677no city20170331
+39000,2679,Salvador Mccormick,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:53:00,2.56,0.0,24.399,70.0,Money,20170331,2679no city20170331
+39000,2679,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:53:00,3.043,0.0,5.636,20.0,Money,20170331,2679no city20170331
+39000,2679,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:53:00,3.043,0.0,23.669,84.0,Money,20170331,2679no city20170331
+39000,2680,Salvador Mccormick,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 15:54:00,2.56,0.0,90.649,260.07,Credit Card,20170331,2680no city20170331
+39000,2682,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:54:00,2.96,0.0,29.871,106.01,Money,20170331,2682no city20170331
+39000,2685,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:55:00,2.96,0.0,8.454,30.0,Money,20170331,2685no city20170331
+39000,2685,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:55:00,2.96,0.0,5.636,20.0,Money,20170331,2685no city20170331
+39000,2685,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:55:00,2.96,0.0,28.177,100.0,Money,20170331,2685no city20170331
+39000,2685,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:55:00,2.96,0.0,28.177,100.0,Money,20170331,2685no city20170331
+39000,2683,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:55:00,3.0239999999999996,0.0,14.089,50.0,Debit Card,20170331,2683no city20170331
+39000,2687,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:56:00,2.96,0.0,14.089,50.0,Money,20170331,2687no city20170331
+39000,2687,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:56:00,3.0239999999999996,0.0,7.045,25.0,Money,20170331,2687no city20170331
+39000,2688,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:56:00,2.96,0.0,5.636,20.0,Money,20170331,2688no city20170331
+39000,2689,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:57:00,2.96,0.0,11.270999999999999,40.0,Money,20170331,2689no city20170331
+39000,2689,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:57:00,2.96,0.0,28.177,100.0,Money,20170331,2689no city20170331
+39000,2689,Lance West,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 15:57:00,2.51,0.0,43.97,123.07,Money,20170331,2689no city20170331
+39000,2689,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:57:00,2.96,0.0,5.636,20.0,Money,20170331,2689no city20170331
+39000,2689,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:57:00,2.96,0.0,2.821,10.01,Money,20170331,2689no city20170331
+39000,2690,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:57:00,2.96,0.0,14.089,50.0,Debit Card,20170331,2690no city20170331
+39000,2691,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:58:00,2.96,0.0,8.454,30.0,Money,20170331,2691no city20170331
+39000,2692,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:58:00,2.96,0.0,14.089,50.0,Debit Card,20170331,2692no city20170331
+39000,2693,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 15:59:00,3.0239999999999996,0.0,16.921,60.05,Money,20170331,2693no city20170331
+39000,2696,Lance West,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:00:00,2.56,0.0,63.441,182.01,Money,20170331,2696no city20170331
+39000,2697,Rodney Patton,Special Gasoline,Fuel,Monique Saunders,Agririe,2017-03-31 16:00:00,2.96,0.0,14.089,50.0,Money,20170331,2697agririe20170331
+39000,2699,Terri Tran,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:01:00,2.96,0.0,14.089,50.0,Money,20170331,2699no city20170331
+39000,2702,Salvador Mccormick,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:02:00,2.51,0.0,37.871,106.0,Money,20170331,2702no city20170331
+39000,2707,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:04:00,2.96,0.0,14.089,50.0,Money,20170331,2707no city20170331
+39000,2705,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:04:00,2.96,0.0,11.270999999999999,40.0,Money,20170331,2705no city20170331
+39000,2706,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:04:00,3.0239999999999996,0.0,11.270999999999999,40.0,Money,20170331,2706no city20170331
+39000,2704,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:04:00,2.96,0.0,35.222,125.0,Money,20170331,2704no city20170331
+39000,2707,Guy Rivera,Ethanol,Fuel,Customer not informed,No City,2017-03-31 16:04:00,2.938,0.0,9.681000000000001,30.0,Money,20170331,2707no city20170331
+39000,2707,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:04:00,3.0239999999999996,0.0,1.409,5.0,Money,20170331,2707no city20170331
+39000,2707,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:04:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2707no city20170331
+39000,2707,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:04:00,2.96,0.0,14.089,50.0,Money,20170331,2707no city20170331
+39000,2711,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:06:00,2.96,0.0,2.818,10.0,Money,20170331,2711no city20170331
+39000,2711,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:06:00,2.96,0.0,28.177,100.0,Money,20170331,2711no city20170331
+39000,2710,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:06:00,2.96,0.0,5.636,20.0,Money,20170331,2710no city20170331
+39000,2711,Devin Copeland,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:06:00,3.0239999999999996,0.0,2.821,10.01,Money,20170331,2711no city20170331
+39000,2710,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:06:00,2.96,0.0,14.089,50.0,Money,20170331,2710no city20170331
+39000,2711,Lester Zimmerman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:06:00,2.56,0.0,34.856,100.0,Money,20170331,2711no city20170331
+39000,2710,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:06:00,2.96,0.0,11.270999999999999,40.0,Money,20170331,2710no city20170331
+39000,2711,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:06:00,3.0239999999999996,0.0,7.045,25.0,Money,20170331,2711no city20170331
+39000,2710,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:06:00,2.96,0.0,28.177,100.0,Money,20170331,2710no city20170331
+39000,2712,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:07:00,2.96,0.0,14.089,50.0,Debit Card,20170331,2712no city20170331
+39000,2714,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:09:00,2.96,0.0,14.089,50.0,Money,20170331,2714no city20170331
+39000,2714,Delores Richards,Ethanol,Fuel,Customer not informed,No City,2017-03-31 16:09:00,2.938,0.0,16.135,50.0,Money,20170331,2714no city20170331
+39000,2714,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:09:00,2.96,0.0,28.177,100.0,Money,20170331,2714no city20170331
+39000,2714,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:09:00,2.96,0.0,14.089,50.0,Money,20170331,2714no city20170331
+39000,2714,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:09:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2714no city20170331
+39000,2713,Delores Richards,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 16:09:00,10.788,0.0,3.0,75.0,Debit Card,20170331,2713no city20170331
+39000,2716,Jeffery Dennis,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:10:00,2.56,0.0,46.71,134.01,Money,20170331,2716no city20170331
+39000,2716,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2716no city20170331
+39000,2716,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,3.0239999999999996,0.0,7.045,25.0,Money,20170331,2716no city20170331
+39000,2716,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,2.96,0.0,20.851,74.0,Money,20170331,2716no city20170331
+39000,2715,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,3.0239999999999996,0.0,14.089,50.0,Debit Card,20170331,2715no city20170331
+39000,2716,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,2.96,0.0,8.454,30.0,Money,20170331,2716no city20170331
+39000,2717,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,2.96,0.0,14.092,50.01,Money,20170331,2717no city20170331
+39000,2717,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,2.96,0.0,1.13,4.01,Money,20170331,2717no city20170331
+39000,2717,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2717no city20170331
+39000,2717,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:10:00,2.96,0.0,9.73,34.53,Money,20170331,2717no city20170331
+39000,2720,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:11:00,2.96,0.0,14.089,50.0,Money,20170331,2720no city20170331
+39000,2719,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:11:00,2.96,0.0,1.409,5.0,Money,20170331,2719no city20170331
+39000,2719,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:11:00,2.96,0.0,56.36,200.02,Money,20170331,2719no city20170331
+39000,2719,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:11:00,2.96,0.0,22.539,79.99,Money,20170331,2719no city20170331
+39000,2719,Devin Copeland,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:11:00,2.96,0.0,4.227,15.0,Money,20170331,2719no city20170331
+39000,2719,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:11:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2719no city20170331
+39000,2718,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:11:00,3.0239999999999996,0.0,28.18,100.01,Credit Card,20170331,2718no city20170331
+39000,2724,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:12:00,2.96,0.0,8.454,30.0,Money,20170331,2724no city20170331
+39000,2724,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:12:00,2.96,0.0,14.089,50.0,Money,20170331,2724no city20170331
+39000,2722,Salvador Mccormick,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:12:00,2.51,0.0,53.591,150.0,Debit Card,20170331,2722no city20170331
+39000,2721,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:12:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2721no city20170331
+39000,2721,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:12:00,2.96,0.0,26.211,93.02,Money,20170331,2721no city20170331
+39000,2721,Lester Zimmerman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:12:00,2.51,0.0,35.728,100.0,Money,20170331,2721no city20170331
+39000,2729,Jeannette Norman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:14:00,2.56,0.0,122.601,351.74,Check,20170331,2729no city20170331
+39000,2730,Rodney Patton,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:15:00,2.96,0.0,28.177,100.0,Money,20170331,2730no city20170331
+39000,2730,Terri Tran,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:15:00,2.51,0.0,35.728,100.0,Money,20170331,2730no city20170331
+39000,2731,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:15:00,2.96,0.0,5.636,20.0,Money,20170331,2731no city20170331
+39000,2732,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:15:00,2.96,0.0,39.451,140.01,Money,20170331,2732no city20170331
+39000,2733,Alma Garza,Gasoline,Fuel,Marilyn Vega,Agririe,2017-03-31 16:16:00,3.0239999999999996,0.0,4.999,17.74,Extended payment plan/ In installments,20170331,2733agririe20170331
+39000,2734,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:17:00,2.96,0.0,39.46,140.04,Money,20170331,2734no city20170331
+39000,2734,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:17:00,2.96,0.0,5.636,20.0,Money,20170331,2734no city20170331
+39000,2734,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:17:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2734no city20170331
+39000,2734,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:17:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2734no city20170331
+39000,2734,Salvador Mccormick,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:17:00,2.51,0.0,3.22,9.01,Money,20170331,2734no city20170331
+39000,2737,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:18:00,2.96,0.0,23.959,85.03,Money,20170331,2737no city20170331
+39000,2736,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:18:00,3.0239999999999996,0.0,22.61,80.24,Money,20170331,2736no city20170331
+39000,2736,Jeffery Dennis,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 16:18:00,6.605,0.0,1.0,14.0,Money,20170331,2736no city20170331
+39000,2735,Rosie Mullins,Diesel Auto Clean,Fuel,Alberto Love,Agririe,2017-03-31 16:18:00,2.56,0.0,34.856,100.0,Money,20170331,2735agririe20170331
+39000,2738,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:19:00,2.96,0.0,14.089,50.0,Credit Card,20170331,2738no city20170331
+39000,2741,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:22:00,2.96,0.0,23.669,84.0,Pre-paid check / Pre- date check,20170331,2741no city20170331
+39000,2743,Salvador Mccormick,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:23:00,2.56,0.0,52.284,150.0,Credit Card,20170331,2743no city20170331
+39000,2744,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:24:00,2.96,0.0,5.636,20.0,Credit Card,20170331,2744no city20170331
+39000,2746,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:24:00,2.96,0.0,16.907,60.0,Money,20170331,2746no city20170331
+39000,2747,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:24:00,2.96,0.0,45.371,161.02,Credit Card,20170331,2747no city20170331
+39000,2746,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:24:00,2.96,0.0,11.270999999999999,40.0,Money,20170331,2746no city20170331
+39000,2745,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:24:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2745no city20170331
+39000,2746,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:24:00,3.0239999999999996,0.0,28.177,100.0,Money,20170331,2746no city20170331
+39000,2749,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:25:00,2.96,0.0,40.86,145.01,Credit Card,20170331,2749no city20170331
+39000,2750,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:26:00,2.96,0.0,10.699000000000002,37.97,Debit Card,20170331,2750no city20170331
+39000,2751,Ora Hall,Special Gasoline,Fuel,Fannie Wong,Agririe,2017-03-31 16:26:00,2.96,0.0,54.951,195.02,Money,20170331,2751agririe20170331
+39000,2753,Lance West,Diesel Auto Clean,Fuel,Roxanne Burton,Agririe,2017-03-31 16:27:00,2.56,0.0,102.82,294.99,Money,20170331,2753agririe20170331
+39000,2752,Jeannette Norman,Gasoline,Fuel,Jim Fuller,Agririe,2017-03-31 16:27:00,3.0239999999999996,0.0,4.999,17.39,Extended payment plan/ In installments,20170331,2752agririe20170331
+39000,2754,Ora Hall,Ethanol,Fuel,Customer not informed,No City,2017-03-31 16:28:00,2.938,0.0,16.135,50.0,Money,20170331,2754no city20170331
+39000,2754,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:28:00,3.0239999999999996,0.0,28.177,100.0,Money,20170331,2754no city20170331
+39000,2754,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:28:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2754no city20170331
+39000,2755,Lance West,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:28:00,2.56,0.0,15.689,45.01,Money,20170331,2755no city20170331
+39000,2756,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:29:00,3.0239999999999996,0.0,50.73,180.04,Money,20170331,2756no city20170331
+39000,2756,Lester Zimmerman,Ethanol,Fuel,Customer not informed,No City,2017-03-31 16:29:00,2.938,0.0,16.135,50.0,Money,20170331,2756no city20170331
+39000,2758,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:29:00,2.96,0.0,33.150999999999996,117.65,Money,20170331,2758no city20170331
+39000,2760,Alma Garza,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:30:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2760no city20170331
+39000,2760,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:30:00,2.96,0.0,14.089,50.0,Money,20170331,2760no city20170331
+39000,2759,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:30:00,3.0239999999999996,0.0,14.089,50.0,Credit Card,20170331,2759no city20170331
+39000,2760,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:30:00,2.96,0.0,2.818,10.0,Money,20170331,2760no city20170331
+39000,2762,Delores Richards,Popsicle And Ice Creams,Popsicle And Ice Creams,Customer not informed,No City,2017-03-31 16:31:00,3.812,0.0,1.0,5.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,Chewing Gum And Candy,Chewing Gum And Candy,Customer not informed,No City,2017-03-31 16:31:00,0.501,0.0,1.0,1.5,Money,20170331,2762no city20170331
+39000,2761,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:31:00,2.96,0.0,8.454,30.0,Money,20170331,2761no city20170331
+39000,2761,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:31:00,2.96,0.0,2.818,10.0,Money,20170331,2761no city20170331
+39000,2762,Delores Richards,Chips,Chips,Customer not informed,No City,2017-03-31 16:31:00,3.517,0.0,1.0,5.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,The Bakery,The Bakery,Customer not informed,No City,2017-03-31 16:31:00,0.614,0.0,1.0,3.5,Money,20170331,2762no city20170331
+39000,2763,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:31:00,2.96,0.0,2.818,10.0,Money,20170331,2763no city20170331
+39000,2763,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:31:00,2.96,0.0,28.177,100.0,Money,20170331,2763no city20170331
+39000,2762,Delores Richards,The Bakery,The Bakery,Customer not informed,No City,2017-03-31 16:31:00,0.614,0.0,2.0,7.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,Juices And Soft Drinks,Juices And Soft Drinks,Customer not informed,No City,2017-03-31 16:31:00,3.016,0.0,1.0,5.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,Juices And Soft Drinks,Juices And Soft Drinks,Customer not informed,No City,2017-03-31 16:31:00,4.9910000000000005,0.0,2.0,15.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,Cigarettes,Cigarettes,Customer not informed,No City,2017-03-31 16:31:00,7.735,0.0,1.0,8.0,Money,20170331,2762no city20170331
+39000,2763,Ora Hall,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:31:00,2.51,0.0,17.864,50.0,Money,20170331,2763no city20170331
+39000,2762,Delores Richards,Cigarettes,Cigarettes,Customer not informed,No City,2017-03-31 16:31:00,7.553,0.0,1.0,8.25,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,Cigarettes,Cigarettes,Customer not informed,No City,2017-03-31 16:31:00,6.4079999999999995,0.0,1.0,7.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,Chips,Chips,Customer not informed,No City,2017-03-31 16:31:00,3.617,0.0,1.0,5.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,Chips,Chips,Customer not informed,No City,2017-03-31 16:31:00,3.6180000000000003,0.0,1.0,5.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,Chips,Chips,Customer not informed,No City,2017-03-31 16:31:00,2.1719999999999997,0.0,1.0,3.0,Money,20170331,2762no city20170331
+39000,2762,Delores Richards,The Bakery,The Bakery,Customer not informed,No City,2017-03-31 16:31:00,0.731,0.0,1.0,2.5,Money,20170331,2762no city20170331
+39000,2764,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:32:00,2.96,0.0,19.724,70.0,Money,20170331,2764no city20170331
+39000,2765,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:32:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2765no city20170331
+39000,2767,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:33:00,2.96,0.0,8.454,30.0,Money,20170331,2767no city20170331
+39000,2766,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:33:00,2.96,0.0,2.818,10.0,Money,20170331,2766no city20170331
+39000,2768,Alma Garza,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:33:00,3.0239999999999996,0.0,28.177,100.0,Money,20170331,2768no city20170331
+39000,2770,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:34:00,2.96,0.0,14.089,50.0,Money,20170331,2770no city20170331
+39000,2769,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:34:00,2.96,0.0,42.272,150.02,Money,20170331,2769no city20170331
+39000,2771,Ora Hall,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:34:00,2.56,0.0,13.943,40.0,Money,20170331,2771no city20170331
+11848000,1150,Alison Austin,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:36:00,2.4290000000000003,0.0,44.46100000000001,120.0,Money,20170331,1150no city20170331
+39000,2776,Delores Richards,Special Gasoline,Fuel,Rosie Vega,Agririe,2017-03-31 16:37:00,2.96,0.0,43.68,155.02,Money,20170331,2776agririe20170331
+39000,2779,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:38:00,3.0239999999999996,0.0,41.28,146.5,Credit Card,20170331,2779no city20170331
+39000,2781,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:38:00,2.96,0.0,14.089,50.0,Money,20170331,2781no city20170331
+39000,2783,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:40:00,2.96,0.0,14.089,50.0,Money,20170331,2783no city20170331
+39000,2782,Alma Garza,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:40:00,3.0239999999999996,0.0,14.089,50.0,Debit Card,20170331,2782no city20170331
+39000,2784,Jeannette Norman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:41:00,3.0239999999999996,0.0,36.631,130.0,Money,20170331,2784no city20170331
+39000,2785,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:42:00,2.96,0.0,5.636,20.0,Money,20170331,2785no city20170331
+39000,2787,Jeannette Norman,Gasoline,Fuel,Leona Harrison,Agririe,2017-03-31 16:43:00,3.0239999999999996,0.0,42.26600000000001,150.0,Credit Card,20170331,2787agririe20170331
+39000,2788,Jeffery Dennis,Diesel Auto Clean,Fuel,Arthur Mason,Froit,2017-03-31 16:43:00,2.56,0.0,47.4,135.99,Money,20170331,2788froit20170331
+39000,2786,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:43:00,2.96,0.0,40.86,145.01,Debit Card,20170331,2786no city20170331
+39000,2790,Rosie Mullins,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:45:00,2.56,0.0,17.428,50.0,Money,20170331,2790no city20170331
+39000,2789,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:45:00,2.96,0.0,28.177,100.0,Debit Card,20170331,2789no city20170331
+39000,2791,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:46:00,2.96,0.0,19.97,70.87,Debit Card,20170331,2791no city20170331
+39000,2792,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:47:00,2.96,0.0,15.07,53.48,Money,20170331,2792no city20170331
+39000,2793,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:47:00,2.96,0.0,31.031999999999996,110.13,Debit Card,20170331,2793no city20170331
+39000,2794,Salvador Mccormick,Gasoline,Fuel,Dolores Gonzales,Agririe,2017-03-31 16:48:00,3.0239999999999996,0.0,36.36,131.08,Credit Card,20170331,2794agririe20170331
+39000,2796,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:49:00,2.96,0.0,5.636,20.0,Credit Card,20170331,2796no city20170331
+39000,2797,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:49:00,2.96,0.0,45.132,160.17,Debit Card,20170331,2797no city20170331
+39000,2798,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:50:00,2.96,0.0,28.177,100.0,Debit Card,20170331,2798no city20170331
+39000,2799,Lester Zimmerman,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:51:00,2.56,0.0,17.428,50.0,Money,20170331,2799no city20170331
+39000,2801,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:52:00,2.96,0.0,59.161,209.96,Credit Card,20170331,2801no city20170331
+39000,2804,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:53:00,3.0239999999999996,0.0,5.636,20.0,Debit Card,20170331,2804no city20170331
+39000,2802,Lester Zimmerman,Diesel Auto Clean,Fuel,Alejandro Wise,Guset,2017-03-31 16:53:00,2.56,0.0,59.262,170.02,Extended payment plan/ In installments,20170331,2802guset20170331
+39000,2806,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:54:00,2.96,0.0,19.724,70.0,Debit Card,20170331,2806no city20170331
+39000,2807,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:55:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2807no city20170331
+39000,2809,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:55:00,2.96,0.0,54.951,195.02,Debit Card,20170331,2809no city20170331
+39000,2808,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:55:00,3.0239999999999996,0.0,5.34,18.95,Money,20170331,2808no city20170331
+39000,2808,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:55:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2808no city20170331
+39000,2808,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:55:00,2.96,0.0,5.642,20.02,Money,20170331,2808no city20170331
+39000,2807,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:55:00,2.96,0.0,19.724,70.0,Money,20170331,2807no city20170331
+39000,2807,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:55:00,2.96,0.0,19.724,70.0,Money,20170331,2807no city20170331
+39000,2807,Rosie Mullins,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:55:00,2.51,0.0,17.864,50.0,Money,20170331,2807no city20170331
+39000,2807,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:55:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2807no city20170331
+39000,2813,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:56:00,2.96,0.0,37.611,133.48,Money,20170331,2813no city20170331
+39000,2812,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:56:00,2.96,0.0,19.724,70.0,Money,20170331,2812no city20170331
+39000,2811,Rosie Mullins,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 16:56:00,2.51,0.0,23.509,65.8,Money,20170331,2811no city20170331
+39000,2811,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:56:00,3.0239999999999996,0.0,7.327000000000001,26.0,Money,20170331,2811no city20170331
+39000,2811,Ora Hall,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:56:00,3.0239999999999996,0.0,4.227,15.0,Money,20170331,2811no city20170331
+39000,2811,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:56:00,2.96,0.0,5.636,20.0,Money,20170331,2811no city20170331
+39000,2810,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:56:00,2.96,0.0,5.636,20.0,Money,20170331,2810no city20170331
+39000,2811,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:56:00,3.0239999999999996,0.0,7.045,25.0,Money,20170331,2811no city20170331
+39000,2814,Salvador Mccormick,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 16:57:00,2.56,0.0,36.191,103.83,Money,20170331,2814no city20170331
+39000,2816,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:58:00,3.0239999999999996,0.0,4.227,15.0,Money,20170331,2816no city20170331
+39000,2819,Ora Hall,Special Gasoline,Fuel,Roberto Goodwin,Agririe,2017-03-31 16:59:00,2.96,0.0,42.26600000000001,150.0,Credit Card,20170331,2819agririe20170331
+39000,2818,Delores Richards,Gasoline,Fuel,Customer not informed,No City,2017-03-31 16:59:00,3.0239999999999996,0.0,14.089,50.0,Credit Card,20170331,2818no city20170331
+39000,2820,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:00:00,2.96,0.0,16.907,60.0,Credit Card,20170331,2820no city20170331
+39000,2821,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:00:00,3.0239999999999996,0.0,6.481,23.0,Money,20170331,2821no city20170331
+39000,2821,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:00:00,2.96,0.0,14.241,50.54,Money,20170331,2821no city20170331
+39000,2822,Rosie Mullins,Special Diesel,Fuel,Yvonne Ballard,Agririe,2017-03-31 17:00:00,2.51,0.0,68.15,190.75,Extended payment plan/ In installments,20170331,2822agririe20170331
+39000,2824,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:01:00,3.0239999999999996,0.0,70.44,249.99,Debit Card,20170331,2824no city20170331
+39000,2823,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:01:00,2.96,0.0,22.541999999999998,80.0,Money,20170331,2823no city20170331
+39000,2825,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:02:00,2.96,0.0,14.089,50.0,Money,20170331,2825no city20170331
+39000,2827,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:02:00,2.96,0.0,28.177,100.0,Money,20170331,2827no city20170331
+39000,2827,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:02:00,2.96,0.0,5.636,20.0,Money,20170331,2827no city20170331
+39000,2829,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:03:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2829no city20170331
+39000,2830,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:03:00,3.0239999999999996,0.0,8.454,30.0,Money,20170331,2830no city20170331
+39000,2831,Ora Hall,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:04:00,3.0239999999999996,0.0,12.040999999999999,42.73,Debit Card,20170331,2831no city20170331
+39000,2834,Delores Richards,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:05:00,3.0239999999999996,0.0,16.907,60.0,Debit Card,20170331,2834no city20170331
+39000,2836,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:06:00,2.96,0.0,5.636,20.0,Money,20170331,2836no city20170331
+39000,2838,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:07:00,2.96,0.0,28.177,100.0,Money,20170331,2838no city20170331
+39000,2837,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:07:00,2.96,0.0,7.045,25.0,Money,20170331,2837no city20170331
+39000,2841,Guy Rivera,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 17:08:00,2.56,0.0,17.428,50.0,Money,20170331,2841no city20170331
+39000,2841,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:08:00,2.96,0.0,28.177,100.0,Money,20170331,2841no city20170331
+39000,2841,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:08:00,2.96,0.0,14.089,50.0,Money,20170331,2841no city20170331
+39000,2840,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:08:00,2.96,0.0,33.531,119.0,Money,20170331,2840no city20170331
+39000,2839,Guy Rivera,Gasoline,Fuel,Meghan Howell,Wadena,2017-03-31 17:08:00,3.0239999999999996,0.0,34.841,125.6,Credit Card,20170331,2839wadena20170331
+39000,2842,Jeannette Norman,Special Diesel,Fuel,Arthur Mason,Froit,2017-03-31 17:09:00,2.51,0.0,71.45100000000002,199.99,Money,20170331,2842froit20170331
+39000,2843,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:09:00,2.96,0.0,28.459,101.0,Money,20170331,2843no city20170331
+39000,2844,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:10:00,2.96,0.0,1.409,5.0,Money,20170331,2844no city20170331
+39000,2845,Alma Garza,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:11:00,3.0239999999999996,0.0,8.454,30.0,Money,20170331,2845no city20170331
+39000,2845,Alma Garza,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:11:00,3.0239999999999996,0.0,2.818,10.0,Money,20170331,2845no city20170331
+39000,2846,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:12:00,2.96,0.0,8.454,30.0,Debit Card,20170331,2846no city20170331
+39000,2848,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:13:00,3.0239999999999996,0.0,47.91,170.03,Debit Card,20170331,2848no city20170331
+39000,2847,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:13:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2847no city20170331
+39000,2847,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:13:00,2.96,0.0,14.089,50.0,Money,20170331,2847no city20170331
+39000,2852,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:14:00,3.0239999999999996,0.0,8.454,30.0,Money,20170331,2852no city20170331
+39000,2850,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:14:00,2.96,0.0,3.759,13.34,Money,20170331,2850no city20170331
+39000,2854,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:15:00,2.96,0.0,5.636,20.0,Money,20170331,2854no city20170331
+39000,2854,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:15:00,2.96,0.0,5.636,20.0,Money,20170331,2854no city20170331
+39000,2855,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:15:00,2.96,0.0,8.454,30.0,Money,20170331,2855no city20170331
+39000,2856,Jeannette Norman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:15:00,3.0239999999999996,0.0,59.169,209.99,Debit Card,20170331,2856no city20170331
+39000,2858,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:17:00,2.96,0.0,8.454,30.0,Credit Card,20170331,2858no city20170331
+39000,2860,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:18:00,2.96,0.0,10.99,39.0,Debit Card,20170331,2860no city20170331
+39000,2862,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:19:00,2.96,0.0,32.131,114.03,Credit Card,20170331,2862no city20170331
+39000,2861,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:19:00,2.96,0.0,14.089,50.0,Credit Card,20170331,2861no city20170331
+39000,2863,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:19:00,2.96,0.0,45.132,160.17,Debit Card,20170331,2863no city20170331
+39000,2864,Ora Hall,Special Diesel,Fuel,Bernice Drake,Agririe,2017-03-31 17:20:00,2.51,0.0,80.0,223.92,Credit Card,20170331,2864agririe20170331
+39000,2865,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:21:00,2.96,0.0,24.951,88.55,Money,20170331,2865no city20170331
+39000,2866,Jeannette Norman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 17:22:00,2.51,0.0,105.26,294.62,Debit Card,20170331,2866no city20170331
+39000,2867,Jeannette Norman,Gasoline,Fuel,Jeanne Price,Agririe,2017-03-31 17:22:00,3.0239999999999996,0.0,11.470999999999998,41.35,Credit Card,20170331,2867agririe20170331
+39000,2868,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:23:00,3.0239999999999996,0.0,6.763,24.0,Money,20170331,2868no city20170331
+39000,2870,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:23:00,3.0239999999999996,0.0,28.177,100.0,Money,20170331,2870no city20170331
+39000,2868,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:23:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2868no city20170331
+39000,2868,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:23:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2868no city20170331
+39000,2869,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:23:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2869no city20170331
+39000,2870,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:23:00,2.96,0.0,8.454,30.0,Money,20170331,2870no city20170331
+39000,2868,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:23:00,2.96,0.0,8.451,29.99,Money,20170331,2868no city20170331
+39000,2868,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:23:00,2.96,0.0,5.636,20.0,Money,20170331,2868no city20170331
+39000,2871,Ora Hall,Ethanol,Fuel,Customer not informed,No City,2017-03-31 17:24:00,2.938,0.0,22.401,69.42,Debit Card,20170331,2871no city20170331
+39000,2872,Salvador Mccormick,Gasoline,Fuel,Jasmine Holloway,Wadena,2017-03-31 17:25:00,3.0239999999999996,0.0,30.412,109.64,Credit Card,20170331,2872wadena20170331
+39000,2873,Jeannette Norman,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 17:26:00,6.647,0.0,1.0,14.0,Money,20170331,2873no city20170331
+39000,2874,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:26:00,2.96,0.0,22.541999999999998,80.0,Money,20170331,2874no city20170331
+39000,2873,Jeannette Norman,Lubricant,Lubricant,Customer not informed,No City,2017-03-31 17:26:00,6.647,0.0,1.0,14.0,Money,20170331,2873no city20170331
+39000,2876,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:27:00,2.96,0.0,16.907,60.0,Debit Card,20170331,2876no city20170331
+39000,2877,Jeffery Dennis,Gasoline,Fuel,Meghan Howell,Wadena,2017-03-31 17:28:00,3.0239999999999996,0.0,20.0,72.1,Credit Card,20170331,2877wadena20170331
+39000,2882,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:29:00,2.96,0.0,36.07,128.01,Money,20170331,2882no city20170331
+39000,2882,Alma Garza,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 17:29:00,2.51,0.0,17.864,50.0,Money,20170331,2882no city20170331
+39000,2880,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:29:00,2.96,0.0,1.001,3.55,Money,20170331,2880no city20170331
+39000,2878,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:29:00,2.96,0.0,28.177,100.0,Debit Card,20170331,2878no city20170331
+39000,2884,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:30:00,3.0239999999999996,0.0,16.419,58.27,Debit Card,20170331,2884no city20170331
+39000,2883,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:30:00,2.96,0.0,15.78,56.0,Money,20170331,2883no city20170331
+39000,2885,Jeffery Dennis,Special Diesel,Fuel,Michelle Poole,Agririe,2017-03-31 17:30:00,2.51,0.0,17.864,50.0,Credit Card,20170331,2885agririe20170331
+39000,2886,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:31:00,2.96,0.0,1.801,6.39,Money,20170331,2886no city20170331
+39000,2887,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:31:00,2.96,0.0,14.089,50.0,Money,20170331,2887no city20170331
+39000,2886,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:31:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2886no city20170331
+39000,2887,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:31:00,2.96,0.0,5.636,20.0,Money,20170331,2887no city20170331
+39000,2886,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:31:00,2.96,0.0,11.542,40.96,Money,20170331,2886no city20170331
+39000,2886,Rosie Mullins,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:31:00,2.96,0.0,28.459,101.0,Money,20170331,2886no city20170331
+39000,2886,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:31:00,3.0239999999999996,0.0,28.177,100.0,Money,20170331,2886no city20170331
+39000,2890,Ora Hall,Ethanol,Fuel,Customer not informed,No City,2017-03-31 17:32:00,2.938,0.0,19.362000000000002,60.0,Money,20170331,2890no city20170331
+39000,2888,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:32:00,2.96,0.0,28.177,100.0,Credit Card,20170331,2888no city20170331
+39000,2889,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:32:00,3.0239999999999996,0.0,28.177,100.0,Money,20170331,2889no city20170331
+39000,2892,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:33:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2892no city20170331
+39000,2894,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:33:00,3.0239999999999996,0.0,4.227,15.0,Money,20170331,2894no city20170331
+39000,2893,Jeffery Dennis,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 17:33:00,2.56,0.0,37.989000000000004,108.99,Money,20170331,2893no city20170331
+39000,2897,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:34:00,2.96,0.0,14.089,50.0,Money,20170331,2897no city20170331
+39000,2896,Jeannette Norman,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 17:34:00,2.51,0.0,21.436999999999998,60.0,Money,20170331,2896no city20170331
+39000,2895,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:34:00,2.96,0.0,8.454,30.0,Money,20170331,2895no city20170331
+39000,2899,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:35:00,2.96,0.0,5.642,20.02,Money,20170331,2899no city20170331
+39000,2900,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:35:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2900no city20170331
+39000,2901,Jeffery Dennis,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 17:35:00,2.56,0.0,17.428,50.0,Money,20170331,2901no city20170331
+39000,2901,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:35:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2901no city20170331
+39000,2901,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:35:00,3.0239999999999996,0.0,2.821,10.01,Money,20170331,2901no city20170331
+39000,2901,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:35:00,2.96,0.0,3.48,12.35,Money,20170331,2901no city20170331
+39000,2902,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:36:00,2.96,0.0,11.95,42.41,Money,20170331,2902no city20170331
+39000,2904,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:36:00,3.0239999999999996,0.0,4.227,15.0,Money,20170331,2904no city20170331
+39000,2907,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:38:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2907no city20170331
+39000,2906,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:38:00,2.96,0.0,5.636,20.0,Money,20170331,2906no city20170331
+39000,2909,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:39:00,2.96,0.0,11.270999999999999,40.0,Money,20170331,2909no city20170331
+39000,2910,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:39:00,2.96,0.0,14.089,50.0,Money,20170331,2910no city20170331
+39000,2910,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:39:00,2.96,0.0,14.089,50.0,Money,20170331,2910no city20170331
+39000,2911,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:40:00,2.96,0.0,33.813,120.0,Money,20170331,2911no city20170331
+39000,2913,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:42:00,2.96,0.0,2.818,10.0,Money,20170331,2913no city20170331
+39000,2913,Salvador Mccormick,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 17:42:00,2.51,0.0,17.864,50.0,Money,20170331,2913no city20170331
+39000,2912,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:42:00,2.96,0.0,14.089,50.0,Debit Card,20170331,2912no city20170331
+39000,2913,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:42:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2913no city20170331
+39000,2914,Guy Rivera,Ethanol,Fuel,Customer not informed,No City,2017-03-31 17:43:00,2.938,0.0,37.109,115.0,Debit Card,20170331,2914no city20170331
+39000,2916,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:43:00,2.96,0.0,4.512,16.01,Money,20170331,2916no city20170331
+39000,2915,Ora Hall,Special Gasoline,Fuel,Jorge Frank,Agririe,2017-03-31 17:43:00,2.96,0.0,32.404,115.0,Money,20170331,2915agririe20170331
+39000,2917,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:44:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2917no city20170331
+39000,2920,Lester Zimmerman,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:45:00,3.0239999999999996,0.0,27.881999999999998,98.95,Money,20170331,2920no city20170331
+39000,2919,Salvador Mccormick,Special Gasoline,Fuel,Mae Collins,Agririe,2017-03-31 17:45:00,2.96,0.0,49.6,176.03,Debit Card,20170331,2919agririe20170331
+39000,2922,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:46:00,2.96,0.0,14.089,50.0,Credit Card,20170331,2922no city20170331
+39000,2921,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:46:00,2.96,0.0,8.454,30.0,Money,20170331,2921no city20170331
+39000,2924,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:48:00,2.96,0.0,5.636,20.0,Money,20170331,2924no city20170331
+39000,2925,Jeannette Norman,Gasoline,Fuel,Jeanne Price,Agririe,2017-03-31 17:49:00,3.0239999999999996,0.0,26.399,95.17,Credit Card,20170331,2925agririe20170331
+39000,2927,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:50:00,2.96,0.0,42.272,150.02,Debit Card,20170331,2927no city20170331
+39000,2926,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:50:00,2.96,0.0,7.045,25.0,Money,20170331,2926no city20170331
+39000,2926,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:50:00,2.96,0.0,11.270999999999999,40.0,Money,20170331,2926no city20170331
+39000,2926,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:50:00,2.96,0.0,28.177,100.0,Money,20170331,2926no city20170331
+39000,2928,Rosie Mullins,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 17:51:00,2.56,0.0,46.25,132.69,Credit Card,20170331,2928no city20170331
+39000,2930,Rosie Mullins,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:51:00,3.0239999999999996,0.0,4.227,15.0,Money,20170331,2930no city20170331
+39000,2931,Ora Hall,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:52:00,3.0239999999999996,0.0,28.177,100.0,Money,20170331,2931no city20170331
+39000,2931,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:52:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2931no city20170331
+39000,2932,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:52:00,2.96,0.0,28.22,100.15,Money,20170331,2932no city20170331
+39000,2931,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:52:00,2.96,0.0,8.454,30.0,Money,20170331,2931no city20170331
+39000,2933,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:53:00,2.96,0.0,5.642,20.02,Money,20170331,2933no city20170331
+39000,2934,Delores Richards,Filters,Filters,Customer not informed,No City,2017-03-31 17:54:00,11.908,0.0,1.0,19.0,Credit Card,20170331,2934no city20170331
+39000,2935,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:54:00,3.0239999999999996,0.0,5.54,19.66,Money,20170331,2935no city20170331
+39000,2936,Lester Zimmerman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:54:00,2.96,0.0,25.36,90.0,Money,20170331,2936no city20170331
+39000,2934,Delores Richards,Filters,Filters,Customer not informed,No City,2017-03-31 17:54:00,13.52,0.0,1.0,21.5,Credit Card,20170331,2934no city20170331
+39000,2938,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:55:00,3.0239999999999996,0.0,30.44,108.03,Money,20170331,2938no city20170331
+39000,2940,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:56:00,2.96,0.0,20.0,70.98,Money,20170331,2940no city20170331
+39000,2943,Jeannette Norman,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:57:00,2.96,0.0,14.089,50.0,Credit Card,20170331,2943no city20170331
+39000,2946,Ora Hall,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:58:00,3.0239999999999996,0.0,22.39,79.46,Money,20170331,2946no city20170331
+39000,2947,Guy Rivera,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:58:00,3.0239999999999996,0.0,28.191999999999997,100.05,Credit Card,20170331,2947no city20170331
+39000,2944,Alma Garza,Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:58:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2944no city20170331
+39000,2944,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:58:00,2.96,0.0,28.177,100.0,Money,20170331,2944no city20170331
+39000,2944,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:58:00,2.96,0.0,5.636,20.0,Money,20170331,2944no city20170331
+39000,2944,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:58:00,2.96,0.0,5.636,20.0,Money,20170331,2944no city20170331
+39000,2948,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 17:59:00,2.96,0.0,14.089,50.0,Debit Card,20170331,2948no city20170331
+39000,2950,Salvador Mccormick,Special Diesel,Fuel,Mandy Lloyd,Agririe,2017-03-31 18:00:00,2.51,0.0,223.32,625.07,Money,20170331,2950agririe20170331
+39000,2952,Delores Richards,Special Diesel,Fuel,Customer not informed,No City,2017-03-31 18:00:00,2.51,0.0,35.728,100.0,Money,20170331,2952no city20170331
+39000,2955,Ora Hall,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:01:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2955no city20170331
+39000,2953,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:01:00,2.96,0.0,2.68,9.51,Money,20170331,2953no city20170331
+39000,2954,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:01:00,2.96,0.0,41.361000000000004,146.79,Money,20170331,2954no city20170331
+39000,2957,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:03:00,3.0239999999999996,0.0,16.907,60.0,Money,20170331,2957no city20170331
+39000,2958,Lance West,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 18:04:00,2.56,0.0,111.52,319.95,Money,20170331,2958no city20170331
+39000,2960,Ora Hall,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:04:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2960no city20170331
+39000,2960,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:04:00,3.0239999999999996,0.0,28.177,100.0,Money,20170331,2960no city20170331
+39000,2960,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:04:00,2.96,0.0,5.636,20.0,Money,20170331,2960no city20170331
+39000,2960,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:04:00,2.96,0.0,5.636,20.0,Money,20170331,2960no city20170331
+39000,2959,Delores Richards,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:04:00,3.0239999999999996,0.0,2.15,7.63,Money,20170331,2959no city20170331
+39000,2961,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:05:00,2.96,0.0,9.017000000000001,32.0,Money,20170331,2961no city20170331
+39000,2961,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:05:00,2.96,0.0,10.722000000000001,38.05,Money,20170331,2961no city20170331
+39000,2963,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:05:00,2.96,0.0,38.321,136.0,Debit Card,20170331,2963no city20170331
+39000,2965,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:06:00,2.96,0.0,3.6639999999999997,13.0,Money,20170331,2965no city20170331
+39000,2964,Guy Rivera,Ethanol,Fuel,Customer not informed,No City,2017-03-31 18:06:00,2.938,0.0,36.609,113.45,Money,20170331,2964no city20170331
+39000,2966,Delores Richards,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:07:00,3.0239999999999996,0.0,26.191,92.95,Money,20170331,2966no city20170331
+39000,2968,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:07:00,2.96,0.0,39.62,140.61,Debit Card,20170331,2968no city20170331
+39000,2967,Jeffery Dennis,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:07:00,3.0239999999999996,0.0,14.089,50.0,Debit Card,20170331,2967no city20170331
+39000,2970,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:08:00,2.96,0.0,10.66,37.83,Money,20170331,2970no city20170331
+39000,2971,Lance West,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:08:00,2.96,0.0,57.772,205.03,Debit Card,20170331,2971no city20170331
+39000,2972,Salvador Mccormick,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:09:00,2.96,0.0,42.26600000000001,150.0,Credit Card,20170331,2972no city20170331
+39000,2973,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:09:00,2.96,0.0,5.636,20.0,Money,20170331,2973no city20170331
+39000,2973,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:09:00,2.96,0.0,1.409,5.0,Money,20170331,2973no city20170331
+39000,2975,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:09:00,2.96,0.0,14.089,50.0,Money,20170331,2975no city20170331
+39000,2976,Delores Richards,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:10:00,2.96,0.0,14.089,50.0,Money,20170331,2976no city20170331
+39000,2979,Salvador Mccormick,Diesel Auto Clean,Fuel,Customer not informed,No City,2017-03-31 18:11:00,2.56,0.0,45.318999999999996,130.02,Credit Card,20170331,2979no city20170331
+39000,2978,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:11:00,2.96,0.0,42.272,150.02,Credit Card,20170331,2978no city20170331
+39000,2982,Alma Garza,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:12:00,2.96,0.0,14.089,50.0,Money,20170331,2982no city20170331
+39000,2982,Jeffery Dennis,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:12:00,2.96,0.0,2.818,10.0,Money,20170331,2982no city20170331
+39000,2980,Lance West,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:12:00,3.0239999999999996,0.0,43.692,155.06,Credit Card,20170331,2980no city20170331
+39000,2982,Ora Hall,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:12:00,2.96,0.0,19.724,70.0,Money,20170331,2982no city20170331
+882000,2815,Henrietta Scott,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:14:00,3.043,0.0,53.19,191.43,Debit Card,20170331,2815no city20170331
+39000,2983,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:14:00,2.96,0.0,8.454,30.0,Money,20170331,2983no city20170331
+39000,2983,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:14:00,2.96,0.0,14.089,50.0,Money,20170331,2983no city20170331
+39000,2986,Delores Richards,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:15:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2986no city20170331
+39000,2986,Delores Richards,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:15:00,3.0239999999999996,0.0,14.089,50.0,Money,20170331,2986no city20170331
+39000,2986,Delores Richards,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:15:00,3.0239999999999996,0.0,5.636,20.0,Money,20170331,2986no city20170331
+39000,2988,Guy Rivera,Special Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:16:00,2.96,0.0,14.089,50.0,Debit Card,20170331,2988no city20170331
+39000,2987,Jeffery Dennis,Special Gasoline,Fuel,Roxanne Long,Agririe,2017-03-31 18:16:00,2.96,0.0,53.692,190.55,Money,20170331,2987agririe20170331
+39000,2989,Salvador Mccormick,Gasoline,Fuel,Customer not informed,No City,2017-03-31 18:17:00,3.0239999999999996,0.0,28.177,100.0,Credit Card,20170331,2989no city20170331
