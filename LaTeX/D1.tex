@@ -131,9 +131,8 @@ To make this easier to understand, imagine that $\textit{confidence}(\abrule)=0.
 \\
 As we established above,  the Apriori Principle states that all subsets of a frequent itemset must be frequent.  The Apriori Principle is a result of the \textit{anti-monotone property of support} \cite{anti_monotone}, which means $\{A,B,C\}$, $\textit{support}(\{A,B\}) >= \textit{support}(\{A,B,C\})$.  We can use this to prune the frequent itemsets much more efficiently, because if $support(\{A,B\}) < \textit{min}_{\textit{support}}$, then any itemset containing the set $\{A,B\}$ will also fall below $\textit{min}_{\textit{support}}$. Once the frequent itemsets have been pruned,  association rules can be generated from the remaining itemsets.  The resulting association rules can be even further pruned by removing those that fall below a confidence threshold $\textit{min}_{\textit{confidence}}$.  Finally, the remaining rules can be ranked according to their  lift to find the rules with the highest associations.  
 
-
-
-
+\subsection{Related Work}
+\textbf{M. A. Valle} \cite{mst_paper} proposed a methodology to study the structure and behavior of consumer market baskets from the topology of a minimum spanning tree which represented the interdependencies between products. The input to their proposed methodology was a correlation matrix between the set of all one-hot encoded purchase vectors such that each vector denoted the presence or non-presence of each product from the dataset in that vector.  The dataset used for the MST construction was a list of transactions from a large supermarket chain branch in Santiago, Chile.  When building this correlation matrix, the authors opted to use the Pearson's Coefficient (which is equivalent to the coefficient $\phi$ for binary data such as theirs) over the traditionally used Jaccard distance to compute the similarity between the binary product vectors, as the former provides both a positive and negative association between products. Additionally,  they used the distance function $d_{ij} = \sqrt{2(1-\phi_{ij}}$ to transform the correlation matrix into a distance measurement (i.e. the weight of the edges).  The authors constructed a MST for 220 product sub-categories, and noted that there was a notable level of grouping between product sub-categories that belonged to the same parent category.
 
 
 %%
