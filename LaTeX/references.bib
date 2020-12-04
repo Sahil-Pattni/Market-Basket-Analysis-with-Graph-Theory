@@ -6,6 +6,8 @@ year = {1994},
 pages={487-489}
 }
 
+
+
 @book{tree,
   title={Lists, Decisions and Graphs},
   author={Williamson, E.A.B.S.G.},
@@ -66,13 +68,8 @@ OPTpages = {146-162},
 doi = {10.1016/j.eswa.2017.12.028}
 }
 
-@article{fp_growth,
-author = {Jiawei Han and Jian  Pei and Yiwen Yin},
-title = {Mining Frequent Patterns without Candidate Generation},
-journaltitle = {Proceedings of the 2000 ACM SIGMOD International Conference on Management of Data},
-year = {2000},
-pages = {1-12},
-doi = {10.1145/342009.335372}
+@inproceedings{fp_growth,
+author = {Han, Jiawei and Pei, Jian and Yin, Yiwen}, title = {Mining Frequent Patterns without Candidate Generation}, year = {2000}, issue_date = {June 2000}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, volume = {29}, number = {2}, issn = {0163-5808}, url = {https://doi.org/10.1145/335191.335372}, doi = {10.1145/335191.335372}, abstract = {Mining frequent patterns in transaction databases, time-series databases, and many other kinds of databases has been studied popularly in data mining research. Most of the previous studies adopt an Apriori-like candidate set generation-and-test approach. However, candidate set generation is still costly, especially when there exist prolific patterns and/or long patterns.In this study, we propose a novel frequent pattern tree (FP-tree) structure, which is an extended prefix-tree structure for storing compressed, crucial information about frequent patterns, and develop an efficient FP-tree-based mining method, FP-growth, for mining the complete set of frequent patterns by pattern fragment growth. Efficiency of mining is achieved with three techniques: (1) a large database is compressed into a highly condensed, much smaller data structure, which avoids costly, repeated database scans, (2) our FP-tree-based mining adopts a pattern fragment growth method to avoid the costly generation of a large number of candidate sets, and (3) a partitioning-based, divide-and-conquer method is used to decompose the mining task into a set of smaller tasks for mining confined patterns in conditional databases, which dramatically reduces the search space. Our performance study shows that the FP-growth method is efficient and scalable for mining both long and short frequent patterns, and is about an order of magnitude faster than the Apriori algorithm and also faster than some recently reported new frequent pattern mining methods.}, journal = {SIGMOD Rec.}, month = may, pages = {1–12}, numpages = {12}
 }
 
 @article{ann_mst,
@@ -150,6 +147,22 @@ year = {2017},
 volume = {74},
 doi = {10.1016/j.eswa.2017.01.007}
 }
+
+@article{segment,
+author = {Anastasia Griva and Cleopatra Bardaki and Katerina Pramatari and Dimitris Papakiriakopoulos},
+title = {Retail business analytics: Customer visit segmentation using market basket data},
+journaltitle = {Expert Systems with Applications},
+year = {2018},
+volume = {100},
+pages = {1-16},
+OPTissn = {0957-4174},
+doi = {https://doi.org/10.1016/j.eswa.2018.01.029}
+}
+
+@inproceedings{mine,
+author = {Agrawal, Rakesh and Imieli\'{n}ski, Tomasz and Swami, Arun}, title = {Mining Association Rules between Sets of Items in Large Databases}, year = {1993}, isbn = {0897915925}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, url = {https://doi.org/10.1145/170035.170072}, doi = {10.1145/170035.170072}, abstract = {We are given a large database of customer transactions. Each transaction consists of items purchased by a customer in a visit. We present an efficient algorithm that generates all significant association rules between items in the database. The algorithm incorporates buffer management and novel estimation and pruning techniques. We also present results of applying this algorithm to sales data obtained from a large retailing company, which shows the effectiveness of the algorithm.}, booktitle = {Proceedings of the 1993 ACM SIGMOD International Conference on Management of Data}, pages = {207–216}, numpages = {10}, location = {Washington, D.C., USA}, series = {SIGMOD '93}
+}
+
 
 
 
