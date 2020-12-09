@@ -20,6 +20,7 @@
 % Used for table formatting
 \usepackage{booktabs}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{longtable}
 
 \addbibresource{references.bib}
 
@@ -312,8 +313,8 @@ Tolerable & Serious & Catastrophic \\ \hline
 \centering
 \begin{tabular}{@{}lllll@{}}
 \toprule
-\multicolumn{5}{c}{Risk Management}                                                          \\ \midrule
-ID & Risk                                            & Probability & Impact       & Priority \\
+\multicolumn{5}{c}{Risks}                                                          \\ \midrule
+ID & Risk                                            & Probability & Impact       & Priority \\ \midrule
 R1 & Data loss/corruption                            & Low         & Catastrophic & High     \\
 R2 & Code loss/corruption                            & Low         & Catastrophic & High     \\
 R3 & Inability to meet deadlines                     & Low         & Serious      & Medium   \\
@@ -322,6 +323,21 @@ R5 & Incorrect estimation of model development time & Low         & Serious     
 R6 & Unrealistic computation times                   & High        & Catastrophic & High     \\ \bottomrule
 \end{tabular}
 \end{table}
+The table above lists the risks identified with their probabilities, their impact, and the priority given to them. Each risk has given an alphanumeric ID to cross reference it against the table below, which describes the risk management for each of the risks identified. 
+
+\begin{longtable}[c]{|p{0.05\textwidth}|p{0.31667\textwidth}|p{0.31667\textwidth}|p{0.31667\textwidth}|}
+\hline
+\multicolumn{4}{|c|}{Risk Management}                                                                                                                                                                                                                        \\ \hline
+
+ID & Avoidance                                                                          & Minimization                                                                           & Contingency                                                               \\ \midrule
+\endhead
+R1 & Store backups of datasets locally and on cloud storage at frequent intervals.      & Do not overwrite existing datasets.                                                    & Retrieve the last checkpoint data.                                        \\ \midrule
+R2 & Maintain a git repository with an online remote, with frequent commits.            & Only commit when the code is known to work correctly.                                  & Roll-back to a previous, working commit.                                  \\ \midrule
+R3 & Set milestone deadlines in the project plan.                                       & Collaborate with supervisor to come up with a robust yet flexible project plan.        & Restructure plan to offset any delays.                                    \\ \midrule
+R4 & Stay at home as much as possible, take necessary precautions outside.              & Self-isolate and work to the best of my ability.                                       & Restructure plan to offset delay, and if necessary, request an extension. \\ \midrule
+R5 & Create realistic plan with reasonable tolerances to account for unexpected delays. & Attempt to finish all tasks within their appropriate period.                           & Restructure plan with updated tolerances.                                 \\ \midrule
+R6 & Perform computations on a small subset of the dataset.                             & Prototype model with very small dataset subsets and increase once the model is robust. & Reduce the dataset size until the computation is affordable.              \\ \bottomrule
+\end{longtable}
 % Keep references on new page
 \newpage
 \printbibliography
