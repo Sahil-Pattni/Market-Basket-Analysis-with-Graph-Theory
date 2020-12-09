@@ -70,7 +70,7 @@ The research objectives for this project have been laid out below, in the order 
 \item Acquire a suitable dataset upon which the MST can be constructed.
 
 \item \label{optimal} Explore and evaluate MST extraction algorithms.
-\\(While Prim's \cite{prims}\cite{prims_og} and Kruskal's \cite{kruskal} algorithms are the most commonly used methods to extract the MST from a graph, research has been conducted on more efficient ways to extract the MST using machine learning techniques such as K-Means, and these will be discussed in the literature review (see Section \ref{related-work}).
+\\(While Prim's \cite{prims}\cite{prims_og}\cite{prims3}\footnote{Discovered by all three independently.} and Kruskal's \cite{kruskal} algorithms are the most commonly used methods to extract the MST from a graph, research has been conducted on more efficient ways to extract the MST using machine learning techniques such as K-Means, and these will be discussed in the literature review (see Section \ref{related-work}).
 
 \item Generate an undirected graph $G(E,V)$ where the edges $E$ are the correlation values between the product vertices.
 
@@ -95,7 +95,27 @@ The research objectives for this project have been laid out below, in the order 
 \end{figure}
 In discrete mathematics and more specifically - graph theory, a graph is a data structure that contains a set of nodes (i.e. vertices) connected by lines (i.e. edges).  These edges may be directed - such as in Figure \ref{fig:graph.example}:(a), or undirected - such as in Figure \ref{fig:graph.example}:(b). A graph $G$ with a set of vertices $V$ and a set of edges $E$ can be represented via the notation $G = (V,E)$. For the purposes of our research, we will be focusing on undirected graphs, where the weight between two vertices is the same in both directions.
 \subsubsection{Minimum Spanning Trees}
-Given an undirected $G = (V,E)$,  a \textit{spanning tree} can be described as a subgraph that is a tree which includes all the vertices $V$ of $G$ with the minimum number of edges required. A \textit{minimum spanning tree} (MST) is the spanning tree with the smallest sum of edge weights.  This means that if the graph has $n$ vertices, each spanning tree - including the minimum spanning tree - will have $n-1$ edges.
+Given an undirected $G = (V,E)$,  a \textit{spanning tree} can be described as a subgraph that is a tree which includes all the vertices $V$ of $G$ with the minimum number of edges required. A \textit{minimum spanning tree} (MST) is the spanning tree with the smallest sum of edge weights.  This means that if the graph has $n$ vertices, each spanning tree - including the minimum spanning tree - will have $n-1$ edges. There are two widely used algorithms to extract the minimum spanning tree from a graph: Prim's algorithm and Kruskal's algorithm.
+\subsubsection{Prim's Algorithm}
+Independently discovered by three authors,  Prim's algorithm is a greedy algorithm\footnote{Selecting the locally optimal choice at each iteration of the solution} to find the minimum spanning three of an undirected,  weighted graph $G$. To successfully implement the algorithm, we need to maintain a set of \textit{discovered} edges, and two sets of vertices: a set of \textit{undiscovered} vertices, and a set of \textit{discovered} vertices.  Figure \ref{fig:prim} illustrates Prim's algorithm being applied to a graph. The algorithm is as follows:\\
+Initialize an empty set of discovered edges: $E$, and two sets of vertices: an empty set $D$ of the discovered vertices, and $UD$ as the set of undiscovered vertices.
+\begin{itemize}
+\item Pick an arbitrary vertex as a starting point (in the case of Figure \ref{fig:prim}, the top right node) Add this vertex to $D$ and remove it from $UD$.
+\item While $UD$ is not empty:
+	\begin{itemize}
+	\item Find the edge $e_i$ with the smallest weight such that it connects together a vertex $V_i$ in $D$ and $V_j$ in $UD$.
+	\item Append $V_j$ to $D$ and remove it from $UD$ (i.e. $V_j$ is now discovered).
+	\item Append $e_i$ to $E$.
+	\end{itemize}
+\end{itemize}
+Once $D$ contains all the vertices of $G$, the algorithm terminates, and the set $D$ represents the minimum spanning tree, and $\sum\limits_{i=1}^n e_i$ is the weight of the MST.
+\begin{figure}[H]
+\centering\includegraphics[scale=0.5]{prims}
+\caption{Prim's Algorithm applied to a graph}\label{fig:prim}
+\end{figure}
+
+\subsubsection{Kruskal's Algorithm}
+Another greedy algorithm,  Kruskal's algorithm also extracts the MST from a graph.
 \subsubsection{Clustering and K-Means}
 Illustrated in Figure \ref{fig:clustering-eg}, clustering is the act of segregating data into a number of groups (i.e. clusters) such that a data point in a cluster is similar to other data points in that cluster.
 \begin{figure}[H]
@@ -162,7 +182,7 @@ As we established above,  the Apriori Principle states that all subsets of a fre
 
 \subsection{Related Work}
 \label{related-work}
-\textbf{C. Zhong et al} \cite{kmeans_mst} proposed a novel framework to extract the minimum spanning tree of a graph based on the K-Means clustering algorithm. Their methodology can be separated into two distinct phases. In the first phase,  the data is partitioned into $\sqrt{n}$ clusters via K-Means and the MST algorithm is applied to each of the clusters individually.  Once the $\sqrt{n}$ MSTs have been constructed, they are combined to form an approximate MST. In the second phase,  new partitions are constructed based on the borders of the clusters identified in phase 1.  Based on these new partitions, a second approximate MST is constructed.  Finally, both graphs are merged such that the resulting graph has $2(n-1)$ edges. The MST algorithm is run on this graph to get the final approximation of the MST.
+\textbf{C. Zhong et al} \cite{kmeans_mst} proposed a novel framework to extract the minimum spanning tree of a graph based on the K-Means clustering algorithm. Their methodology can be separated into two distinct phases. In the first phase,  the data is partitioned into $\sqrt{n}$ clusters via K-Means and the Kruskal's algorithm is applied to each of the clusters individually.  Once the $\sqrt{n}$ MSTs have been constructed, they are combined to form an approximate MST. In the second phase,  new partitions are constructed based on the borders of the clusters identified in phase 1.  Based on these new partitions, a second approximate MST is constructed.  Finally, both graphs are merged such that the resulting graph has $2(n-1)$ edges. The Kruskal's algorithm is run on this graph to get the final approximation of the MST.
 \\\textbf{Critical Analysis}\\
 The authors have proposed an efficient way to approximate an MST, with their methodology having a complexity of $O(N^{1.5})$, which is faster than the standard MST algorithm which has a complexity of $O(N^2)$. This may not intuitively seem like a large decrease, but as Figure \ref{fig:speed-compare} illustrates, there is a significant increase in efficiency over the standard algorithm.
 \begin{figure}[H]
@@ -331,7 +351,7 @@ R5 & Incorrect estimation of model development time & Low         & Serious     
 R6 & Unrealistic computation times                   & High        & Catastrophic & High     \\ \bottomrule
 \end{tabular}
 \end{table}
-The table above lists the risks identified with their probabilities, their impact, and the priority given to them. Each risk has given an alphanumeric ID to cross reference it against the table below, which describes the risk management for each of the risks identified. 
+\noindent The table above lists the risks identified with their probabilities, their impact, and the priority given to them. Each risk has given an alphanumeric ID to cross reference it against the table below, which describes the risk management for each of the risks identified. 
 
 \begin{longtable}[c]{|p{0.05\textwidth}|p{0.31667\textwidth}|p{0.31667\textwidth}|p{0.31667\textwidth}|}
 \hline
