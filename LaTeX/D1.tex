@@ -19,6 +19,7 @@
 \newcommand{\abrule}{\setA\rightarrow\setB}
 % Used for table formatting
 \usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
 
 \addbibresource{references.bib}
 
@@ -56,8 +57,8 @@ For businesses which deal with the sale of a heterogeneous physical assets - suc
 \item Which products will benefit the most by being placed at eye-level?
 \item Which products should be placed next to each other to maximize the purchase volume?
 \end{itemize}
-One way to find optimal solutions for such questions is to employ the use of Association Rule Mining (also known as Market Basket Analysis). This set of techniques assess frequent itemsets (e.g. from sales data) and generate association rules between products. Several algorithms and techniques exist for association rule mining, such as the Apriori Algorithm and FP-Growth \cite{fp_growth}. One problem with these algorithms is that they tend to generate an enormous amount of rules, of which many of the rules themselves are large This makes it grossly inconvenient for the end-user to retrieve any actionable information from the results.\\
-What we will do is construct a network of products - where each vertice represents a product or product category, and an edge between two vertices represents the simultaneous occurrence of the the two products. The result is a graph (i.e. a network), whose architecture is visually informative of the products and their associations.  The insights that can be gained from the MST can help the management of the mentioned businesses to maximize their profit.
+One way to find optimal solutions for such questions is to employ the use of Association Rule Mining (also known as Market Basket Analysis). This set of techniques assess frequent itemsets (e.g. from sales data) and generate association rules between products. Several algorithms and techniques exist for association rule mining, such as the Apriori Algorithm and FP-Growth \cite{fp_growth}. One problem with these algorithms is that they tend to generate an enormous amount of rules, of which many of the rules themselves are large. This makes it grossly inconvenient for the end-user to retrieve any actionable information from the results.\\
+What we will do is construct a network of products - where each vertice represents a product or product category, and an edge between two vertices represents the simultaneous occurrence of the the two products. The result is a graph (i.e. a network), whose architecture is visually informative of the products and their associations.  From this graph, we can extract a minimum spanning tree (MST), which will prune the graph down to only the strongest connections. The insights that can be gained from the MST can help the management of the mentioned businesses to maximize their profit.  Furthermore, we will then be able to extract association rules from this MST.
 
 \subsection{Aims}
 The aim of this study is to study the effectiveness of a minimum spanning tree as a market basket analysis tool - from product clustering to association rule mining.  Additionally, we will determine how the architecture of the MST will change during and after large events such as promotions. The model will be tested on a relatively large dataset of sales data.
@@ -84,7 +85,7 @@ The research objectives for this project have been laid out below, in the order 
 \newpage
 \section{Background}
 \subsection{Core Concepts} % TODO: Maybe change title?
-\subsubsection{Graphs}
+\subsubsection*{Graphs}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1.5]{graph-example}
@@ -94,7 +95,15 @@ The research objectives for this project have been laid out below, in the order 
 In discrete mathematics and more specifically - graph theory, a graph is a data structure that contains a set of nodes (i.e. vertices) connected by lines (i.e. edges).  These edges may be directed - such as in Figure \ref{fig:graph.example}:(a), or undirected - such as in Figure \ref{fig:graph.example}:(b). A graph $G$ with a set of vertices $V$ and a set of edges $E$ can be represented via the notation $G = (V,E)$. For the purposes of our research, we will be focusing on undirected graphs, where the weight between two vertices is the same in both directions.
 \subsubsection{Minimum Spanning Trees}
 Given an undirected $G = (V,E)$,  a \textit{spanning tree} can be described as a subgraph that is a tree which includes all the vertices $V$ of $G$ with the minimum number of edges required. A \textit{minimum spanning tree} (MST) is the spanning tree with the smallest sum of edge weights.  This means that if the graph has $n$ vertices, each spanning tree - including the minimum spanning tree - will have $n-1$ edges.
-\subsection{Binary Purchase Vectors}
+\subsubsection{Clustering and K-Means}
+Illustrated in Figure \ref{fig:clustering-eg}, clustering is the act of segregating data into a number of groups (i.e. clusters) such that a data point in a cluster is similar to other data points in that cluster.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{cluster-eg2}
+\caption{An example of clustering}\label{fig:clustering-eg}
+\end{figure}
+\noindent K-Means Clustering \cite{kmeans} is an unsupervised machine learning algorithm where the data is partitioned into $k$ clusters, where each observation belongs to the cluster with the nearest mean (i.e. centroid).
+\subsubsection{Binary Purchase Vectors}
 Binary purchase vectors play an instrumental role in the construction of the MST, helping us determine the association between products. What is a binary purchase vector, however? It is a vector whose length is the number of unique products in the dataset, where each element is a 1 or 0 depending on whether the product was purchasd or not. Imagine a grocer who only sells five items: milk, eggs, bread, apples and oranges. If a customer purchases bread and oranges, the binary purchase vector for that transaction would look like this:
 \begin{table}[H]
 \centering
@@ -226,7 +235,7 @@ The primary objective of this dissertation is to analyze the viability of a fram
 A candidate dataset has been identified: a dataset of $~27,000,000$ transactions occurring across multiple branches of a Brazilian gas station store \cite{data_source}. Each row in the dataset contains the purchase information for a particular product for a given transaction. The dataset has been checked for errors and inconsistencies, and any found have been remedied. Additionally, since the transaction id is an unreliable identifier for a market basket\footnote{transaction numbers reset once they have reached an upper limit, transaction ids are not synced across stores so the same transaction id could refer to multiple transactions across different stores.}, we have assigned each row a unique alphanumeric code consisting of the purchase's transaction number, city and date, which will act as a robust unique identifier for each basket. F Additionally, we have removed redundant or unnecessary features from the dataset, this will allow us to make quicker passes through all the data when generating the binary purchase vectors.  Once the dataset is prepared, we will need to extract a binary purchase matrix from the dataset.  Since each product purchase has an assigned transaction number, to find all product purchases in a transaction, we will need one pass of the database. Therefore, to build $n$ binary purchase vectors, we will need $n$ passes of the database (i.e.  a complexity of $O(n)$). This will prove to be quite computationally expensive,  as there are approximately $5,200,000$ unique baskets in our dataset.  Even when only considering $473,641$ baskets with $40$ unique products, the resulting matrix (see Fig. \ref{fig:corrmat}) took over 6 hours to construct.  We will be looking into more efficient ways to generate out input data. \\
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{corrmat}
+\includegraphics[scale=0.45]{corrmat}
 \caption{Correlation Matrix for 473,641 baskets}
 \label{fig:corrmat}
 \end{figure}
@@ -258,14 +267,61 @@ There are two ways to validate the \textit{interestingness} of an association ru
 
 \subsubsection*{MST Grouping Validation}
 One way to validate the MST is to check the grouping of products in the MST. Ideally,  grouping of similar products should be present (e.g. strong grouping between dairy products). We can set a threshold on the edge distance, such that any products within that threshold radius can be considered a cluster.  One objective way to evaluate this cluster is to build a confusion matrix with the products against their parent categories and evaluate the proportion of products grouped together under their correct parent category. It would also be interesting to compare the results of the MST grouping to the clusters generated by an unsupervised clustering algorithm such as the K-Means clustering algorithm.
-%%
-%%\newpage
-%%\section{Evaluation Strategy}
-%%
-%%\newpage
-%\section{Project Management}
 
+\newpage
+\section{Project Management}
+To ensure that the project is of optimal quality,  a plan must be charted out that specifies a timetable and deadlines for milestones in the prohect,
+\subsection{Methodology}
+There are several formal approaches for development planning,  but the most optimal process for us is the Waterfall method \cite{waterfall}, as our methodology can be defined as a linear, sequential workflow, where the requirements have been explicitly stated and change is unlikely.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{waterfall}
+\caption{An outline of the waterfall method}\label{fig:waterfall}
+\end{figure}
 
+\subsection{Gantt Chart}
+(To be added)
+
+\subsection{Risk Analysis}
+The probabilities of our risks can be discretized and approximated to the following values:
+\begin{table}[H]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{9AFF99}}l |
+>{\columncolor[HTML]{FFFFC7}}l |
+>{\columncolor[HTML]{F8FF00}}l |
+>{\columncolor[HTML]{FFCB2F}}l |
+>{\columncolor[HTML]{FF6F6F}}l |}
+\hline
+Very Low & Low & Moderate & High & Very High \\ \hline
+\end{tabular}
+\end{table}
+\noindent The impact of a given risk can be defined as follows:
+\begin{table}[H]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{FFFFC7}}l |
+>{\columncolor[HTML]{F8FF00}}l |
+>{\columncolor[HTML]{FF6F6F}}l |}
+\hline
+Tolerable & Serious & Catastrophic \\ \hline
+\end{tabular}
+\end{table}
+\noindent Given these metrics, we can describe our risk analysis as follows:
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\multicolumn{5}{c}{Risk Management}                                                          \\ \midrule
+ID & Risk                                            & Probability & Impact       & Priority \\
+R1 & Data loss/corruption                            & Low         & Catastrophic & High     \\
+R2 & Code loss/corruption                            & Low         & Catastrophic & High     \\
+R3 & Inability to meet deadlines                     & Low         & Serious      & Medium   \\
+R4 & Degradation of health                           & Low         & Serious      & Low      \\
+R5 & Incorrect estimation of model development time & Low         & Serious      & Low      \\
+R6 & Unrealistic computation times                   & High        & Catastrophic & High     \\ \bottomrule
+\end{tabular}
+\end{table}
 % Keep references on new page
 \newpage
 \printbibliography
