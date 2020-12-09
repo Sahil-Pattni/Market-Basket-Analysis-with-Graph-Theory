@@ -225,20 +225,19 @@ The authors' approach seems to be novel,  thorough and well structured.  Their m
 \section{Requirements \& Research}
 \subsection{Requirements Analysis}
 This section will identify both the functional and non-functional requirements required for the implementation of the model proposed in this document. By stating the specific requirements of the model,  it serves as a high-level view of how the model should function. 
- 
+ Using the MoSCoW system, each requirement has been given one of the following priorities: must have, should have, could have and would have.
  % FUNCTIONAL
 \begin{table}[H]
 \centering
 \caption{Functional Requirements}
-\begin{tabular}{@{}rll@{}}
+\begin{tabular}{@{}rlll@{}}
 \toprule
-\textbf{ID} & \textbf{Category} & \textbf{Description}                   \\ \midrule
-FR1        & Dataset           & The dataset must not have any empty values. \\
-FR2        & Dataset           & The dataset must have a unique identifier for each transaction.\\ 
-FR3     &  Model       & A list of binary purchase vectors must be extracted from the dataset.\\
-FR4     &  Model       & The model must return a storable data type representation of a MST.\\
-FR5    & Model        & The model must produce  $p \times q$ association rules.\\
-\bottomrule
+\textbf{ID} & \textbf{Category} & \textbf{Priority} & \textbf{Description}                                                  \\ \midrule
+FR1         & Dataset           & Must Have         & The dataset must be void of empty values.                             \\
+FR2         & Dataset           & Must Have         & The dataset must have a unique identifier for each transaction.       \\
+FR3         & Model             & Must Have         & A list of binary purchase vectors must be extracted from the dataset. \\
+FR4         & Model             & Must Have         & The model must return a storable data type representation of a MST.   \\
+FR5         & Model             & Should Have       & The model must produce  $p \times q$ association rules.               \\ \bottomrule
 \end{tabular}
 \label{tab:fr}
 \end{table}
@@ -247,12 +246,11 @@ FR5    & Model        & The model must produce  $p \times q$ association rules.\
 \begin{table}[H]
 \centering
 \caption{Non-Functional Requirements}
-\begin{tabular}{@{}rll@{}}
+\begin{tabular}{@{}rllp{0.7\textwidth}@{}}
 \toprule
-\textbf{ID} & \textbf{Category} & \textbf{Description}                   \\ \midrule
-NFR1       & Dataset         & The dataset must contain at least 500,000 unique transactions.\\
-NFR2     & Hardware    & The data inputs and the MST construction will run on a computer\\&&with at least 8 GB of ram, and a quad-core CPU with clock speed\\&&aabove 2.5GHz.\\
-\bottomrule
+\textbf{ID} & \textbf{Category} & \textbf{Category} & \textbf{Description}                                                                                                                          \\ \midrule
+NFR1        & Dataset           & Should Have       & The dataset will contain at least 500,000 unique transactions.                                                                                \\
+NFR2        & Hardware          & Could Have        & The data inputs and the MST construction will run on a computer with at least 8 GB of ram, and a quad-core CPU with clock speed above 2.5GHz. \\ \bottomrule
 \end{tabular}
 \label{nfr}
 \end{table}
