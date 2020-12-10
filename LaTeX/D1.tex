@@ -35,7 +35,7 @@
 \date{\today}
 \maketitle
 \pagenumbering{arabic}
-
+\newpage
 \section*{Declaration} 
 I, Sahil Manojkumar Pattni, confirm that this work submitted for assessment is my own and is expressed in my own words. Any uses made within it of the works of other authors in any form (e.g., ideas, equations, figures, text, tables, programs) are properly acknowledged at any point of their use. A list of the references employed is included. 
 \\
@@ -313,7 +313,8 @@ One way to validate the MST is to check the grouping of products in the MST. Ide
 
 \newpage
 \section{Project Management}
-To ensure that the project is of optimal quality,  a plan must be charted out that specifies a timetable and deadlines for milestones in the prohect,
+\label{sec:mgmt}
+To ensure that the project is of optimal quality,  a plan must be charted out that specifies a timetable and deadlines for milestones in the project.
 \subsection{Methodology}
 There are several formal approaches for development planning,  but the most optimal process for us is the Waterfall method \cite{waterfall}, as the methodology can be defined as a linear, sequential workflow, where the requirements have been explicitly stated and change is unlikely.
 \begin{figure}[H]
@@ -382,8 +383,14 @@ R6 & Perform computations on a small subset of the dataset.                     
 \end{longtable}
 
 \subsection{Professional, Ethical, Legal \& Social Issues}
-To the best of my knowledge, there are no professional, ethical, legal and social issues present. The only potential issue (both ethically and legally) was data anonymization,  and the author of the dataset has explicitly stated \cite{data_source} that the names of the products, customers and employees have been modified to be unidentifiable.
-
+\subsubsection*{Professional Issues}
+To ensure a level of professionalism is always upheld, the author has identified key risks and noted their contingencies. In addition, the author has developed - in collaboration with the supervisor - a project plan that ensures that all parties involved are suitably informed about development milestones and their deadlines.
+\subsubsection*{Legal Issues}
+The only software being used for the development of this project is Jupyter Notebook - an open source web-based development tool that is licensed under a modified BSD license. The dataset being used for this project has been anonymized, with the names of the products, customers and employees being modified to avoid identification. Therefore it can be concluded that there are no legal issues present.
+\subsubsection*{Ethical Issues}
+Since this project does not involve the participation of any human subjects, there are no ethical issues present.
+\subsubsection*{Social Issues}
+There are no social issues in this project.
 
 
 % Keep references on new page
