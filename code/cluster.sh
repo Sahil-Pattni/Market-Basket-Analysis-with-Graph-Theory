@@ -1,3 +1,3 @@
 #!/bin/bash
 
-!ipcluster start --n=$1
+ipcluster start --n=$1
