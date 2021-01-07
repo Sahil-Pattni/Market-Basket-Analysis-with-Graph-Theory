@@ -1,0 +1,5 @@
+{
+    "jupyter.jupyterServerType": "local",
+    "jupyter.themeMatplotlibPlots": true,
+    "python.pythonPath": "/usr/local/bin/python3"
+}
