@@ -14,14 +14,11 @@ fn import_unqiue(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
     Ok(v) // return with Result wrapper
 }
 
-fn untitled(path: &str) -> Result<HashMap<u32, [i8; 45]>, Box<dyn Error>> {
+fn make_vectors(path: &str) -> Result<HashMap<u32, [i8; 45]>, Box<dyn Error>> {
     let products = import_unqiue("../data/unique.csv")?; // unique products
     let mut transactions: HashMap<u32, [i8; 45]> = HashMap::new();
     let mut reader = Reader::from_path(path)?;
-    let mut i = 0;
     for result in reader.records() {
-        if i > 1000000 {break;} // temp, remove this
-        i += 1;
         let record = result?; // error check
         let product = record[0].to_string();
         let basket_id: u32 = record[1].parse()?;
@@ -44,15 +41,19 @@ fn untitled(path: &str) -> Result<HashMap<u32, [i8; 45]>, Box<dyn Error>> {
     Ok(transactions) // return type with Ok signature
 }
 
+
+
 fn main() {
     let _filepath = "../data/products.csv";
     let start = Instant::now();
-    match untitled(_filepath) {
+    let mut num_baskets = 0;
+    match make_vectors(_filepath) {
         Ok(res) => {
-            println!("There are {} baskets", res.iter().len());
+            num_baskets = res.iter().len();
+            println!("There are {} baskets", num_baskets);
         },
         Err(err) => println!("Error: {:?}", err)
     };
     let duration = start.elapsed().as_secs();
-    println!("Finished in {} seconds", duration);
+    println!("Finished generating {} baskets in {} seconds", num_baskets, duration);
 }
