@@ -41,7 +41,6 @@ fn untitled(path: &str) -> Result<HashMap<u32, [i8; 45]>, Box<dyn Error>> {
             }
         }
     }
-
     Ok(transactions) // return type with Ok signature
 }
 
