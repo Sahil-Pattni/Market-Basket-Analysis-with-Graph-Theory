@@ -1,4 +1,5 @@
 use csv::Reader;
+use csv::Writer;
 use std::collections::HashMap;
 use std::error::Error;
 use std::time::Instant;
@@ -14,11 +15,20 @@ fn import_unqiue(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
     Ok(v) // return with Result wrapper
 }
 
-fn make_vectors(path: &str) -> Result<HashMap<u32, [i8; 45]>, Box<dyn Error>> {
+fn make_vectors(path: &str) -> Result<HashMap<u32, [u8; 45]>, Box<dyn Error>> {
+    // Get list of unique products
     let products = import_unqiue("../data/unique.csv")?; // unique products
-    let mut transactions: HashMap<u32, [i8; 45]> = HashMap::new();
+    // Hashmap with each key being a basket ID
+    let mut transactions: HashMap<u32, [u8; 45]> = HashMap::new();
+    // CSV Reader
     let mut reader = Reader::from_path(path)?;
+
+    // Temp limit breaker for testing
+    let mut index = 0;
+
     for result in reader.records() {
+        // index += 1;
+        // if index > 1000000 {break;}
         let record = result?; // error check
         let product = record[0].to_string();
         let basket_id: u32 = record[1].parse()?;
@@ -41,6 +51,22 @@ fn make_vectors(path: &str) -> Result<HashMap<u32, [i8; 45]>, Box<dyn Error>> {
     Ok(transactions) // return type with Ok signature
 }
 
+fn write_data(path: &str, map: HashMap<u32, [u8; 45]>) -> Result<(), Box<dyn Error>> {
+    // Init writer
+    let mut writer = Writer::from_path(path)?;
+    // Products for header
+    let products = import_unqiue("../data/unique.csv")?; // unique products
+
+    writer.write_record(products)?;
+    for (key, val) in map.iter() {
+        let mut temp_vec = Vec::new();
+        for v in val {
+            temp_vec.push(v.to_string());
+        }
+        writer.write_record(temp_vec)?;
+    };
+    Ok(())
+}
 
 
 fn main() {
@@ -51,6 +77,7 @@ fn main() {
         Ok(res) => {
             num_baskets = res.iter().len();
             println!("There are {} baskets", num_baskets);
+            write_data("../data/rust_vectors.csv", res);
         },
         Err(err) => println!("Error: {:?}", err)
     };
