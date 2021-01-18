@@ -27,8 +27,6 @@ fn make_vectors(path: &str) -> Result<HashMap<u32, [u8; 45]>, Box<dyn Error>> {
     let mut index = 0;
 
     for result in reader.records() {
-        // index += 1;
-        // if index > 1000000 {break;}
         let record = result?; // error check
         let product = record[0].to_string();
         let basket_id: u32 = record[1].parse()?;
