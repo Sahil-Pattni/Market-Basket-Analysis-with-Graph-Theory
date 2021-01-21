@@ -1,4 +1,5 @@
 #!/bin/bash
 
-git push && git push github main
+git push origin master
+git push github main
 
