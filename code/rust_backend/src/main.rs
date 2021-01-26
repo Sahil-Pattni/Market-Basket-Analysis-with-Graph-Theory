@@ -23,9 +23,6 @@ fn make_vectors(path: &str) -> Result<HashMap<u32, [u8; 45]>, Box<dyn Error>> {
     // CSV Reader
     let mut reader = Reader::from_path(path)?;
 
-    // Temp limit breaker for testing
-    let mut index = 0;
-
     for result in reader.records() {
         let record = result?; // error check
         let product = record[0].to_string();
