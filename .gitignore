@@ -16,3 +16,5 @@ code/data/
 Journals/
 saved_websites/
 code/rust_backend/target
+.vscode/
+__pycache__/
