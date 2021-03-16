@@ -18,6 +18,15 @@ def log(message):
         print(message)
 
 
+class Rule:
+    def __init__(self, lhs, rhs, support, confidence, lift):
+        self.lhs = lhs
+        self.rhs = rhs
+        self.support = support
+        self.confidence = confidence
+        self.lift = lift
+    
+
 class MSTARM:
     """
     TODO: describe
@@ -30,10 +39,20 @@ class MSTARM:
 
 
     def __distance_function(self, x) -> float:
+        """
+        Converts the correlation matrix values such
+        that the larger the value, the smaller the transformed
+        value.
+
+        Args:
+            x (`pandas.DataFrame`): The correlation matrix.
+        """
         return np.sqrt(2*(1-x))
     
 
     def __generate_clusters(self) -> list:
+        """
+        """
         matrix = nx.to_scipy_sparse_matrix(self.MST)
         best_score = -math.inf
         best_clusters = None
@@ -87,13 +106,13 @@ class MSTARM:
     
 
     # ------ PUBLIC FUNCTION ------ #
-    def generate_rules(self, min_support=0.005, min_confidence=0.6, write_to_csv=True) -> None:
+    def generate_rules(self, min_support=0.005, min_confidence=0.6, write_to_csv=False) -> None:
         assert(self.clusters is not None)
         start = time.time()
-        self.rules = [['a', 'b', 'support', 'confidence', 'lift']]
         below_threshold = set()
         is_unique = lambda a,b: len(set(a+b)) == (len(a) + len(b))
         excluded, ignored = 0,0
+        self.rules = []
 
         for x, cluster in enumerate(self.clusters):
             cluster_rules = self.__get_rules(cluster)
@@ -123,19 +142,19 @@ class MSTARM:
 
                 a_str = tuple(self.names[i] for i in a)
                 b_str = tuple(self.names[i] for i in b)
-                self.rules.append([a_str, b_str, support_ab, confidence, lift])
+                
+                new_rule = Rule(a_str, b_str, support_ab, confidence, lift)
+                self.rules.append(new_rule)
                 
                 if i % 10000 == 0:
                     self.__log("Iteration #{i}: {excluded:,} excluded, {ignored:,} ignored.")
         
         print(f'Finished generating rules in {(time.time() - start):,.2f} seconds')
+        # TODO: Change to pickle
         if write_to_csv:
             self.__write_rules_to_csv()
-    
 
-    
-
-
+        return self.rules
 
 if __name__ == '__main__':
     arm = MSTARM('data/rust_vectors.csv', debug_mode=True)
