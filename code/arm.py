@@ -26,6 +26,9 @@ class Rule:
         self.confidence = confidence
         self.lift = lift
     
+    def __str__(self):
+        return f'{", ".join(self.lhs)} -> {", ".join(self.rhs)}'
+    
 
 class MSTARM:
     """
@@ -80,52 +83,75 @@ class MSTARM:
 
     
     def __get_rules(self, cluster) -> list:
+
+        def exclude(rule):
+            a,b = rule
+            if len(a) == len(b):
+                if len(a) == 1:
+                    return False
+            return True
+
         rules = set()
         for set_size in range(1, len(cluster)):
             rules.update(combinations(cluster, set_size))
-        return list(combinations(rules, 2))
+        rules = list(combinations(rules, 2))
+        # Filter out one to one rules if specified
+        if self.exclude_one_to_one:
+            rules = list(filter(exclude, rules))
 
-    
-    def __write_rules_to_csv(self) -> None:
-        assert(self.rules is not None)
-        with open('data/output/class_rules.csv', 'w+') as f:
-            writer = csv.writer(f)
-            for row in self.rules:
-                writer.writerow(row)
+        return rules
     
     
-    def __init__(self, filepath, debug_mode=False) -> None:
+    def __init__(self, filepath, debug_mode=False, exclude_one_to_one=False) -> None:
+        self.exclude_one_to_one = exclude_one_to_one
         self.DEBUG_MODE = debug_mode
-        self.df = pd.read_csv('data/rust_vectors.csv')
+        self.df = pd.read_csv(filepath)
         self.names = self.df.columns
         self.corr = np.array(self.__distance_function(self.df.corr()))
         self.G = nx.from_numpy_matrix(self.corr)
         self.MST = nx.minimum_spanning_tree(self.G)
         self.__generate_clusters()
         self.__log('Successfully initialized instance with graphs.')
+        self.scanned_rules = set()
     
 
     # ------ PUBLIC FUNCTION ------ #
-    def generate_rules(self, min_support=0.005, min_confidence=0.6, write_to_csv=False) -> None:
+    def generate_rules(self, min_support=0.005, min_confidence=0.6) -> None:
+        # Check if clusters initialized
         assert(self.clusters is not None)
         start = time.time()
+        # Record rules below threshold for pre-emptive pruning
         below_threshold = set()
-        is_unique = lambda a,b: len(set(a+b)) == (len(a) + len(b))
-        excluded, ignored = 0,0
+        # Filter to exclude any sets where the antecedent and subsequent are the same
+        is_unique = lambda a,b: set(a) != set(b)
+        # Record rules to return
         self.rules = []
 
-        for x, cluster in enumerate(self.clusters):
+        for cluster in self.clusters:
             cluster_rules = self.__get_rules(cluster)
-            cluster_rules.sort(key=len)
+            # sort by size of antecedent, allowing the pruning of larger sets later.
+            cluster_rules.sort(key=lambda x: len(x[0]))
+
+            self.__log(f'Running {len(cluster_rules):,} rules.')
             
-            for i, rule in enumerate(cluster_rules):
+            for rule in cluster_rules:
                 a, b = rule
+                # sort
+                a = tuple(sorted(a))
+                b = tuple(sorted(b))
                 ab = a + b
+
+                scanned = (a,b)
+                if scanned in self.scanned_rules:
+                    # Skip if this rule has already been checked
+                    continue
+
+                self.scanned_rules.add(scanned)
                 
                 if not is_unique(a, b):
                     continue
+                
                 if any([set(x).issubset(ab) for x in below_threshold]):
-                    excluded += 1
                     continue
 
                 # Used to avoid re-calculation of same values
@@ -137,7 +163,9 @@ class MSTARM:
 
                 if support_ab < min_support:
                     below_threshold.add(ab)
-                    ignored += 1
+                    continue
+                
+                if confidence < min_confidence:
                     continue
 
                 a_str = tuple(self.names[i] for i in a)
@@ -145,16 +173,16 @@ class MSTARM:
                 
                 new_rule = Rule(a_str, b_str, support_ab, confidence, lift)
                 self.rules.append(new_rule)
-                
-                if i % 10000 == 0:
-                    self.__log("Iteration #{i}: {excluded:,} excluded, {ignored:,} ignored.")
         
         print(f'Finished generating rules in {(time.time() - start):,.2f} seconds')
-        # TODO: Change to pickle
-        if write_to_csv:
-            self.__write_rules_to_csv()
 
         return self.rules
+
+    
+    def identify_cluster(self, product):
+        for i, cluster in enumerate(self.clusters):
+            if product in [self.names[q] for q in cluster]:
+                return i
 
 if __name__ == '__main__':
     arm = MSTARM('data/rust_vectors.csv', debug_mode=True)
