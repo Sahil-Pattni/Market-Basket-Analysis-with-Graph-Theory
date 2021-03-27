@@ -75,15 +75,17 @@ class MSTARM:
         if b is not None:
             a += b
         
+        # Add condition for binary validation of purchases.
         condition = (self.df.iloc[:, a[0]] == 1)
         for i in a[1:]:
             condition = (condition) & (self.df.iloc[:, i] == 1)
+        
         transaction = self.df[condition]
         return transaction.shape[0]/self.df.shape[0]
 
     
     def __get_rules(self, cluster) -> list:
-
+        # Excludes 1-1 rules
         def exclude(rule):
             a,b = rule
             if len(a) == len(b):
@@ -119,13 +121,19 @@ class MSTARM:
     def generate_rules(self, min_support=0.005, min_confidence=0.6) -> None:
         # Check if clusters initialized
         assert(self.clusters is not None)
-        start = time.time()
+        start_all = time.time()
         # Record rules below threshold for pre-emptive pruning
         below_threshold = set()
-        # Filter to exclude any sets where the antecedent and subsequent are the same
-        is_unique = lambda a,b: set(a) != set(b)
         # Record rules to return
         self.rules = []
+
+        # -- TESTING VARIABLES -- #
+        already_scanned = 0
+        not_unique = 0
+        below_threshold_count = 0
+
+        support_times = []
+
 
         for cluster in self.clusters:
             cluster_rules = self.__get_rules(cluster)
@@ -140,24 +148,21 @@ class MSTARM:
                 a = tuple(sorted(a))
                 b = tuple(sorted(b))
                 ab = a + b
-
-                scanned = (a,b)
-                if scanned in self.scanned_rules:
-                    # Skip if this rule has already been checked
-                    continue
-
-                self.scanned_rules.add(scanned)
-                
-                if not is_unique(a, b):
-                    continue
                 
                 if any([set(x).issubset(ab) for x in below_threshold]):
+                    below_threshold_count += 1
                     continue
 
                 # Used to avoid re-calculation of same values
+                start = time.time()
                 support_a = self.__support(a)
+                support_times.append(time.time()-start)
+                start = time.time()
                 support_b = self.__support(b)
+                support_times.append(time.time()-start)
+                start = time.time()
                 support_ab = self.__support(a, b)
+                support_times.append(time.time()-start)
                 confidence = 0 if support_a == 0 else support_ab/support_a
                 lift = 0 if support_b == 0 else confidence/support_b
 
@@ -174,7 +179,10 @@ class MSTARM:
                 new_rule = Rule(a_str, b_str, support_ab, confidence, lift)
                 self.rules.append(new_rule)
         
-        print(f'Finished generating rules in {(time.time() - start):,.2f} seconds')
+        print(f'Finished generating rules in {(time.time() - start_all):,.2f} seconds')
+        print(f'Already Scanned: {already_scanned:,}\nNot Unique: {not_unique:,}\nBelow Threshold: {below_threshold_count:,}')
+        print(f'Average time to calculate support: {sum(support_times)/len(support_times):.5f} for {len(support_times):,} iterations.')
+
 
         return self.rules
 
