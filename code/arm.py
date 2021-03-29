@@ -151,22 +151,20 @@ class MSTARM:
                 b = tuple(sorted(b))
                 ab = a + b
                 
-                # Check if rule is already below threshold, if so 
+                # Flag if rule is a subset of sets that are below the threshold
                 for x in below_threshold:
                     if set(x).issubset(ab):
                         below_threshold_count += 1
                         is_above_threshold = False
                         break
 
+                # If rule does not match any that are below threshold
                 if is_above_threshold:
                     # Used to avoid re-calculation of same values
                     support_a, support_b, support_ab = self.__support(a, b)
                     confidence = 0 if support_a == 0 else support_ab/support_a
                     lift = 0 if support_b == 0 else confidence/support_b
 
-                    if support_ab < min_support:
-                        below_threshold.add(ab)
-                        continue
 
                     if support_a < min_support:
                         below_threshold.add(a)
