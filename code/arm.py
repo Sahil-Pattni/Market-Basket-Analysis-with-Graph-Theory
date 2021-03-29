@@ -89,7 +89,6 @@ class MSTARM:
 
     
     def __get_rules(self, cluster) -> list:
-        start_time = time.time()
         # Excludes 1-1 rules
         def exclude(rule):
             a,b = rule
@@ -107,8 +106,6 @@ class MSTARM:
         if self.exclude_one_to_one:
             rules = list(filter(exclude, rules))
         
-        end_time = time.time() - start_time
-        self.__log(f'Generated all potential rules for cluster with {len(cluster)} elements in {end_time:,.2f} seconds')
         return rules
     
     
@@ -129,7 +126,7 @@ class MSTARM:
     def generate_rules(self, min_support=0.005, min_confidence=0.6) -> None:
         # Check if clusters initialized
         assert(self.clusters is not None)
-        start_all = time.time()
+        start_time = time.time()
         # Record rules below threshold for pre-emptive pruning
         below_threshold = set()
         # Record rules to return
@@ -138,14 +135,12 @@ class MSTARM:
         # -- TESTING VARIABLES -- #
         below_threshold_count = 0
 
-        support_times = []
-
 
         for cluster_num, cluster in enumerate(self.clusters):
+            start_time_cluster = time.time()
             cluster_rules = self.__get_rules(cluster)
             # sort by size of antecedent, allowing the pruning of larger sets later.
             cluster_rules.sort(key=lambda x: len(x[0]))
-            self.__log(f'Working with cluster #{cluster_num} of {len(self.clusters)} | {len(cluster_rules):,} elements')
 
             
             for rule in cluster_rules:
@@ -187,9 +182,11 @@ class MSTARM:
                     
                     new_rule = Rule(a_str, b_str, support_ab, confidence, lift)
                     self.rules.append(new_rule)
-        print(f'Average time to calculate support: {sum(support_times)/len(support_times):.5f} for {len(support_times):,} iterations.')
+                
+            self.__log(f'Finished cluster #{cluster_num + 1} of {len(self.clusters)} | {(time.time() - start_time_cluster):,.2f} seconds')
 
-
+            
+        print(f'Finished in {(time.time() - start_time)/60:,.2f} minutes')
         return self.rules
 
     
