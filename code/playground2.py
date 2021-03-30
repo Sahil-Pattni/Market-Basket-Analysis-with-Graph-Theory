@@ -1,24 +1,26 @@
-import time
-import random
-data = set()
+x = 0
+for b in range(3):
+    for c in range(3):
+        if b == 2:
+            break
+        x += 1
 
-limit = 10000000
-size_at_time = 0
-largest_time = 0
+print(x)
 
-for _ in range(limit):
-    num = random.randint(0, limit)
-    start = time.time()
-    if num != data:
-        data.add(num)
-    duration = time.time() - start
-
-    if duration > largest_time:
-        largest_time = duration
-        size_at_time = len(data)
-
-print(f'Longest time when set had {size_at_time:,} elements, taking {largest_time} time.')
+below_threshold = 0
+ab = 0
+below_threshold_count = 0
 
 
+for _ in range(10):
+    # Old
+    if any([set(x).issubset(ab) for x in below_threshold]):
+        below_threshold_count += 1
+        continue
 
-    
+    # New
+    for x in below_threshold:
+        if set(x).issubset(ab):
+            below_threshold_count += 1
+            is_above_threshold = False
+            break
