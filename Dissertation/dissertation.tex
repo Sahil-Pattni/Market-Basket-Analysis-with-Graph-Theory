@@ -1,8 +1,9 @@
-\documentclass[paper=a4, fontsize=11pt]{scrartcl}	% KOMA
+\documentclass[paper=a4, fontsize=11pt]{article}	% For KOMA, use scrartcl
 
-\usepackage[a4paper,pdftex]{geometry}	% A4paper margins
-\setlength{\oddsidemargin}{5mm}			% Remove 'twosided' indentation
-\setlength{\evensidemargin}{5mm}
+\usepackage[a4paper,includeheadfoot,margin=2cm]{geometry}
+
+%\setlength{\oddsidemargin}{5mm}			% Remove 'twosided' indentation
+%\setlength{\evensidemargin}{5mm}
 
 \usepackage[english]{babel}
 \usepackage[protrusion=true,expansion=true]{microtype}	
@@ -30,6 +31,9 @@
     {\centering \large \@author}}				
 \makeatother							
 
+
+\newcommand{\me}{Sahil Manojkumar Pattni}
+
 % ------------------------------------------------------------------------------
 % Metadata (Change this)
 % ------------------------------------------------------------------------------
@@ -37,7 +41,7 @@
 \title{	\normalsize \textsc{Final Year Dissertation} 	% Subtitle
 		 	\\[2.0cm]								% 2cm spacing
 			\HRule{0.5pt} \\						% Upper rule
-			\LARGE \textbf{{Multi-Element Association Rule Derivation using Minimum Spanning Trees and Markov Clustering}}	% Title
+			\LARGE \textbf{{Multi-Element Complementary Association Rule Derivation using Minimum Spanning Trees and Markov Clustering}}	% Title
 			\HRule{2pt} \\ [0.5cm]		% Lower rule + 0.5cm spacing
 			\normalsize \today			% Todays date
 		}
@@ -77,7 +81,12 @@
 % ------------------------------------------------------------------------------
 \setcounter{page}{1}		% Set page numbering to begin on this page
 
+\section*{Declaration}
+I, \me, confirm that this work submitted for assessment is my own and is expressed in my own words. Any uses made within it of the works of other authors in any form (e.g., ideas, equations, figures, text, tables, programs) are properly acknowledged at any point of their use. A list of the references employed is included.
+\\Signed: \me
+\\Date: \today
 
+\section*{Abstract}
 
 
 
