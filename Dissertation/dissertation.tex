@@ -1,6 +1,6 @@
-\documentclass[paper=a4, fontsize=11pt]{article}	% For KOMA, use scrartcl
+\documentclass[paper=a4,fontsize=11pt]{article}	% For KOMA, use scrartcl
 
-\usepackage[a4paper,includeheadfoot,margin=2cm]{geometry}
+\usepackage[a4paper,includeheadfoot,margin=1in]{geometry}
 
 %\setlength{\oddsidemargin}{5mm}			% Remove 'twosided' indentation
 %\setlength{\evensidemargin}{5mm}
@@ -41,7 +41,7 @@
 \title{	\normalsize \textsc{Final Year Dissertation} 	% Subtitle
 		 	\\[2.0cm]								% 2cm spacing
 			\HRule{0.5pt} \\						% Upper rule
-			\LARGE \textbf{{Multi-Element Complementary Association Rule Derivation using Minimum Spanning Trees and Markov Clustering}}	% Title
+			\LARGE \textbf{{Association Rules using Minimum Spanning Trees and Markov Clustering}}	% Title
 			\HRule{2pt} \\ [0.5cm]		% Lower rule + 0.5cm spacing
 			\normalsize \today			% Todays date
 		}
@@ -79,17 +79,45 @@
 % ------------------------------------------------------------------------------
 % Begin document
 % ------------------------------------------------------------------------------
-\setcounter{page}{1}		% Set page numbering to begin on this page
-
+\thispagestyle{empty}		% Remove page numbering on this page
+\pagebreak
+\hspace{0pt}
+\vfill
 \section*{Declaration}
 I, \me, confirm that this work submitted for assessment is my own and is expressed in my own words. Any uses made within it of the works of other authors in any form (e.g., ideas, equations, figures, text, tables, programs) are properly acknowledged at any point of their use. A list of the references employed is included.
+\\\\Date: \today
 \\Signed: \me
-\\Date: \today
 
-\section*{Abstract}
+\vfill
+\hspace{0pt}
+\pagebreak
+
+\newpage\section*{Abstract}
+In this digital age, data is being generated and collected at an unprecedented rate, with data analytics employed by corporations and small businesses alike to produce actionable insights, reduce costs, optimize operations and increase revenue. Association rules allow us to identify relationships between products that can provide insights into customer spending habits and product perception.
 
 
+In this study, a minimum spanning tree (MST) will be generated from a transactional database such that only the strongest relationships between products remain. A clustering algorithm will be applied to this MST to identify high co-purchase segments, and association rules will then be extracted from these segments. \textbf{TODO: ADD MORE}
 
+% Table of Contents
+\newpage\tableofcontents\newpage
+
+\setcounter{page}{1}		% Set page numbering to begin on this page
+\section{Introduction}
+\subsection{Motivation}
+\subsection{Aims and Objectives}
+
+
+\section{Background}
+\subsection{Apriori Algorithm}
+
+\section{Data [Creation/Organization/Blank]}
+
+\section{MST Generation}
+
+\section{Testing and Evaluation}
+\subsection{Metrics}
+\subsection{Data Filtering}
+Talk about how MST different when comparing different cities.
 
 % ------------------------------------------------------------------------------
 % End document
