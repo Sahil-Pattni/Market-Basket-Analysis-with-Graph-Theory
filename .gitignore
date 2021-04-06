@@ -11,7 +11,7 @@
 *.ps
 *run.xml
 *.aux.**
-
+*.swp
 code/data/
 Journals/
 saved_websites/
