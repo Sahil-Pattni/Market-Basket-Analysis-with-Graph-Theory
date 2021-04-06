@@ -41,7 +41,7 @@
 \title{	\normalsize \textsc{Final Year Dissertation} 	% Subtitle
 		 	\\[2.0cm]								% 2cm spacing
 			\HRule{0.5pt} \\						% Upper rule
-			\LARGE \textbf{{Association Rules using Minimum Spanning Trees and Markov Clustering}}	% Title
+			\LARGE \textbf{{Market Basket Analysis with Graph Theory}}	% Title
 			\HRule{2pt} \\ [0.5cm]		% Lower rule + 0.5cm spacing
 			\normalsize \today			% Todays date
 		}
@@ -104,11 +104,27 @@ In this study, a minimum spanning tree (MST) will be generated from a transactio
 \setcounter{page}{1}		% Set page numbering to begin on this page
 \section{Introduction}
 \subsection{Motivation}
-\subsection{Aims and Objectives}
+For businesses such as groceries, hypermarkets, and retail outlets that deal with the trade of heterogeneous physical assets, operations such as inventory management and product placement play an instrumental role in determining the business' financial success. These involve asking questions such as:
+\begin{itemize}
+\item Which products should be placed at the entrance of the store? Which should be placed closer to the exit?
+\item Which products will benefit the most by being placed at eye-level?
+\item Which products should be placed next to each other to maximize the purchase volume?
+\end{itemize}
+One way to find optimal solutions to such queries is to employ the use of Association Rule Mining (also known as Market Basket Analysis). This set of techniques assess frequent itemsets (e.g. from sales data) and generate association rules between products. 
+Several algorithms exist for association rule mining, most prominently the Apriori Algorithm \cite{apriori} and FP-Growth \cite{fp_growth}, however these algorithms tend to generate an overwhelming amount of rules, rendering it inconvenient for the end-user to extract actionable information from the ruleset. A method that could produce a smaller, albeit more meaningful ruleset could prove to be more useful to such businesses and those who manage them.
+
+\subsection{Aims}
+The aim of this paper is to improve upon an existing method (see: Section \ref{sec:mst paper}) that derives association rules from minimum spanning trees, and to determine whether it can be considered a viable alternative or complement to established method: the Apriori Algorithm.
+
+\subsection{Objectives}
+
 
 
 \section{Background}
-\subsection{Apriori Algorithm}
+\subsection{Related Work}
+\subsubsection{Fast Algorithms for Mining Assocation Rules}
+\subsubsection{Market basket analysis: Complementing association rules with minimum spanning trees}
+\label{sec:mst paper}
 
 \section{Data [Creation/Organization/Blank]}
 
@@ -118,6 +134,9 @@ In this study, a minimum spanning tree (MST) will be generated from a transactio
 \subsection{Metrics}
 \subsection{Data Filtering}
 Talk about how MST different when comparing different cities.
+
+% References
+\printbibliography[heading=bibintoc]
 
 % ------------------------------------------------------------------------------
 % End document
