@@ -95,25 +95,18 @@ fn write_data(path: &str, map: HashMap<u32, [u8; 45]>) -> Result<(), Box<dyn Err
 
 
 fn main() {
-    //let _filepath = "../data/products.csv";
-    //let start = Instant::now();
-    //let mut num_baskets = 0;
-    // match make_vectors(_filepath) {
-    //     Ok(res) => {
-    //         num_baskets = res.iter().len();
-    //         println!("There are {} baskets", num_baskets);
-    //         write_data("../data/rust_vectors_temp.csv", res);
-    //         //write_purchases("../data/purchases.csv", res);
-    //     },
-    //     Err(err) => println!("Error: {:?}", err)
-    // };
-    
-    let _in_path = "../data/rust_vectors.csv";
-    let _out_path = "../data/output/purchases.csv";
-    match write_purchases(_in_path, _out_path) {
-        Ok(()) => {()}
+    let _filepath = "../data/products.csv";
+    let start = Instant::now();
+    let mut num_baskets = 0;
+    match make_vectors(_filepath) {
+        Ok(res) => {
+            num_baskets = res.iter().len();
+            println!("There are {} baskets", num_baskets);
+            write_data("../data/rust_vectors_temp.csv", res);
+            //write_purchases("../data/purchases.csv", res);
+        },
         Err(err) => println!("Error: {:?}", err)
-    }
-    //let duration = start.elapsed().as_secs();
-    //println!("Finished generating {} baskets in {} seconds", num_baskets, duration);
+    };
+    let duration = start.elapsed().as_secs();
+    println!("Finished generating {} baskets in {} seconds", num_baskets, duration);
 }
