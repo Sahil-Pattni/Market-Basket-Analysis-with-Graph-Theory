@@ -76,7 +76,7 @@ fn main() {
         Ok(res) => {
             num_baskets = res.iter().len();
             println!("There are {} baskets", num_baskets);
-            write_data("../data/rust_vectors_temp.csv", res);
+            write_data("../data/rust_vectors_new.csv", res);
         },
         Err(err) => println!("Error: {:?}", err)
     };
