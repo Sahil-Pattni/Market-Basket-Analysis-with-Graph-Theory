@@ -15,18 +15,23 @@ fn import_unqiue(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
     Ok(v) // return with Result wrapper
 }
 
-fn make_vectors(path: &str) -> Result<HashMap<u32, [u8; 45]>, Box<dyn Error>> {
+fn make_vectors(path: &str) -> Result<HashMap<u64, [u8; 45]>, Box<dyn Error>> {
     // Get list of unique products
-    let products = import_unqiue("../data/unique.csv")?; // unique products
+    let products = import_unqiue("../data/output/unique_products.csv")?; // unique products
     // Hashmap with each key being a basket ID
-    let mut transactions: HashMap<u32, [u8; 45]> = HashMap::new();
+    let mut transactions: HashMap<u64, [u8; 45]> = HashMap::new();
     // CSV Reader
     let mut reader = Reader::from_path(path)?;
 
     for result in reader.records() {
         let record = result?; // error check
         let product = record[0].to_string();
-        let basket_id: u32 = record[1].parse()?;
+        // let basket_id: u32 = record[4].parse()?;
+        // println!("{}", basket_id);
+        let basket_id: u64 = match record[4].parse() {
+            Ok(id) => id,
+            Err(error) => panic!("Problem with {}: {}", &record[4], error),
+        };
 
         // Insert basket_id if doesn't exist
         if !transactions.contains_key(&basket_id) {
@@ -43,45 +48,46 @@ fn make_vectors(path: &str) -> Result<HashMap<u32, [u8; 45]>, Box<dyn Error>> {
             }
         }
     }
+    println!("Vectors made!");
     Ok(transactions) // return type with Ok signature
 }
 
-fn write_purchases(in_path: &str, out_path: &str) -> Result<(), Box<dyn Error>>{
+// fn write_purchases(in_path: &str, out_path: &str) -> Result<(), Box<dyn Error>>{
     
-    // Contains Vec<String> of purchases
-    let mut purchases: Vec<Vec<String>> = Vec::new();
-    // CSV Reader
-    let mut reader = Reader::from_path(in_path)?;
-    // CSV Writer
-    let mut writer = Writer::from_path(out_path)?;
-    // Import column names
-    let products = import_unqiue("../data/columns.csv")?; // unique products
-    // Iterate and add products
-    let data = reader.records();
-    for row in data {
-        let mut current_purchase: Vec<String> = Vec::new();
-        let row = row.iter();
-        for (i, item) in row.enumerate() {
-            let item: u8 = item[i].parse()?;
-            if (item as u8) == (1 as u8) {
-                current_purchase.push(products[i].clone());
-            }
-        }
-        purchases.push(current_purchase);
-    }
+//     // Contains Vec<String> of purchases
+//     let mut purchases: Vec<Vec<String>> = Vec::new();
+//     // CSV Reader
+//     let mut reader = Reader::from_path(in_path)?;
+//     // CSV Writer
+//     let mut writer = Writer::from_path(out_path)?;
+//     // Import column names
+//     let products = import_unqiue("../data/output/unique_products.csv")?; // unique products
+//     // Iterate and add products
+//     let data = reader.records();
+//     for row in data {
+//         let mut current_purchase: Vec<String> = Vec::new();
+//         let row = row.iter();
+//         for (i, item) in row.enumerate() {
+//             let item: u8 = item[i].parse()?;
+//             if (item as u8) == (1 as u8) {
+//                 current_purchase.push(products[i].clone());
+//             }
+//         }
+//         purchases.push(current_purchase);
+//     }
 
-    // Write to csv
-    for row in purchases {
-        writer.write_record(row)?;
-    }
+//     // Write to csv
+//     for row in purchases {
+//         writer.write_record(row)?;
+//     }
 
-    Ok(())
-}
+//     Ok(())
+// }
 
-fn write_data(path: &str, map: HashMap<u32, [u8; 45]>) -> Result<(), Box<dyn Error>> {
+fn write_data(path: &str, map: HashMap<u64, [u8; 45]>) -> Result<(), Box<dyn Error>> {
     let mut writer = Writer::from_path(path)?;
     // Products for header
-    let products = import_unqiue("../data/unique.csv")?; // unique products
+    let products = import_unqiue("../data/output/unique_products.csv")?; // unique products
     writer.write_record(products)?;
     for (_, val) in map.iter() {
         let mut temp_vec = Vec::new();
@@ -95,7 +101,7 @@ fn write_data(path: &str, map: HashMap<u32, [u8; 45]>) -> Result<(), Box<dyn Err
 
 
 fn main() {
-    let _filepath = "../data/products.csv";
+    let _filepath = "../data/output/original_cleaned.csv";
     let start = Instant::now();
     let mut num_baskets = 0;
     match make_vectors(_filepath) {
