@@ -267,7 +267,14 @@ For clarity, we have illustrated the disparity between the author's algorithm an
 
 
 \subsection{Markov Clustering}
-\textbf{S. Dongen} \cite{markov_clustering} introduced the novel Markov Clustering Algorithm (MCL), where given a non-negative weighted directional graph $G$, the MCL simulates flow in the graph. It does this by first mapping the graph $G$ in a generic way onto a Markov matrix $M_1$.
+\textbf{S. Dongen} \cite{markov_clustering} introduced the novel Markov Clustering Algorithm (MCL), a graph clustering algorithm that favours sparse graphs (i.e. graphs where the average degree is smaller than the number of nodes). 
+The reason for this follows the notion that dense regions in sparse graphs correspond with regions in which the number of $k$-length paths is relatively large - and therefore - paths whose beginnings and ends are in the same dense region have a higher probability for random walks\footnote{A random walk is a stochastic process of of successively random steps along a space, in this case: a directed graph.} of length $k$ as opposed to other paths.
+In other words, random walks originating from a node in a dense region have a high probability of ending in that same dense region.
+Given a non-negative weighted directional graph $G$, the MCL simulates flow in the graph. 
+It does this by first mapping the graph $G$ in a generic way onto a Markov matrix $M_1$.
+Once completed, the set of transition probabilities (TP's) are iteratively recomputed via expansion and contraction, resulting in an array of Markov Graphs.
+In the expansion stage, higher TP's are calculated, whereas for the contraction phase, a new Markov Graph is created by rewarding high TP's and penalizing low TP's.
+The belief is that by doing so, the flow between dense regions that are sparsely connected will be removed, leaving only distinct and unconnected dense regions (i.e. clusters).
 
 
 \subsection{Apriori Algorithm}
