@@ -21,6 +21,18 @@
 \usepackage{longtable}
 
 
+% Chapter Title Whitespace Modifier
+\usepackage{titlesec}
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang] 
+%{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter:}{1em}{} 
+
+
 \addbibresource{references.bib}
 
 % ------------------------------------------------------------------------------
@@ -131,6 +143,8 @@ In this study, a minimum spanning tree (MST) will be generated from a transactio
 \rfoot{Page \thepage}
 
 \chapter{Introduction}
+
+
 \section{Motivation}
 For businesses such as groceries, hypermarkets, and retail outlets that deal with the trade of heterogeneous physical assets, operations such as inventory management and product placement play an instrumental role in determining the business' financial success. These involve asking questions such as:
 \begin{itemize}
@@ -168,10 +182,6 @@ Maybe describe the structure of the document here?
 
 \chapter{Background}
 
-
-
-
-
 \section{Graph Theory}
 \begin{figure}[H]
 \centering
@@ -180,8 +190,10 @@ Maybe describe the structure of the document here?
 \label{fig:graph.example}
 \end{figure}
 In discrete mathematics and more specifically - graph theory, a graph is a data structure that contains a set of nodes (i.e. vertices) connected by lines (i.e. edges).  These edges may be directed - such as in Figure \ref{fig:graph.example}:(a), or undirected - such as in Figure \ref{fig:graph.example}:(b). A graph $G$ with a set of vertices $V$ and a set of edges $E$ can be represented via the notation $G = (V,E)$. For the scope of this project,  we will be building undirected graphs, where the weight between two vertices is the same in both directions.
+
 \subsection{Minimum Spanning Trees}
 Given an undirected $G = (V,E)$,  a \textit{spanning tree} can be described as a subgraph that is a tree which includes all the vertices $V$ of $G$ with the minimum number of edges required. A \textit{minimum spanning tree} (MST) is the spanning tree with the smallest sum of edge weights.  This means that if the graph has $n$ vertices, each spanning tree - including the minimum spanning tree - will have $n-1$ edges. There are two widely used algorithms to extract the minimum spanning tree from a graph: Prim's algorithm and Kruskal's algorithm.
+
 \subsection{Prim's Algorithm}
 Independently discovered by three authors,  Prim's algorithm \cite{prims}\cite{prims_og}\cite{prims3} is a greedy algorithm\footnote{Selecting the locally optimal choice at each iteration of the solution} to find the minimum spanning three of an undirected,  weighted graph $G$. To successfully implement the algorithm, three sets need to maintained: a set of \textit{discovered} edges, and two sets of vertices: a set of \textit{undiscovered} vertices, and a set of \textit{discovered} vertices.  Figure \ref{fig:prim} illustrates Prim's algorithm being applied to a graph. The algorithm is as follows:\\
 Initialize an empty set of discovered edges: $E$, and two sets of vertices: an empty set $D$ of the discovered vertices, and $UD$ as the set of undiscovered vertices.
@@ -215,6 +227,7 @@ Maintaining a set of edges $E$, and an initially empty set of chosen edges $C$:
 The algorithm will terminate when $n-1$ edges have been selected.  The time complexity for this algorithm is $O(ElogE)$.
 
 \section{Binary Purchase Vectors}
+\label{sec:binary_purchase_vectors}
 A binary purchase vector is a vector with an element for each distinct product in our dataset, with a value of 1 if a given product was present in the purchase, and 0 otherwise. For example, consider a grocer who only sells five items: milk, eggs, bread, apples and oranges. If a customer purchases bread and oranges, the binary purchase vector for this transaction would be:
 \begin{table}[H]
 \centering
@@ -344,9 +357,11 @@ Each row in the dataset represents the purchase of a specific product as part of
 \item Product Cost
 \item Discount Amount
 \end{itemize}
-All personal and corporate names were exchanged for fictitious names by the author of the dataset in order to preserve the anonymity of those whose who could have otherwise been identified through the dataset. The \textit{Order Number} field showed discrepancies, where a given order number could reference distinct transactions in different stores and cities, and at different dates and times. This could be due to the stores maintaining their own order numbers, and also because the order numbers may reset after a given limit. A unique transaction identifier - named \texttt{basket\_id} - was created by concatenating the order number and the date, thereby mitigating the occurrence of a identifier that references multiple transactions. 
+All personal and corporate names were exchanged for fictitious names by the author of the dataset in order to preserve the anonymity of those whose who could have otherwise been identified through the dataset. The \textit{Order Number} field showed discrepancies, where a given order number could reference distinct transactions in different stores and cities, and at different dates and times. 
+This could be due to the stores maintaining their own order numbers, and also because the order numbers may reset after a given limit.
+A unique transaction identifier - named \texttt{basket\_id} - was created by concatenating the order number and the date, thereby mitigating the occurrence of a identifier that references multiple transactions.
 
-
+The dataset was then transformed such that each transaction was represented by a binary purchase vector - as described in Section \ref{sec:binary_purchase_vectors} - wherein each column represents a product category. The product categories were chosen for the graph representation over the products themselves as it would give a more generalized view on the associations between them, and the categories themselves were deemed specific enough that they would not be parent to children of significant variance.
 
 % References
 \printbibliography[heading=bibintoc, title=References]
