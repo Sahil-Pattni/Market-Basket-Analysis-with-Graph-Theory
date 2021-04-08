@@ -4,23 +4,22 @@
 % ------------------------------------------------------------------------------
 % Imports and Packages
 % ------------------------------------------------------------------------------
-\usepackage[a4paper,includeheadfoot,margin=1in]{geometry}
-
-\usepackage[english]{babel}
-\usepackage[protrusion=true,expansion=true]{microtype}	
-\usepackage{amsmath,amsfonts,amsthm,amssymb} % Math
-\usepackage{float} % For [H] centering
-\usepackage{graphicx} % For images
+\usepackage[a4paper,includeheadfoot,margin=1in]{geometry} 	  % Document Formatting
+\usepackage[english]{babel}                               	  % Typographical Rules
+\usepackage[protrusion=true,expansion=true]{microtype}         % Typograhical Rules
+\usepackage{amsmath,amsfonts,amsthm,amssymb} 			      % Non-native Math Symbols
+\usepackage{float}                                             % For [H] centering
+\usepackage{graphicx}                                          % For images
 \usepackage[style=ieee, sorting=none, backend=biber]{biblatex} % Citation
+\usepackage{fancyhdr}                                          % Header customization
 
-\usepackage{setspace}
-\doublespacing
-
-
-% Table formatting
+\usepackage{setspace}                                          % Double Spacing
+\doublespacing 											      
+															  % Table formatting
 \usepackage{booktabs}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{longtable}
+
 
 \addbibresource{references.bib}
 
@@ -30,14 +29,12 @@
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
 
-\graphicspath{{../images/}}
-
-\makeatletter							% Title
+\makeatletter							        % Title
 \def\printtitle{%						
     {\centering \@title\par}}
 \makeatother									
 
-\makeatletter							% Author
+\makeatletter							   
 \def\printauthor{%					
     {\centering \large \@author}}				
 \makeatother							
@@ -46,8 +43,8 @@
 % ------------------------------------------------------------------------------
 % LaTeX Variables and Shortcuts
 % ------------------------------------------------------------------------------
-
-\newcommand{\me}{Sahil Manojkumar Pattni}
+\graphicspath{{../images/}}                      % Image Sources
+\newcommand{\me}{Sahil Manojkumar Pattni}        % Author Name
 \newcommand{\setA}{\{A\}}
 \newcommand{\setB}{\{B\}}
 \newcommand{\abrule}{\setA\rightarrow\setB}
@@ -125,6 +122,14 @@ In this study, a minimum spanning tree (MST) will be generated from a transactio
 
 
 \setcounter{page}{1}		% Set page numbering to begin on this page
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Final Year Dissertation}
+\lhead{\leftmark}
+\rfoot{Page \thepage}
+
 \chapter{Introduction}
 \section{Motivation}
 For businesses such as groceries, hypermarkets, and retail outlets that deal with the trade of heterogeneous physical assets, operations such as inventory management and product placement play an instrumental role in determining the business' financial success. These involve asking questions such as:
@@ -162,6 +167,8 @@ Maybe describe the structure of the document here?
 
 
 \chapter{Background}
+
+
 
 
 
@@ -323,15 +330,23 @@ In conclusion, \textbf{R. Aggarwal et al.} introduced a formal system for associ
 All the research conducted above has served as the inspiration for this project.
 
 
-\chapter{Multi-Element Association Rule Generation}
-\section{[Creation/Organization/Blank]}
+\chapter{Dataset Processing}
+The dataset used in this study is the transactional sales data from a chain of Brazilian gas-station stores \cite{data_source}.
+Each row in the dataset represents the purchase of a specific product as part of a transaction - and as such, each row corresponds to the following columns:
+\begin{itemize}
+\item Company Code
+\item Order Number
+\item Employee
+\item Product
+\item Product Category
+\item Client
+\item Sale Date Time
+\item Product Cost
+\item Discount Amount
+\end{itemize}
+All personal and corporate names were exchanged for fictitious names by the author of the dataset in order to preserve the anonymity of those whose who could have otherwise been identified through the dataset. The \textit{Order Number} field showed discrepancies, where a given order number could reference distinct transactions in different stores and cities, and at different dates and times. This could be due to the stores maintaining their own order numbers, and also because the order numbers may reset after a given limit. A unique transaction identifier - named \texttt{basket\_id} - was created by concatenating the order number and the date, thereby mitigating the occurrence of a identifier that references multiple transactions. 
 
-\section{MST Generation}
 
-\section{Testing and Evaluation}
-\section{Metrics}
-\section{Data Filtering}
-Talk about how MST different when comparing different cities.
 
 % References
 \printbibliography[heading=bibintoc, title=References]
