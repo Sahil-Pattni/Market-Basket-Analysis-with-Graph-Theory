@@ -1,6 +1,7 @@
 # --- Imports --- #
+from matplotlib.pylab import cm, axis
 from itertools import combinations
-
+import matplotlib.pyplot as plt
 import markov_clustering as mc
 import networkx as nx
 import pandas as pd
@@ -122,7 +123,71 @@ class MSTARM:
         self.scanned_rules = set()
     
 
-    # ------ PUBLIC FUNCTION ------ #
+    # ------ PUBLIC FUNCTIONS ------ #
+
+    def plot_graph_and_mst(self, dim=10, output_filepath=None, layout_on_mst=False):
+        """
+        TODO: Document
+        """
+
+        # Plot layout
+        nrows, ncols = 1,2
+        _, ax = plt.subplots(nrows=nrows, ncols=ncols, figsize=(dim*ncols, dim*nrows))
+
+        # Set Titles
+        ax[0].set_title("Complete Graph", fontsize=2*dim)
+        ax[1].set_title("Minimum Spanning Tree", fontsize=2*dim)
+
+        # Fixed positional layout for nodes
+        pos = nx.spring_layout(self.MST) if layout_on_mst else nx.spring_layout(self.G)
+
+        # Collection of plotting arguments common amongst the two draw functions
+        kwargs = dict(pos=pos, with_labels=True, node_color='c', node_size=400, edge_color='0.25', font_size=1.5*dim)
+
+        # Plot full graph
+        nx.draw(self.G, ax=ax[0], width=1, **kwargs)
+        # Plot MST
+        nx.draw(self.MST, ax=ax[1], width=2, **kwargs)
+
+        if output_filepath is not None:
+            plt.savefig(output_filepath)
+        
+        plt.show()
+
+    
+    def plot_mst_clusters(self, dim=10, output_filepath=None):
+        """
+        TODO: Document
+        """
+
+        # Plot layout
+        nrows, ncols = 1,2
+        _, ax = plt.subplots(nrows=nrows, ncols=ncols, figsize=(dim*ncols, dim*nrows))
+
+        # Set titles
+        ax[0].set_title("Minimum Spanning Tree", fontsize=20)
+        ax[1].set_title("Markov Clustered MST", fontsize=20)
+
+        # Fixed positional layout for nodes
+        pos = nx.spring_layout(self.MST)
+
+        # Collection of plotting arguments common amongst the two draw functions
+        kwargs= dict(pos=pos, with_labels=True,node_size=400, edge_color='0.25', font_size=15)
+
+        # map node to cluster id for colors
+        cluster_map = {node: i for i, cluster in enumerate(self.clusters) for node in cluster}
+        colors = [cluster_map[i] for i in range(len(self.MST.nodes()))]
+
+        # Plot unclustered MST
+        nx.draw(self.MST, ax=ax[0], node_color='c', width=1, **kwargs)
+        # Plot clustered MST
+        nx.draw(self.MST, node_color=colors, cmap=cm.tab20, ax=ax[1], width=2, **kwargs)
+
+        if output_filepath is not None:
+            plt.savefig(output_filepath)
+
+
+
     def generate_rules(self, min_support=0.005, min_confidence=0.6) -> None:
         # Check if clusters initialized
         assert(self.clusters is not None)
@@ -192,10 +257,6 @@ class MSTARM:
         for i, cluster in enumerate(self.clusters):
             if product in [self.names[q] for q in cluster]:
                 return i
-
-if __name__ == '__main__':
-    arm = MSTARM('data/rust_vectors.csv', debug_mode=True)
-    arm.generate_rules()
 
 
 

@@ -4,6 +4,8 @@ use std::collections::HashMap;
 use std::error::Error;
 use std::time::Instant;
 
+static PRODUCTS: &'static str = "../data/output/unique_products_no_fuel.csv"; // Change this when changing datasets
+const SIZE: usize = 38; // Change this when changing datasets
 
 // Import list of unique products to maintain uniform ordering for vectors
 fn import_unqiue(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
@@ -16,23 +18,23 @@ fn import_unqiue(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
     Ok(v) // return with Result wrapper
 }
 
-fn make_vectors(path: &str) -> Result<HashMap<u64, [u8; 39]>, Box<dyn Error>> {
+fn make_vectors(path: &str) -> Result<HashMap<u64, [u8; SIZE]>, Box<dyn Error>> {
     // Get list of unique products
-    let products = import_unqiue("../data/output/unique_products.csv")?; // unique products
+    let products = import_unqiue(PRODUCTS)?; // unique products
     // Hashmap with each key being a basket ID
-    let mut transactions: HashMap<u64, [u8; 39]> = HashMap::new();
+    let mut transactions: HashMap<u64, [u8; SIZE]> = HashMap::new();
     // CSV Reader
     let mut reader = Reader::from_path(path)?;
 
     for result in reader.records() {
         let record = result?; // error check
-        let product = record[0].to_string(); // 0 for product, 1 for product_category
+        let product = record[1].to_string();
         let basket_id: u64 = record[4].parse()?;
 
         // Insert basket_id if doesn't exist
         if !transactions.contains_key(&basket_id) {
             // Insert blank binary purchase vector
-            transactions.insert(basket_id, [0; 39]);
+            transactions.insert(basket_id, [0; SIZE]);
         }
     
         // Vector for given basket_id
@@ -49,10 +51,10 @@ fn make_vectors(path: &str) -> Result<HashMap<u64, [u8; 39]>, Box<dyn Error>> {
 }
 
 
-fn write_data(path: &str, map: HashMap<u64, [u8; 39]>) -> Result<(), Box<dyn Error>> {
+fn write_data(path: &str, map: HashMap<u64, [u8; SIZE]>) -> Result<(), Box<dyn Error>> {
     let mut writer = Writer::from_path(path)?;
     // Products for header
-    let products = import_unqiue("../data/output/unique_products.csv")?; // unique products
+    let products = import_unqiue(PRODUCTS)?; // unique products
     writer.write_record(products)?;
 
     for (_, val) in map.iter() {
@@ -71,14 +73,14 @@ fn write_data(path: &str, map: HashMap<u64, [u8; 39]>) -> Result<(), Box<dyn Err
 
 fn main() {
     // Dataset selection (Switch to False to use Product Name)
-    let _filepath = "../data/output/original_cleaned_no_fuel.csv";
+    let _filepath = "../data/output/original_cleaned_no_fuel.csv"; // Change this when changing datasets
     let start = Instant::now();
     let mut num_baskets = 0;
     match make_vectors(_filepath) {
         Ok(res) => {
             num_baskets = res.iter().len();
             println!("There are {} baskets", num_baskets);
-            write_data("../data/rust_vectors_product_category_no_fuel.csv", res);
+            write_data("../data/rust_vectors_product_category_no_fuel.csv", res); // Change this when changing datasets
         },
         Err(err) => println!("Error: {:?}", err)
     };
