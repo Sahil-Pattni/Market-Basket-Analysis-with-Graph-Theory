@@ -4,6 +4,7 @@ use std::collections::HashMap;
 use std::error::Error;
 use std::time::Instant;
 
+
 // Import list of unique products to maintain uniform ordering for vectors
 fn import_unqiue(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
     let mut reader = Reader::from_path(path)?;
@@ -15,23 +16,23 @@ fn import_unqiue(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
     Ok(v) // return with Result wrapper
 }
 
-fn make_vectors(path: &str) -> Result<HashMap<u64, [u8; 45]>, Box<dyn Error>> {
+fn make_vectors(path: &str) -> Result<HashMap<u64, [u8; 39]>, Box<dyn Error>> {
     // Get list of unique products
     let products = import_unqiue("../data/output/unique_products.csv")?; // unique products
     // Hashmap with each key being a basket ID
-    let mut transactions: HashMap<u64, [u8; 45]> = HashMap::new();
+    let mut transactions: HashMap<u64, [u8; 39]> = HashMap::new();
     // CSV Reader
     let mut reader = Reader::from_path(path)?;
 
     for result in reader.records() {
         let record = result?; // error check
-        let product = record[0].to_string();
+        let product = record[0].to_string(); // 0 for product, 1 for product_category
         let basket_id: u64 = record[4].parse()?;
 
         // Insert basket_id if doesn't exist
         if !transactions.contains_key(&basket_id) {
             // Insert blank binary purchase vector
-            transactions.insert(basket_id, [0; 45]);
+            transactions.insert(basket_id, [0; 39]);
         }
     
         // Vector for given basket_id
@@ -48,7 +49,7 @@ fn make_vectors(path: &str) -> Result<HashMap<u64, [u8; 45]>, Box<dyn Error>> {
 }
 
 
-fn write_data(path: &str, map: HashMap<u64, [u8; 45]>) -> Result<(), Box<dyn Error>> {
+fn write_data(path: &str, map: HashMap<u64, [u8; 39]>) -> Result<(), Box<dyn Error>> {
     let mut writer = Writer::from_path(path)?;
     // Products for header
     let products = import_unqiue("../data/output/unique_products.csv")?; // unique products
@@ -69,14 +70,15 @@ fn write_data(path: &str, map: HashMap<u64, [u8; 45]>) -> Result<(), Box<dyn Err
 
 
 fn main() {
-    let _filepath = "../data/output/original_cleaned.csv";
+    // Dataset selection (Switch to False to use Product Name)
+    let _filepath = "../data/output/original_cleaned_no_fuel.csv";
     let start = Instant::now();
     let mut num_baskets = 0;
     match make_vectors(_filepath) {
         Ok(res) => {
             num_baskets = res.iter().len();
             println!("There are {} baskets", num_baskets);
-            write_data("../data/rust_vectors_new.csv", res);
+            write_data("../data/rust_vectors_product_category_no_fuel.csv", res);
         },
         Err(err) => println!("Error: {:?}", err)
     };
