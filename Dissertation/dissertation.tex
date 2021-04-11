@@ -251,7 +251,7 @@ To illustrate the exponential growth of the number of rules given the length of 
 \caption{Number of Association Rules for an Itemset}
 \label{fig:numrules}
 \end{figure}
-Given this exponential growth in rules, we can conclude that iterating through all the itemsets, and so a valid solution might be apply the Apriori Algorithm to prune the itemsets. To understand how the algorithm works, the following three metrics must be considered:
+Given this exponential growth in rules ($O(3^n)$), we can conclude that iterating through all the itemsets, and so a valid solution might be apply the Apriori Algorithm to prune the itemsets. To understand how the algorithm works, the following three metrics must be considered:
 The support of a set of products is the fraction of transactions in which these set of products are present. For example,  for a list of transactions $T$, for the product $X$ where $T(X)$ denotes that the set of transactions in which X was present:
 \[
 \textit{support}(\{A\}) = \frac{T(A)}{T}
