@@ -1,13 +1,11 @@
 # --- Imports --- #
-from numba import jit, njit, vectorize
-from matplotlib.pylab import cm, axis
-from itertools import combinations, starmap
+from matplotlib.pylab import cm
+from itertools import combinations
 import matplotlib.pyplot as plt
 import markov_clustering as mc
 import networkx as nx
 import pandas as pd
 import numpy as np
-from timeit import timeit
 import time
 import math
 import csv
@@ -71,10 +69,10 @@ class MSTARM:
             if Q > best_score:
                 best_score = Q
                 best_clusters = clusters
-        self.clusters = np.array(best_clusters)
+        self.clusters = best_clusters
 
 
-    def __support(self, a, b) -> float:
+    def __support(self, a, b):
         
         def get_condition(x):
             # Checks if corresponding column for each element is 1
@@ -92,27 +90,15 @@ class MSTARM:
 
     
     def __get_rules(self, cluster) -> list:
-        # Excludes 1-1 rules
-        def exclude(rule):
-            a,b = rule
-            if len(a) == len(b):
-                if len(a) == 1:
-                    return False
-            return True
-
         rules = set()
         for set_size in range(1, len(cluster)):
             rules.update(combinations(cluster, set_size))
         rules = list(combinations(rules, 2))
-
-        # Filter out one to one rules if specified
-        if self.exclude_one_to_one:
-            rules = list(filter(exclude, rules))
         
         return rules
     
     
-    def __init__(self, filepath, debug_mode=False, exclude_one_to_one=False) -> None:
+    def __init__(self, filepath, debug_mode=True, exclude_one_to_one=False) -> None:
         self.exclude_one_to_one = exclude_one_to_one
         self.DEBUG_MODE = debug_mode
         self.df = pd.read_csv(filepath)
