@@ -1,6 +1,6 @@
 # --- Imports --- #
 from matplotlib.pylab import cm
-from itertools import combinations
+from itertools import combinations, permutations
 import matplotlib.pyplot as plt
 import markov_clustering as mc
 import networkx as nx
@@ -94,8 +94,20 @@ class MSTARM:
         for set_size in range(1, len(cluster)):
             rules.update(combinations(cluster, set_size))
         rules = list(combinations(rules, 2))
-        
-        return rules
+
+        pruned_rules = []
+        for rule in rules:
+            a,b = rule
+            if any(p in b for p in a):
+                continue
+            pruned_rules.append((a,b))
+            pruned_rules.append((b,a))
+        pruned_rules.sort(key=lambda x : len(x[0]))
+        return pruned_rules
+
+    
+    
+
     
     
     def __init__(self, filepath, debug_mode=True, exclude_one_to_one=False) -> None:
@@ -107,11 +119,84 @@ class MSTARM:
         self.G = nx.from_numpy_matrix(self.corr)
         self.MST = nx.minimum_spanning_tree(self.G)
         self.__generate_clusters()
-        self.__log('Successfully initialized instance with graphs.')
-        self.scanned_rules = set()
+
     
 
     # ------ PUBLIC FUNCTIONS ------ #
+
+    def generate_bicluster_rules(self, min_support=0.005, min_confidence=0.6):
+        items_by_cluster = {}
+        for index, cluster in enumerate(self.clusters):
+            items = set()
+            for set_size in range(1, len(cluster)):
+                items.update(combinations(cluster, set_size))
+            items_by_cluster[index] = items
+        
+        rules = []
+
+        cluster_combinations = list(combinations(list(range(len(self.clusters))), 2))
+
+        for comb in cluster_combinations:
+            a_items = items_by_cluster[comb[0]]
+            b_items = items_by_cluster[comb[1]]
+            
+            current_rules = [list(zip(i,b_items)) for i in permutations(a_items,len(b_items))]
+            rules.extend(current_rules)
+        
+        pruned_rules = []
+        pruned_count = 0
+        for rule in rules:
+            a, b = rule
+            if any(p in b for p in a):
+                pruned_count += 1
+                continue
+            pruned_rules.append((a,b))
+            pruned_rules.append((b,a))
+        
+        print(f'Removed {pruned_count:,} duplicates.')
+        
+        below_threshold = set()
+        final_rules = []
+        for rule in pruned_rules:
+            is_above_threshold = True
+            a,b = rule
+            a = tuple(sorted(a))
+            b = tuple(sorted(b))
+            ab = a + b
+
+            for x in below_threshold:
+                if set(x).issubset(ab):
+                    is_above_threshold = False
+                    break
+                    
+            if is_above_threshold:
+                support_a, support_b, support_ab = self.__support(a,b)
+                confidence = 0 if support_a == 0 else support_ab/support_a
+                lift = 0 if support_b == 0 else confidence/support_b
+
+                if support_a < min_support:
+                    below_threshold.add(a)
+                
+                if support_b < min_support:
+                    below_threshold.add(b)
+                
+                if confidence < min_confidence:
+                    continue
+
+                if support_ab < min_support:
+                    continue
+
+                a_str = tuple(self.names[i] for i in a)
+                b_str = tuple(self.names[i] for i in b)
+
+                final_rules.append(Rule(a_str, b_str, support_ab, confidence, lift))
+        
+        return final_rules
+
+
+        
+
+
 
     def plot_graph_and_mst(self, dim=10, output_filepath=None, layout_on_mst=False):
         """
@@ -190,7 +275,6 @@ class MSTARM:
         for cluster_num, cluster in enumerate(self.clusters):
             cluster_rules = self.__get_rules(cluster)
             # sort by size of antecedent, allowing the pruning of larger sets later.
-            cluster_rules.sort(key=lambda x: len(x[0]))
 
             
             for rule in cluster_rules:
@@ -225,13 +309,14 @@ class MSTARM:
                     if confidence < min_confidence:
                         continue
 
+                    if support_ab < min_support:
+                        continue
+
                     a_str = tuple(self.names[i] for i in a)
                     b_str = tuple(self.names[i] for i in b)
                     
                     new_rule = Rule(a_str, b_str, support_ab, confidence, lift)
                     self.rules.append(new_rule)
-
-            
         return self.rules
 
     
