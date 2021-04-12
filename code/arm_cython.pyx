@@ -40,6 +40,22 @@ cdef class Rule:
     def __str__(self):
         return f'{self.lhs} -> {self.rhs} | support: {self.support:.4f} | confidence: {self.confidence:.4f} | lift {self.lift:.4f}'
 
+    # --- Getter Methods --- #
+    def get_lhs(self):
+        return self.lhs
+    
+    def get_rhs(self):
+        return self.rhs
+    
+    def get_support(self):
+        return self.support
+    
+    def get_confidence(self):
+        return self.confidence
+    
+    def get_lift(self):
+        return self.lift
+
 
 # ----- GLOBAL VARIABLES ----- #
 cdef object df
@@ -124,12 +140,12 @@ cdef list __add_reverse(list ruleset):
         
 
 def __distance_function(x):
-    """ Vectorized Numpy matrix transformation function """
-    return np.sqrt(2*(1-x))
+    """ Vectorized Numpy matrix transformation function. """
+    return np.sqrt(2*(1-np.abs(x)))
 
 
 cdef int __factorial(int n):
-    """ Returns the factorial of a number """
+    """ Returns the factorial of a number. """
     cdef int i, ret
     ret = 1
 
