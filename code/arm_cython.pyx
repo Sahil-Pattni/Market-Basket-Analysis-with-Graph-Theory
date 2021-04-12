@@ -280,8 +280,9 @@ cpdef init(filepath, pickled=False, graph_exists=False, inflation=None):
 
     """
     global df, product_names, graph, minimum_spanning_tree
-    graph_path = f'data/output/graphs/{filepath.replace("/", "_")}_graph.pkl'
-    mst_path = f'data/output/graphs/{filepath.replace("/", "_")}_mst.pkl'
+    graph_path = f'data/output/graphs/{filepath.replace("/", "_")[:-4]}_graph.pkl'
+    mst_path = f'data/output/graphs/{filepath.replace("/", "_")[:-4]}_mst.pkl'
+
     df = pd.read_pickle(filepath) if pickled else pd.read_csv(filepath)
     product_names = list(df.columns)
     cdef object corr = __distance_function(np.array(df.corr()))
@@ -299,7 +300,9 @@ cpdef init(filepath, pickled=False, graph_exists=False, inflation=None):
     __generate_clusters(inflation=inflation)
 
 
-
+def get_clusters():
+    """ Returns the clusters with product names. """
+    return [[c, __get_names(c)] for c in clusters]
 
 cpdef generate_rules(double min_support=0.005, double min_confidence=0.6):
     """
@@ -382,3 +385,74 @@ cpdef list generate_bicluster_rules(min_support=0.005, min_confidence=0.6):
     
     rules = __add_reverse(rules)
     return __filter_rules(rules, min_support=min_support, min_confidence=min_confidence)
+
+
+def plot_graph_and_mst(dim=10, output_filepath=None, layout_on_mst=False):
+    """
+    Plots the complete graph and minimum spanning tree.
+
+    Args:
+        dim (`int`): The dimension for each block in the graph (Default: 10).
+        output_filepath (`str`): The filepath to save the plot image to, if specified (Default: None).
+        layout_on_mst (`bool`): Sets the layout based on the MST if `True`, on the graph otherwise (Default: `False`).
+
+    """
+    # Plot layout
+    nrows, ncols = 1,2
+    _, ax = plt.subplots(nrows=nrows, ncols=ncols, figsize=(dim*ncols, dim*nrows))
+
+    # Set Titles
+    ax[0].set_title("Complete Graph", fontsize=2*dim)
+    ax[1].set_title("Minimum Spanning Tree", fontsize=2*dim)
+
+    # Fixed positional layout for nodes
+    pos = nx.spring_layout(minimum_spanning_tree) if layout_on_mst else nx.spring_layout(graph)
+
+    # Collection of plotting arguments common amongst the two draw functions
+    kwargs = dict(pos=pos, with_labels=True, node_color='c', node_size=400, edge_color='0.25', font_size=1.5*dim)
+
+    # Plot full graph
+    nx.draw(graph, ax=ax[0], width=1, **kwargs)
+    # Plot MST
+    nx.draw(minimum_spanning_tree, ax=ax[1], width=2, **kwargs)
+
+    if output_filepath is not None:
+        plt.savefig(output_filepath)
+    
+    plt.show()
+
+
+def plot_mst_clusters(dim=10, output_filepath=None):
+        """
+        Plots the clustered and unclustered MSTs.
+
+        Args:
+            dim (`int`): The dimension for each block in the graph (Default: 10).
+            output_filepath (`str`): The filepath to save the plot image to, if specified (Default: None).
+        
+        """
+        # Plot layout
+        nrows, ncols = 1,2
+        _, ax = plt.subplots(nrows=nrows, ncols=ncols, figsize=(dim*ncols, dim*nrows))
+
+        # Set titles
+        ax[0].set_title("Minimum Spanning Tree", fontsize=20)
+        ax[1].set_title("Markov Clustered MST", fontsize=20)
+
+        # Fixed positional layout for nodes
+        pos = nx.spring_layout(minimum_spanning_tree)
+
+        # Collection of plotting arguments common amongst the two draw functions
+        kwargs= dict(pos=pos, with_labels=True,node_size=400, edge_color='0.25', font_size=15)
+
+        # map node to cluster id for colors
+        cluster_map = {node: i for i, cluster in enumerate(clusters) for node in cluster}
+        colors = [cluster_map[i] for i in range(len(minimum_spanning_tree.nodes()))]
+
+        # Plot unclustered MST
+        nx.draw(minimum_spanning_tree, ax=ax[0], node_color='c', width=1, **kwargs)
+        # Plot clustered MST
+        nx.draw(minimum_spanning_tree, node_color=colors, cmap=cm.tab20, ax=ax[1], width=2, **kwargs)
+
+        if output_filepath is not None:
+            plt.savefig(output_filepath)
