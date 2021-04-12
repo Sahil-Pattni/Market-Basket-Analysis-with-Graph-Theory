@@ -3,7 +3,7 @@ import csv
 import time
 import pandas as pd
 
-df = pd.read_csv('data/rust_vectors.csv')
+df = pd.read_pickle('data/rust_vectors_product_category_no_fuel.pkl')
 columns = df.columns
 purchases = []
 start = time.time()
@@ -22,6 +22,6 @@ print(f'Finished getting purchases in {end/60:,.2f} minutes.')
 estimated_time = (end/limit) * df.shape[0] 
 print(f'Estimated completion time for full dataset is {estimated_time/60:.2f} minutes')
 
-with open('data/purchases.csv', 'w+') as f:
+with open('data/purchases_no_fuel.csv', 'w+') as f:
     writer = csv.writer(f)
     writer.writerows(purchases)
