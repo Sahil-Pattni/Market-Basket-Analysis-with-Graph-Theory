@@ -5,4 +5,4 @@ setup(
     ext_modules = cythonize("arm_cython.pyx")
 )
 
-# NOTE: To execute successfully, run as `python setup.py build_ext --inplace`
+# NOTE: Run `python setup.py build_ext --inplace`
