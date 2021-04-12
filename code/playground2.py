@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     
     start = time.time()
-    cy.init(csv_filepath, pickled=False, graph_exists=False)
+    cy.init(csv_filepath, pickled=False, graph_exists=False, inflation=1.6)
     rules = cy.generate_bicluster_rules(min_support=min_support, min_confidence=min_confidence)
     cy_time = time.time() - start
     print(f'Cython: {cy_time:,.4f} seconds. {len(rules):,} rules. ')
