@@ -15,6 +15,7 @@
 code/data/
 Journals/
 saved_websites/
+code/build/
 code/rust_backend/target
 .vscode/
 __pycache__/
