@@ -41,12 +41,13 @@ cdef class Rule:
         return f'{self.lhs} -> {self.rhs} | support: {self.support:.4f} | confidence: {self.confidence:.4f} | lift {self.lift:.4f}'
 
 
-# --- GLOBAL VARIABLES --- #
+# ----- GLOBAL VARIABLES ----- #
 cdef object df
 cdef list product_names, clusters
 cdef object graph, minimum_spanning_tree
 
 
+# ----- PRIVATE FUNCTIONS ----- # 
 cdef list __filter_rules(ruleset, min_support, min_confidence):
     """
     Filters out rules that do not satisfy specified parameters.
@@ -95,7 +96,7 @@ cdef list __filter_rules(ruleset, min_support, min_confidence):
             if support_ab < min_support:
                 continue
             
-            rules.append(Rule(get_names(a), get_names(b), support_ab, confidence, lift))
+            rules.append(Rule(__get_names(a), __get_names(b), support_ab, confidence, lift))
 
     return rules
 
@@ -119,39 +120,6 @@ cdef list __add_reverse(list ruleset):
         rules.append((b,a))
     return rules
 
-
-cpdef list generate_bicluster_rules(min_support=0.005, min_confidence=0.6):
-    """
-    Generates a list of bi-cluster rules, such that the antecedent and consequent of the rule
-    originate from different clusters.
-
-    Args:
-        min_support (`double`): The minimum support required for the rule to be added (Default: 0.005).
-        min_confidence (`double`): The minimum confidence required to rule to be added (Default: 0.6).
-    
-    Returns:
-        rules (`list`): List of rules, each an instance of the `Rule` class.
-
-    """
-    cdef dict items_by_cluster = {}
-    cdef set items
-    for index, cluster in enumerate(clusters):
-        items = set()
-        for set_size in range(1, len(cluster)):
-            items.update(combinations(cluster, set_size))
-        items_by_cluster[index] = items
-    
-    cdef list rules = []
-    cdef list cluster_combinations = list(combinations(list(range(len(clusters))), 2))
-
-    for comb in cluster_combinations:
-        a_items = items_by_cluster[comb[0]]
-        b_items = items_by_cluster[comb[1]]
-        current_rules = list(product(a_items, b_items))
-        rules.extend(current_rules)
-    
-    rules = __add_reverse(rules)
-    return __filter_rules(rules, min_support=min_support, min_confidence=min_confidence)
 
         
 
@@ -189,7 +157,7 @@ cdef int __num_rule(int d):
 
 
 def __support(a, b):
-    """"
+    """
     Returns the proportion of transactions where the itemset was present, 
     for `a`, `b` and `a+b`.
 
@@ -202,7 +170,7 @@ def __support(a, b):
         b_filter (`double`): The proportion of transactions where items in `b` were present.
         ab_filter (`double`): The proportion of transactions where items in `a` and `b` were present.
 
-    """"
+    """
     def get_condition(x):
         """
         Returns a conditional statement for `pandas` to filter the 
@@ -287,8 +255,17 @@ def __generate_clusters(inflation=None):
                 best_score = modularity
                 best_clusters = current_clusters
         clusters = best_clusters
+    
 
 
+cdef __get_names(itemset):
+    """
+    Returns a tuple with the names associated with the items in an itemset.
+    """
+    return tuple(product_names[item] for item in itemset)
+
+
+# ----- PUBLIC FUNCTIONS ----- #
 
 cpdef init(filepath, pickled=False, graph_exists=False, inflation=None):
     """
@@ -323,11 +300,6 @@ cpdef init(filepath, pickled=False, graph_exists=False, inflation=None):
 
 
 
-cdef get_names(itemset):
-    """
-    Returns a tuple with the names associated with the items in an itemset.
-    """
-    return tuple(product_names[item] for item in itemset)
 
 cpdef generate_rules(double min_support=0.005, double min_confidence=0.6):
     """
@@ -374,7 +346,39 @@ cpdef generate_rules(double min_support=0.005, double min_confidence=0.6):
                 if confidence < min_confidence:
                     continue
                 
-                rules.append(Rule(get_names(a), get_names(b), support_ab, confidence, lift))
+                rules.append(Rule(__get_names(a), __get_names(b), support_ab, confidence, lift))
     return rules
 
 
+cpdef list generate_bicluster_rules(min_support=0.005, min_confidence=0.6):
+    """
+    Generates a list of bi-cluster rules, such that the antecedent and consequent of the rule
+    originate from different clusters.
+
+    Args:
+        min_support (`double`): The minimum support required for the rule to be added (Default: 0.005).
+        min_confidence (`double`): The minimum confidence required to rule to be added (Default: 0.6).
+    
+    Returns:
+        rules (`list`): List of rules, each an instance of the `Rule` class.
+
+    """
+    cdef dict items_by_cluster = {}
+    cdef set items
+    for index, cluster in enumerate(clusters):
+        items = set()
+        for set_size in range(1, len(cluster)):
+            items.update(combinations(cluster, set_size))
+        items_by_cluster[index] = items
+    
+    cdef list rules = []
+    cdef list cluster_combinations = list(combinations(list(range(len(clusters))), 2))
+
+    for comb in cluster_combinations:
+        a_items = items_by_cluster[comb[0]]
+        b_items = items_by_cluster[comb[1]]
+        current_rules = list(product(a_items, b_items))
+        rules.extend(current_rules)
+    
+    rules = __add_reverse(rules)
+    return __filter_rules(rules, min_support=min_support, min_confidence=min_confidence)
