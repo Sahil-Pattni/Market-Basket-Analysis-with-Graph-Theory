@@ -275,6 +275,7 @@ def __generate_clusters(inflation=None):
     
 
 cpdef __generate_itemsets_by_cluster():
+    """ Generates all possible itemsets for each cluster. """
     global itemsets_by_cluster
     cdef set items
     for index, cluster in enumerate(clusters):
@@ -330,6 +331,56 @@ cpdef init(filepath, pickled=False, graph_exists=False, inflation=None):
 def get_clusters():
     """ Returns the clusters with product names. """
     return [[c, __get_names(c)] for c in clusters]
+
+
+cpdef generate_intracluster_rules(double min_support=0.005, double min_confidence=0.6):
+    """
+    Generates the association rules from within a cluster for each cluster.
+
+    Args:
+        min_support (`double`): The minimum support required for a rule.
+        min_confidence (`double`): The minimum confidence required for a rule.
+    
+    Returns:
+        rules (`list`): A list of association rules, where each item is an instance of the `Rule` class.
+    """
+    cdef set below_threshold = set()
+    cdef list rules = []
+    cdef tuple a, b
+    cdef double support_a, support_b, support_ab, confidence, lift
+    cdef list ruleset
+
+    for cluster, itemsets in itemsets_by_cluster.items():
+        ruleset = list(combinations(itemsets, 2))
+        for rule in ruleset:
+            is_above_threshold = True
+            atup, btup = rule
+            a = tuple(sorted(atup))
+            b = tuple(sorted(btup))
+            ab = a + b
+
+            for x in below_threshold:
+                if set(x).issubset(ab):
+                    is_above_threshold = False
+                    break
+            
+            if is_above_threshold:
+                support_a, support_b, support_ab = __support(a, b)
+                confidence = 0 if support_a == 0 else support_ab / support_a
+                lift = 0 if support_b == 0 else confidence / support_b
+
+                if support_a < min_support:
+                    below_threshold.add(a)
+                
+                if support_b < min_support:
+                    below_threshold.add(b)
+
+                if confidence < min_confidence:
+                    continue
+                
+                rules.append(Rule(__get_names(a), __get_names(b), support_ab, confidence, lift))
+    return rules
+
 
 cpdef generate_rules(double min_support=0.005, double min_confidence=0.6):
     """
