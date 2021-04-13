@@ -20,6 +20,44 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{longtable}
 
+\usepackage{listings}                                          % Code Syntax Formatting and Highlighting
+\usepackage{xcolor}                                            % Color Highlighting Rules
+
+
+\addbibresource{references.bib}
+
+
+% ------------------------------------------------------------------------------
+% Listings Color Highlighting Rules
+% ------------------------------------------------------------------------------
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{red},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    emph={cpdef, cdef},
+    emphstyle={\color{red}}
+}
+
+\lstset{style=mystyle}
+
 
 % Chapter Title Whitespace Modifier
 \usepackage{titlesec}
@@ -27,9 +65,6 @@
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{1em}{\Huge}   
 \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 
-
-
-\addbibresource{references.bib}
 
 % ------------------------------------------------------------------------------
 % Definitions (do not change this)
@@ -277,7 +312,7 @@ The Apriori principle states that \textit{all subsets of a frequent itemset must
 
 \begin{figure}[H]\centering
 \includegraphics[scale=0.5]{apriori-prune}	
-\caption{Pruning Infrequent Rules \cite{apriori-prune}}
+\caption{Pruning Infrequent Rules (Source: \cite{apriori-prune})}
 \label{fig:prune}
 \end{figure}
 
@@ -340,7 +375,7 @@ In conclusion, \textbf{R. Aggarwal et al.} introduced a formal system for associ
 All the research conducted above has served as the inspiration for this project.
 
 
-\chapter{My Work (Rename this)}
+\chapter{Methodology}
 
 \section{Dataset Pre-Processing}
 The dataset used in this study is the transactional sales data from a chain of Brazilian gas-station stores \cite{data_source}.
@@ -377,7 +412,7 @@ The dataset was then transformed such that each transaction was represented by a
 \end{figure}
 The metrics used to assess the association rules - support, lift and confidence - are based on the proportional presence of a given itemset in the transactions. Since our dataset is from a gas-station store chain, fuel products dominate the transactional presence by a significant factor. Figure \ref{fig:cat_dist} highlights the disparity between the presence of \textit{fuel} products and the others, with \textit{fuel} being present in $99.28\%$ of all transactions. To avoid the association rules being dominated by the \textit{fuel} category - which should inherently understood to be a key product for gas stations - the fuel category was purged from the dataset.
 
-Using the Pearson's Correlation Coefficient (Equation \ref{eq:pearson}), a correlation matrix was derived from the binary purchase vector dataset. In this instance - because the correlation is of binary variables - the Pearson's Correlation Coefficient is equivalent to the Phi Coefficient ($\phi$) \cite{phi}. The resulting correlation matrix is also diagonally symmetrical (i.e. $\phi_{ij} = \phi_{ji}$), and therefore the illustration of the correlation matrix in Figure \ref{fig:correlation} displays only those values that are below the diagonal.
+Using the Pearson's Correlation Coefficient \cite{pearson} (Equation \ref{eq:pearson}), a correlation matrix was derived from the binary purchase vector dataset. In this instance - because the correlation is of binary variables - the Pearson's Correlation Coefficient is equivalent to the Phi Coefficient ($\phi$) \cite{phi}. The resulting correlation matrix is also diagonally symmetrical (i.e. $\phi_{ij} = \phi_{ji}$), and therefore the illustration of the correlation matrix in Figure \ref{fig:correlation} displays only those values that are below the diagonal.
 \begin{equation}
 \label{eq:pearson}
 r = \frac{ n(\sum xy) - (\sum x) (\sum y)} { \sqrt{ [n\sum x^2 - (\sum x)^2] [n \sum y^2 - (\sum y)^2] } }
@@ -405,31 +440,77 @@ d_{ij} = \sqrt{2(1-|\phi_{ij}|)}
 \label{fig:distance_function}
 \caption{The effect of the distance function $\sqrt{2(1-|x|)}$}
 \end{figure}
-With the correlation matrix transformed using Equation \ref{eq:distance_function}, a graph $G = (V,E)$ was generated such that the vertices $V$ represent the product categories, and the edges $E$ the associations between them. Employing Kruskal's algorithm, a minimum spanning tree was then extracted from this graph. Both the complete graph and the MST are illustrated in Figure \ref{fig:graph_mst}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.31]{graph_and_mst_no_fuel}
+\includegraphics[scale=0.32]{graph_and_mst_no_fuel}
 \caption{Product Category Graph and MST}
 \label{fig:graph_mst}
 \end{figure}
+With the correlation matrix transformed using Equation \ref{eq:distance_function}, a graph $G = (V,E)$ was generated such that the vertices $V$ represent the product categories, and the edges $E$ the associations between them. Employing Kruskal's algorithm, a minimum spanning tree was then extracted from this graph. Both the complete graph and the MST are illustrated in Figure \ref{fig:graph_mst}. The value of each node is an integer, which corresponds with the index of the product category in the binary purchase vector dataset. The length of each edge is directly proportionate to its value, such that the greater the value, the greater the length of the edge.
+
+
 
 \section{Markov Clustering}
-The MST was then clustered using the Markov Clustering algorithm. To identify the most modular clustering configuration (modularity being the minimality of connectedness between dense clusters), an array of inflation scores between $1.5$ and $2.5$ (inclusive) were tested at increments of $0.1$, leading us to determine that an inflation score of $1.6$ resulted in the most optimal modularity. The results of this clustering are illustrated in Figure \ref{fig:clustered} (note that while the disposition of the nodes is different from that illustrated in Figure \ref{fig:graph_mst}, the values of all nodes and edges are the same). Figure \ref{fig:cluster_named} illustrates the product categories in each cluster, color-coded in accordance with the graphs in Figure \ref{fig:clustered}.
-
+The MST was then clustered using the Markov Clustering algorithm. To identify the most modular clustering configuration (modularity being the minimality of connectedness between dense clusters), an array of inflation scores between $1.5$ and $2.5$ (inclusive) were tested at increments of $0.1$, leading us to determine that an inflation score of $1.6$ resulted in the most optimal modularity. The Markov Clustering was performed using this inflation score, and the clustering results are illustrated in Figure \ref{fig:clustered} (note that while the disposition of the nodes is different from that illustrated in Figure \ref{fig:graph_mst}, the values of all nodes and edges are the same). 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.31]{mst_clustered_no_fuel}
+\includegraphics[scale=0.32]{mst_clustered_no_fuel2}
 \caption{MST before and after Markov Clustering}
 \label{fig:clustered}
 \end{figure}
+The Markov Clustering algorithm segmented the nodes into 8 distinct clusters.
+Figure \ref{fig:cluster_named} illustrates the names of the product categories in each cluster, color-coded in accordance with the graphs in Figure \ref{fig:clustered}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.31]{cluster_named}
+\includegraphics[scale=0.25]{cluster_named}
 \caption{Product categories by cluster}
 \label{fig:cluster_named}
 \end{figure}
+
+\section{Rule Generation}
+\subsection{Itemset Generation}
+For every cluster identified, all possible itemsets are generated for the $n$ product categories in a given cluster such that the length of the itemsets range from $1$ to $n-1$. Listing \ref{lst:itemset_generation} is the excerpt of code that generates all possible itemsets for a cluster.
+
+\begin{lstlisting}[language=Python, caption=Cluster Itemset Generation, label=lst:itemset_generation]
+# Source: arm_cython.pyx
+from itertools import combinations
+...
+cpdef __generate_itemsets_by_cluster():
+    global itemsets_by_cluster
+    cdef set items
+    for index, cluster in enumerate(clusters):
+        items = set()
+        for set_size in range(1, len(cluster)):
+            items.update(combinations(cluster, set_size))
+        itemsets_by_cluster[index] = items
+\end{lstlisting}
+Once the minimum spanning tree has been successfully clustered, association rules can be generated from the clusters in two distinct ways.
+\subsection{Bi-Cluster Rule Generation}
+Bi-cluster rules are those where the antecedent and consequent originate from distinct and separate clusters. All possible bi-cluster permutations $^nP_2$ are calculated for $n$ clusters. Possible association rules are then generated for these combinations of clusters.
+
+
+\begin{lstlisting}[language=Python, caption=Cluster Itemset Generation, label=lst:bi_cluster]
+# Source: arm_cython.pyx
+cpdef list generate_bicluster_rules(min_support=0.005, min_confidence=0.6):
+    cdef list rules = []
+    cdef list cluster_combinations = list(combinations(list(range(len(clusters))), 2))
+
+    for comb in cluster_combinations:
+        a_items = itemsets_by_cluster[comb[0]]
+        b_items = itemsets_by_cluster[comb[1]]
+        current_rules = list(product(a_items, b_items))
+        rules.extend(current_rules)
+    
+    rules = __add_reverse(rules)
+    return __filter_rules(rules, min_support=min_support, min_confidence=min_confidence)
+\end{lstlisting}
+Listing \ref{lst:bi_cluster} is the excerpt of code used to generate all the bi-cluster rules. On line $4$, we have used the \texttt{combinations} function instead of \texttt{permutations}. 
+
+If we were to use permutations, we would have to generate each itemset $i$ such that $(\{i \in A\} \rightarrow \{i \in B\})$ for clusters $A$ and $B$, and then later $(\{i \in B\} \rightarrow \{i \in B\})$, which would essentially be the same combinations in a different configuration. Instead, by using \texttt{combinations} on line $4$ of Listing \ref{lst:bi_cluster}, we only compute the former, and then re-add the rule to the ruleset with the antecedent and consequent swapped (line $12$). This method essentially reduces our computational time by half.
+\subsection{Intra-Cluster Rule Generation}
+Intra-cluster rules are those where the both antecedent and consequent originate from the same cluster.
 
 
 
