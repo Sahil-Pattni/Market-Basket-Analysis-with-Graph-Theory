@@ -215,35 +215,36 @@ def __support(a, b):
     return a_filter, b_filter, ab_filter
 
 
-def __get_rules(cluster):
+
+cdef int sort_key(tuple x):
+    """ Key to sort rules by length of antecedent. """
+    return len(x[0])
+
+
+cdef list __prune_rules(ruleset):
     """
-    Generates potential association rules from items within a specified cluster.
+    Prunes rules so that there is no intersection between the antecedent and consequent.
 
     Args:
-        cluster (`tuple`): An itemset such that all children belong to a single cluster.
+        ruleset (`list`): Ruleset.
     
     Returns:
-        pruned_rules (`list`): A list of tuples, such that each tuple represents the antecedent and consequent of a rule.
-
+        pruned (`list`): Ruleset.
     """
-    rules = []
-    for set_size in range(1, len(cluster)):
-        rules.extend(list(combinations(cluster, set_size)))
-   
-    rules = list(combinations(rules, 2))
-
-    # Prune where elements are in both antecedent and consequent
-    pruned_rules = []
-    for rule in rules:
+    cdef list pruned = []
+    cdef tuple a, b
+    for rule in ruleset:
         a, b = rule
-        if any(p in b for p in a):
-            continue
-        pruned_rules.append((a,b))
-        pruned_rules.append((b,a))
-
-    pruned_rules.sort(key=lambda x: len(x[0]))
-    return pruned_rules
-
+        is_valid = True
+        for item in a:
+            if item in b:
+                is_valid = False
+                break
+        if is_valid:
+            pruned.append(rule)
+    
+    pruned.sort(key=sort_key)
+    return pruned
 
 
 def __generate_clusters(inflation=None):
@@ -352,6 +353,7 @@ cpdef generate_intracluster_rules(double min_support=0.005, double min_confidenc
 
     for cluster, itemsets in itemsets_by_cluster.items():
         ruleset = list(combinations(itemsets, 2))
+        ruleset = __prune_rules(ruleset)
         for rule in ruleset:
             is_above_threshold = True
             atup, btup = rule
@@ -380,57 +382,6 @@ cpdef generate_intracluster_rules(double min_support=0.005, double min_confidenc
                 
                 rules.append(Rule(__get_names(a), __get_names(b), support_ab, confidence, lift))
     return rules
-
-
-cpdef generate_rules(double min_support=0.005, double min_confidence=0.6):
-    """
-    Generates the association rules from within all clusters.
-
-    Args:
-        min_support (`double`): The minimum support required for a rule.
-        min_confidence (`double`): The minimum confidence required for a rule.
-    
-    Returns:
-        rules (`list`): A list of association rules, where each item is an instance of the `Rule` class.
-    """
-    # TODO: Use dict from bi-cluster rule function.
-    cdef set below_threshold = set()
-    cdef list rules = []
-    cdef tuple a, b
-    cdef double support_a, support_b, support_ab, confidence, lift
-
-    for cluster in clusters:
-        cluster_rules = __get_rules(cluster)
-
-        for rule in cluster_rules:
-            is_above_threshold = True
-            atup, btup = rule
-            a = tuple(sorted(atup))
-            b = tuple(sorted(btup))
-            ab = a + b
-
-            for x in below_threshold:
-                if set(x).issubset(ab):
-                    is_above_threshold = False
-                    break
-            
-            if is_above_threshold:
-                support_a, support_b, support_ab = __support(a, b)
-                confidence = 0 if support_a == 0 else support_ab / support_a
-                lift = 0 if support_b == 0 else confidence / support_b
-
-                if support_a < min_support:
-                    below_threshold.add(a)
-                
-                if support_b < min_support:
-                    below_threshold.add(b)
-
-                if confidence < min_confidence:
-                    continue
-                
-                rules.append(Rule(__get_names(a), __get_names(b), support_ab, confidence, lift))
-    return rules
-
 
 
 cpdef list generate_bicluster_rules(min_support=0.005, min_confidence=0.6):
