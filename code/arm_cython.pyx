@@ -61,6 +61,7 @@ cdef class Rule:
 cdef object df
 cdef list product_names, clusters
 cdef object graph, minimum_spanning_tree
+cdef dict itemsets_by_cluster = {}
 
 
 # ----- PRIVATE FUNCTIONS ----- # 
@@ -273,6 +274,15 @@ def __generate_clusters(inflation=None):
         clusters = best_clusters
     
 
+cpdef __generate_itemsets_by_cluster():
+    global itemsets_by_cluster
+    cdef set items
+    for index, cluster in enumerate(clusters):
+        items = set()
+        for set_size in range(1, len(cluster)):
+            items.update(combinations(cluster, set_size))
+        itemsets_by_cluster[index] = items
+
 
 cdef __get_names(itemset):
     """
@@ -314,6 +324,7 @@ cpdef init(filepath, pickled=False, graph_exists=False, inflation=None):
         
     
     __generate_clusters(inflation=inflation)
+    __generate_itemsets_by_cluster()
 
 
 def get_clusters():
@@ -331,6 +342,7 @@ cpdef generate_rules(double min_support=0.005, double min_confidence=0.6):
     Returns:
         rules (`list`): A list of association rules, where each item is an instance of the `Rule` class.
     """
+    # TODO: Use dict from bi-cluster rule function.
     cdef set below_threshold = set()
     cdef list rules = []
     cdef tuple a, b
@@ -369,6 +381,7 @@ cpdef generate_rules(double min_support=0.005, double min_confidence=0.6):
     return rules
 
 
+
 cpdef list generate_bicluster_rules(min_support=0.005, min_confidence=0.6):
     """
     Generates a list of bi-cluster rules, such that the antecedent and consequent of the rule
@@ -382,24 +395,16 @@ cpdef list generate_bicluster_rules(min_support=0.005, min_confidence=0.6):
         rules (`list`): List of rules, each an instance of the `Rule` class.
 
     """
-    cdef dict items_by_cluster = {}
-    cdef set items
-    for index, cluster in enumerate(clusters):
-        items = set()
-        for set_size in range(1, len(cluster)):
-            items.update(combinations(cluster, set_size))
-        items_by_cluster[index] = items
-    
     cdef list rules = []
     cdef list cluster_combinations = list(combinations(list(range(len(clusters))), 2))
 
     for comb in cluster_combinations:
-        a_items = items_by_cluster[comb[0]]
-        b_items = items_by_cluster[comb[1]]
+        a_items = itemsets_by_cluster[comb[0]]
+        b_items = itemsets_by_cluster[comb[1]]
         current_rules = list(product(a_items, b_items))
         rules.extend(current_rules)
     
-    rules = __add_reverse(rules)
+    rules = __add_reverse(rules) # More efficient than calling permutations() in `cluster_combinations` above.
     return __filter_rules(rules, min_support=min_support, min_confidence=min_confidence)
 
 
