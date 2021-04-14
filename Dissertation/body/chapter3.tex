@@ -1,8 +1,8 @@
 
-\chapter{Methodology}
+\chapter{Rule Generation via MSTs}
 
 \section{Dataset Pre-Processing}
-The dataset used in this study is the transactional sales data from a chain of Brazilian gas-station stores \cite{data_source}.
+The dataset used in this study is the transactional sales data from a chain of Brazilian gas-station stores \pcite{data_source}.
 Each row in the dataset represents the purchase of a specific product as part of a transaction - and as such, each row corresponds to the following columns:
 \begin{itemize}
 \item Company Code
@@ -36,11 +36,14 @@ The dataset was then transformed such that each transaction was represented by a
 \end{figure}
 The metrics used to assess the association rules - support, lift and confidence - are based on the proportional presence of a given itemset in the transactions. Since our dataset is from a gas-station store chain, fuel products dominate the transactional presence by a significant factor. Figure \ref{fig:cat_dist} highlights the disparity between the presence of \textit{fuel} products and the others, with \textit{fuel} being present in $99.28\%$ of all transactions. To avoid the association rules being dominated by the \textit{fuel} category - which should inherently understood to be a key product for gas stations - the fuel category was purged from the dataset.
 
-Using the Pearson's Correlation Coefficient \cite{pearson} (Equation \ref{eq:pearson}), a correlation matrix was derived from the binary purchase vector dataset. In this instance - because the correlation is of binary variables - the Pearson's Correlation Coefficient is equivalent to the Phi Coefficient ($\phi$) \cite{phi}. The resulting correlation matrix is also diagonally symmetrical (i.e. $\phi_{ij} = \phi_{ji}$), and therefore the illustration of the correlation matrix in Figure \ref{fig:correlation} displays only those values that are below the diagonal.
-\begin{equation}
-\label{eq:pearson}
-r = \frac{ n(\sum xy) - (\sum x) (\sum y)} { \sqrt{ [n\sum x^2 - (\sum x)^2] [n \sum y^2 - (\sum y)^2] } }
-\end{equation}
+%Using the Pearson's Correlation Coefficient \pcite{pearson} (Equation \ref{eq:pearson}), a correlation matrix was derived from the binary purchase vector dataset. In this instance - because the correlation is of binary variables - the Pearson's Correlation Coefficient is equivalent to the Phi Coefficient ($\phi$) \pcite{phi}. The resulting correlation matrix is also diagonally symmetrical (i.e. $\phi_{ij} = \phi_{ji}$), and therefore the illustration of the correlation matrix in Figure \ref{fig:correlation} displays only those values that are below the diagonal.
+%\begin{multline}
+%\label{eq:pearson}
+%r = \frac{ n(\sum xy) - (\sum x) (\sum y)} { \sqrt{ [n\sum x^2 - (\sum x)^2] [n \sum y^2 - (\sum y)^2] } }
+%\end{multline}
+
+Following the methodology described in Section \ref{sec:binary_purchase_vectors}, a correlation matrix was computed from the binary purchase vectors using the Pearson's Correlation Coefficient. Since the correlations are of binary variables again, the correlation score is equivalent to the Phi-Coefficient $\phi$. Figure \ref{fig:correlation} illustrates the correlation matrix. Only the values below the diagonal have been illustrated as the matrix is diagonally symmetrical.
+
 
 
 
@@ -52,7 +55,7 @@ r = \frac{ n(\sum xy) - (\sum x) (\sum y)} { \sqrt{ [n\sum x^2 - (\sum x)^2] [n 
 \label{fig:correlation}
 \end{figure}
 
-A minimum spanning tree is a graph composed of the \textit{shortest} path connecting all vertices, and therefore the values in the correlation matrix would need to be transformed via a function such that the higher the correlation value, the lower the output value. This would allow the MST to capture the strongest associations between the product categories. As used by \textbf{M. A. Valle et al.} in \cite{mst_paper}, the distance function (Equation \ref{eq:distance_function}  was used to make this transformation - where $\phi_{ij}$ refers to the correlation value for two given product categories $i$ and $j$ in Figure \ref{fig:correlation}). However, whereas \textbf{M. A. Valle et al.} left their $\phi_{ij}$ unaltered, we have converted it to an absolute value (i.e. $|\phi_{ij}|$). The reason behind this is to capture the strongest relationships between product categories, positive and negative alike. By leaving the value unaltered, the MST would not capture strong negative associations as they would have the highest weights after the distance function was applied. Figure \ref{fig:distance_function} illustrates the effect of this function, where the stronger the correlation, the lower the distance function's output. The figure also demonstrates that because the Pearson's Correlation Coefficient is bound to the interval $[-1,1]$, the distance function's output is therefore bound to the interval $[0,\sqrt{2}]$. 
+A minimum spanning tree is a graph composed of the \textit{shortest} path connecting all vertices, and therefore the values in the correlation matrix would need to be transformed via a function such that the higher the correlation value, the lower the output value. This would allow the MST to capture the strongest associations between the product categories. As used by \textbf{M. A. Valle et al.} in \pcite{mst_paper}, the distance function (Equation \ref{eq:distance_function}  was used to make this transformation - where $\phi_{ij}$ refers to the correlation value for two given product categories $i$ and $j$ in Figure \ref{fig:correlation}). However, whereas \textbf{M. A. Valle et al.} left their $\phi_{ij}$ unaltered, we have converted it to an absolute value (i.e. $|\phi_{ij}|$). The reason behind this is to capture the strongest relationships between product categories, positive and negative alike. By leaving the value unaltered, the MST would not capture strong negative associations as they would have the highest weights after the distance function was applied. Figure \ref{fig:distance_function} illustrates the effect of this function, where the stronger the correlation, the lower the distance function's output. The figure also demonstrates that because the Pearson's Correlation Coefficient is bound to the interval $[-1,1]$, the distance function's output is therefore bound to the interval $[0,\sqrt{2}]$. 
 \begin{equation}
 \label{eq:distance_function}
 d_{ij} = \sqrt{2(1-|\phi_{ij}|)}
@@ -142,4 +145,4 @@ Intra-cluster rules are those where the both antecedent and consequent originate
 \subsection{Rule Pruning}
 As described in Section \ref{mba_define}, the \textit{anti-monotone property of support} implies that the support for a subset of a given set should be equal to or greater than the support of the set: \[\text{support}(\{x,y\}) \geq \text{support}(\{x,y,z\})\]
 To take advantage of this, we first sort our rules in ascending order by the number of elements in the antecedent. When iterating through the potential rules, if either the antecedent or consequent is found to have a support score below the pre-defined minimum tolerance, the itemsets are added to a set \texttt{below\_threshold}. Any future rules iterated are then cross-checked against \texttt{below\_threshold}, 
-and if it is found that any set in \texttt{below\_threshold} is a subsset of the rule, the rule is discarded as we know that its support is below our minimum tolerance. This allows us to avoid computing the support for several rules - the time complexity of which $O(n)$ at worst, thereby significantly reducing computation time.
+and if it is found that any set in \texttt{below\_threshold} is a subsset of the rule, the rule is discarded as we know that its support is below our minimum tolerance. This allows us to avoid computing the support for several rules - the time complexity of which $O(n)$ at worst, thereby significantly reducing computation time. For both the \textit{bi-cluster} and \textit{intra-cluster} rule generation, the rules are pruned accordingly, and those that satisfy the thresholds specified are returned.

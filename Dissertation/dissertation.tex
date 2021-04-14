@@ -10,7 +10,14 @@
 \usepackage{amsmath,amsfonts,amsthm,amssymb} 			      % Non-native Math Symbols
 \usepackage{float}                                             % For [H] centering
 \usepackage{graphicx}                                          % For images
-\usepackage[style=ieee, sorting=none, backend=biber]{biblatex} % Citation
+\usepackage[
+		style=authoryear,
+		citestyle=authoryear,
+		sorting=nyvt,
+		giveninits=true,
+		backend=biber,
+		maxnames=2
+		]{biblatex} % Citation
 \usepackage{fancyhdr}                                          % Header customization
 
 \usepackage{setspace}                                          % Double Spacing
@@ -80,7 +87,7 @@
 \makeatletter							   
 \def\printauthor{%					
     {\centering \large \@author}}				
-\makeatother							
+\makeatother					
 
 
 % ------------------------------------------------------------------------------
@@ -93,7 +100,9 @@
 \newcommand{\setB}{\{B\}}
 \newcommand{\abrule}{\setA\rightarrow\setB}
 
+\newcommand{\pcite}[1]{\textbf{\parencite{#1}}}
 
+%\DeclareNameAlias{sortname}{last-first}
 % ------------------------------------------------------------------------------
 % Metadata (Change this)
 % ------------------------------------------------------------------------------
@@ -132,10 +141,6 @@
 
 \printauthor				% Print the author data as defined above
 
-
-
-
-
 % ------------------------------------------------------------------------------
 % Begin document
 % ------------------------------------------------------------------------------
@@ -161,10 +166,6 @@ In this study, a minimum spanning tree (MST) will be generated from a transactio
 % Table of Contents
 \newpage\tableofcontents\newpage
 
-
-
-
-
 \setcounter{page}{1}		% Set page numbering to begin on this page
 
 % Header settings
@@ -174,11 +175,13 @@ In this study, a minimum spanning tree (MST) will be generated from a transactio
 \lhead{\leftmark}
 %\rfoot{Page \thepage}
 
-
+% ------------------------------------------------------------------------------
+% Chapters
+% ------------------------------------------------------------------------------
 \input{body/chapter1} % Introduction
 \input{body/chapter2} % Background
 \input{body/chapter3} % Methodology
-
+\input{body/chapter4} % Results and Experiments
 
 
 
