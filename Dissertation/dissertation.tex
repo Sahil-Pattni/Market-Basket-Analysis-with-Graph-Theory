@@ -14,8 +14,8 @@
 		style=authoryear,
 		citestyle=authoryear,
 		sorting=nyvt,
-		giveninits=true,
 		backend=biber,
+		bibencoding=utf8,
 		maxnames=2
 		]{biblatex} % Citation
 \usepackage{fancyhdr}                                          % Header customization
@@ -59,7 +59,30 @@
     showstringspaces=false,
     showtabs=false,                  
     tabsize=2,
-    emph={cpdef, cdef},
+    emph={
+    to, 
+    function,
+    let, 
+    in, 
+    define, 
+    add, 
+    at, 
+    as, 
+    with, 
+    parameters, 
+    integer, 
+    float, 
+    string, 
+    sort, 
+    ascending, 
+    descending,
+    break,
+    true,
+    false,
+    continue,
+    next,
+    loop
+    },
     emphstyle={\color{red}}
 }
 
@@ -96,6 +119,7 @@
 \graphicspath{{../images/}}                      % Image Sources
 \renewcommand*{\bibfont}{\small}                 % Make references text size small
 \newcommand{\me}{Sahil Manojkumar Pattni}        % Author Name
+\newcommand{\algo}{CGRG Algorithm}
 \newcommand{\setA}{\{A\}}
 \newcommand{\setB}{\{B\}}
 \newcommand{\abrule}{\setA\rightarrow\setB}
