@@ -135,19 +135,19 @@ The author proposed a novel way to apply the mathematics behind Markov processes
 
 \subsection{AIS Algorithm}
 \label{sec:ais}
-\pcite{mine} proposed a novel algorithm to generate all statistically significant association rules between items in a database, laying the foundation for association rule mining. Given a set of items $I = I_1, I_2, I_3,\dots,I_m$, the authors define an association rule to be of the form $X \rightarrow I_j$ where X is a set of items such that $X \in I, I_j \notin X$.  The hypothetical database stated was a list of transactions, $T$, where each transaction $t$ was a binary vector of length $m$, as described in Section \ref{sec:binary_purchase_vectors}. The authors define two constraints for assessing association rules:
+\pcite{mine} proposed a novel algorithm to generate all statistically significant association rules between items in a database, laying the foundation for association rule mining. Given a set of items $I = \{I_1, I_2, I_3,\dots,I_m\}$, the authors define an association rule to be of the form $X \rightarrow I_j$ where X is a set of items such that $X \subset I, I_j \notin X$.  The hypothetical database stated was a list of transactions, $T$, where each transaction $t$ was a binary vector of length $m$, as described in Section \ref{sec:binary_purchase_vectors}. The authors define two constraints for assessing association rules:
 \\\\\textbf{Support}\\
-The support of an association rule is the proportion of transactions in which the itemsets in the rule are present. For a set of transactions $T$, where $T(i)$ denotes the set of transactions in which the set of items $i \in I$ was purchased:
+The support of an association rule is the proportion of transactions in which the itemsets in the rule are present. For a set of transactions $T$, where $T(i)$ denotes the set of transactions in which the set of items $i \subseteq I$ was purchased:
 \[
 \text{support}(i) = \frac{T(i)}{T} 
 \]
-Similarly, where $T{(i_k, i_j)}$ represents the set of transactions in which the itemsets $\{i_k \in I, i_j\in I\}$ were purchased, the support for the association rule $i_k \rightarrow i_j$ can be represented as:
+Similarly, where $T{(i_k, i_j)}$ represents the set of transactions in which the itemsets $\{i_k \subset I, i_j\subset I\}$ were purchased, the support for the association rule $i_k \rightarrow i_j$ can be represented as:
 \[
 \text{support}(i_k \rightarrow i_j) = \frac{T(i_k, i_j)}{T} 
 \]
 Support scores correspond with the statistical significance of a rule, and rules with low support scores may not occur frequently enough to draw reasonable conclusions from.
 \\\\\textbf{Confidence}\\
-Confidence is the conditional probability of an itemset $i_j \in I$ being present in a transaction given that itemset $i_k \in I$ is present in the same transaction. The confidence of the association rule $i_k \rightarrow i_j$ can be represented as:
+Confidence is the conditional probability of an itemset $i_j;\;\;i_j \subset I$ being present in a transaction given that itemset $i_k;\;\;i_k \subset I$ is present in the same transaction. The confidence of the association rule $i_k \rightarrow i_j$ can be represented as:
 \[
 \text{confidence}(i_k \rightarrow i_j) = \frac{T(i_k, i_j)}{T(i_k)} \equiv \frac{\text{support}(i_k \rightarrow i_j)}{\text{support}(i_k)}
 \]
@@ -162,7 +162,7 @@ To generate candidate itemsets, the authors first generate all possible itemsets
 However, if an itemset $i_j$ is indeed found to be \textit{large}, then another multiple passes over the dataset will be required to check the support scores for subsets of $i_j$. To avoid this, the authors devised a measure to calculate the expected support $\bar{s}$ of an itemset. The expected support is used to estimate the support of $i_j = (i_p + i_q)$, not only when $i_j$ is expected to be \textit{large}, but also when $i_p$ is expected to be \textit{large} yet $(i_p + i_q)$ is expected to be \textit{small}. This estimation further prunes the number of rules whose support scores need to be computed.
 \\\\\textbf{Association Rule Generation}\\
 To generate association rules, the authors used the following technique:\\
-for each \textit{large} itemset $Y = i_1, i_2,\dots,i_k; k \geq 2$ from the set of non-pruned \textit{large} itemsets, generate a set of association rules in the form $X \rightarrow i_j; X \subset Y, i_j \notin X$ such that $X$ is of length $k-1$. Therefore, each \textit{large} itemset will produce $k$ rules. From the generated rules, the authors discarded those rules whose confidence scores fell below the confidence constraint $\textit{min}_\textit{confidence}$.
+for each \textit{large} itemset $Y = \{i_1, i_2,\dots,i_k\}; k \geq 2$ from the set of non-pruned \textit{large} itemsets, generate a set of association rules in the form $X \rightarrow i_j; X \subset Y, i_j \notin X$ such that $X$ is of length $k-1$. Therefore, each \textit{large} itemset will produce $k$ rules. From the generated rules, the authors discarded those rules whose confidence scores fell below the confidence constraint $\textit{min}_\textit{confidence}$.
 \\\\\textbf{Evaluation}\\
 The authors tested their methodology on a sales dataset with $46,783$ transactions, with $63$ distinct departments. Their configuration was composed of a support constraint of $1\%$ (i.e. $\textit{min}_\textit{support} = 0.01$) and a confidence constraint of $50\%$ (i.e. $\textit{min}_\textit{confidence} = 0.5$). The authors note that the rules produced follow what general intuition might suggest. For example:
 \[
