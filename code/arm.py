@@ -205,6 +205,8 @@ def generate_intracluster_rules(min_support=0.005, min_confidence=0.6):
     for _, itemsets in itemsets_by_cluster.items():
         ruleset = list(combinations(itemsets, 2))
         ruleset = __prune_rules(ruleset)
+        ruleset = __add_reverse(ruleset)
+        # TODO: Add reverse
         for rule in ruleset:
             is_above_threshold = True
             atup, btup = rule
