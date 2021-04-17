@@ -3,9 +3,11 @@
 In this section, we introduce the main contribution of this paper: the Clustered-Graph Rule Generation (CGRG) algorithm. The \algo\ algorithm derives association rules from a clustered minimum spanning tree. This chapter will focus on the workings of the algorithm.
 
 \section{Data Processing}
+\label{sec:algo_data}
 Given an itemset $I = \{I_1, I_2,\dots,I_m\}$ and a set of tranactions $T = \{T_1,T_2,\dots\,T_n\}$ such that $T_i \subseteq I$, every transaction $t_i$ will be transformed into a binary purchase vector, as described in Section \ref{sec:binary_purchase_vectors}. An $m \times m$ correlation matrix will then be computed using the Pearson's Correlation Coefficient from the set of binary purchase vectors, composed of the correlation every item has against every other item. A graph $G = (V,E)$ will be constructed from this correlation matrix, such that the vertices $V=I$, and every edge will be the correlation value between the two items it connects. A minimum spanning tree is a sub-graph composed of the \textit{shortest} path connecting all vertices (i.e. the lowest sum of weights), and therefore to do so from our graph, the MST would only capture strongly negative and weakly positive relationships only, whereas we want to capture the strongest relationships between products. Therefore to extract a MST with the strongest associations, the values in the correlation matrix must first be transformed before a graph is constructed from them.
 
 \section{Distance Function}
+\label{sec:distance}
 As mentioned in Section \ref{sec:binary_purchase_vectors}, the Pearson's Correlation Coefficient is equivalent to the Phi Coefficient ($\phi$)for binary variables, as is the case for our binary purchase vectors. Given $\phi_{ij}$ for items $I_i$ and $I_j$ in the correlation matrix, \pcite{mst_paper} used the distance function
 \[
 \phi_{ij} = \sqrt{2(1-\phi_{ij})}
@@ -110,12 +112,12 @@ for r in rules
         define lift as (confidence $\div$ support_consequent)
         if support_antecedent < min_support
             to below_threshold add support_antecedent
-            next loop // move to next rule in for loop
         if support_consequent < min_support
             to below_threshold add support_consequent
-            next loop
         if confidence < min_confidence:
-            next loop
+            next loop // move to next rule in for loop
+        if support_r < min_support
+            next loop 
         // If all constraints met, add rule
         to valid_rules add r
 \end{lstlisting}
