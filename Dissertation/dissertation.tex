@@ -186,10 +186,10 @@ I, \me, confirm that this work submitted for assessment is my own and is express
 \pagebreak
 
 \newpage\section*{Abstract}
-In this digital age, data is being generated and collected at an unprecedented rate, with data analytics employed by corporations and small businesses alike to produce actionable insights, reduce costs, optimize operations and increase revenue. Association rules allow us to identify relationships between products that can provide insights into customer spending habits and product perception.
+In this digital age, data is being generated and collected at an unprecedented rate, with data analytics employed by corporations and small businesses alike to produce actionable insights, reduce costs, optimize operations and increase revenue. Association rules allow us to identify relationships between products - some of which may be non-intuitive - that can provide insights into customer spending habits and product perception.
 
-
-In this study, a minimum spanning tree (MST) will be generated from a transactional database such that only the strongest relationships between products remain. A clustering algorithm will be applied to this MST to identify high co-purchase segments, and association rules will then be extracted from these segments. \textbf{[ADD MORE HERE]}
+Several algorithms exist for deriving association rules from transactional datasets, and many of these produce a vast number of rules, sometimes too many for the end-user to extract those that may ultimately be beneficial.
+To that end, we introduce a novel algorithm: the \algo\ algorithm, that generates a limited number of high value association rules from a clustered minimum spanning tree, with each rule being of a distinct class: either a bi-cluster rule or an intra-cluster rule.
 
 % Table of Contents
 \newpage\tableofcontents\newpage
@@ -206,18 +206,21 @@ In this study, a minimum spanning tree (MST) will be generated from a transactio
 % ------------------------------------------------------------------------------
 % Chapters
 % ------------------------------------------------------------------------------
+
 \input{body/introduction} % Introduction
-\input{body/background} % Background
-\input{body/algorithm} % Methodology
-\input{body/analysis} % Results and Experiments
-
-
-
+\input{body/background}   % Background
+\input{body/algorithm}    % Methodology
+\input{body/analysis}     % Results and Experiments
+\input{body/conclusions}  % Conclusions
 
 % ----------------------------------------------------------
 % Do not write below this line
 % ----------------------------------------------------------
 % References
+\renewcommand*{\mkbibnamefamily}[1]{\textsc{\textbf{#1}}}
+\renewcommand*{\mkbibnameprefix}[1]{\textsc{\textbf{#1}}}
+\renewcommand*{\mkbibnamegiven}[1]{\textsc{\textbf{#1}}}
+\renewcommand*{\mkbibnamesuffix}[1]{\textsc{\textbf{#1}}}
 \printbibliography[heading=bibintoc, title=References]
 
 % ------------------------------------------------------------------------------
