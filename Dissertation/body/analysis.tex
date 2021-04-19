@@ -11,6 +11,30 @@ All the code for this algorithm was written in Python \pcite{py} and Rust \pcite
 \item \texttt{markov\_clustering}: Markov Clustering Algorithm.
 \end{itemize}
 
+\section{Data Transformation}
+\label{sec:algo_data}
+Given an itemset $I = \{I_1, I_2,\dots,I_m\}$ and a set of tranactions $T = \{T_1,T_2,\dots\,T_n\}$ such that $T_i \subseteq I$, every transaction $T_i$ will be transformed into a binary purchase vector, as described in Section \ref{sec:binary_purchase_vectors}. An $m \times m$ correlation matrix will then be computed using the Pearson's Correlation Coefficient from the set of binary purchase vectors, composed of the correlation every item has against every other item. A graph $G = (V,E)$ will be constructed from this correlation matrix, such that the vertices $V=I$, and every edge will be the correlation value between the two items it connects. A minimum spanning tree is a sub-graph composed of the \textit{shortest} path connecting all vertices (i.e. the lowest sum of weights), and therefore if we construct our graph from the correlation matrix, the MST would only capture strongly negative and weakly positive relationships only, whereas we want to capture the strongest relationships between products, both negative and positive. Therefore to extract a MST with the strongest associations, the values in the correlation matrix must first be transformed before a graph is constructed from them.
+
+\section{Distance Function}
+\label{sec:distance}
+As mentioned in Section \ref{sec:binary_purchase_vectors}, the Pearson's Correlation Coefficient is equivalent to the Phi Coefficient ($\phi$) for binary variables, as is the case for our binary purchase vectors. Given $\phi_{ij}$ for items $I_i$ and $I_j$ in the correlation matrix, \pcite{mst_paper} used the distance function
+\[
+\phi_{ij} = \sqrt{2(1-\phi_{ij})}
+\]
+to transform their correlation matrix. Given that we are using the Pearson's Correlation Coefficient that gives us a correlation score in the interval [-1,1], this equation is not suitable for us as it discards the strongly negative associations by outputting a larger weight (e.g. a correlation score of -1 would be transformed to 2) which would not be captured in the MST. Therefore, we modify the equation to be
+\[
+\phi_{ij} = \sqrt{2(1-|\phi_{ij}|)}
+\]
+allowing us to capture both positive and negative associations alike. Figure \ref{fig:distance_function} illustrates the effect of our distance function, where the stronger the correlation of the input, the lower the output. Given that our initial correlation values were bound to the interval $[-1,1]$, the output of the distance function is similarly bound to the interval $[0, \sqrt{2}]$.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{distance_function}
+\label{fig:distance_function}
+\caption{The effect of the distance function $\sqrt{2(1-|x|)}$}
+\end{figure}
+\noindent Once the correlation matrix has been transformed via this function, the graph $G=(V,E)$ can be constructed.
+
+
 
 \section{Dataset Pre-Processing}
 The dataset used in this study is the sales data of $4,152,919$ transactions and $39$ unique product categories from a chain of Brazilian gas-station stores \pcite{data_source}.
@@ -118,24 +142,53 @@ We observe that there is a $100\%$ overlap between the top five rules generated 
 \caption{Ranked supports for both the \algo\ and Apriori Algorithm}
 \label{fig:rule_support}
 \end{figure}
-\noindent Figure \ref{fig:rule_support} illustrates the support values for the $x^{th}$ rule for both the \algo\ and Apriori when they are sorted by highest support score to lowest. 
-We can observe that when provided with the same support and confidence constraints, the Apriori algorithm produces far greater rules, whereas the \algo\ algorithm captures mostly the those rules that have a relatively higher support, with the exception being at the elbow of both curves, where the \algo\ algorithm mostly captures those rules with a lower support than the Apriori algorithm.\\
-We can infer from this figure that the \algo\ algorithm captures the strongest rules present in the Apriori ruleset, which leads us to theorize that \textit{rules where the itemsets each originate from the same cluster are likelier to have a higher support score than those which don't}. In other words, given an itemset $I = i_1,i_2,\dots,i_m$ and clusters $A$ and $B$, rules which follow:
+\noindent Figure \ref{fig:rule_support} illustrates the support values for the $x^{th}$ rule for both the \algo\ and Apriori when they are sorted by the highest support score to the lowest. 
+We can observe that when provided with the same support and confidence constraints, the Apriori algorithm produces far greater rules, whereas the \algo\ algorithm captures mostly the those rules that have a relatively higher support, with the exception being at the elbow of both curves, where the \algo\ algorithm captured rules with a lower support than the Apriori algorithm.\\
+We can infer from this figure that the \algo\ algorithm captures the strongest rules present in the Apriori ruleset, which leads us to theorize that \textit{rules where the itemsets each originate from the same cluster are likelier to have a higher support score than those which don't}. In other words, given clusters $A$ and $B$, and subsets of any given cluster $cl_i$ and $cl_j$, rules which follow:
 \[
-i_k \rightarrow i_j;\;\;\;i_k \subset A, \;\;\; (i_j \subset B \;|\; i_j \subset A)
+cl_i \rightarrow cl_j;\;\;\;cl_i \subset A, \;\;\; (cl_j \subset B \;|\; cl_j \subset A)
 \]
 are likelier to have a higher support score than rules whose antecedent and/or consequent are composed of items from multiple clusters.
 To further reinforce this theory, we present the averages of the support, confidence and lift scores generated by both algorithms:
 \begin{longtable}
-{@{}llll@{}}\toprule Algorithm& Support& Confidence& Lift\\*\midrule\endfirsthead\endhead
+{@{}llll@{}}\toprule Algorithm& Mean Support& Mean Confidence& Mean Lift\\*\midrule\endfirsthead\endhead
 Apriori & 0.0034& 0.3737& 1.9096\\
 \algo\ & 0.0075& 0.3683& 1.8855\\
 \midrule\caption{Averages for both algorithms}\end{longtable}
-\noindent We can see that while the mean confidence and lift scores from the Apriori algorithm are slightly higher those from the \algo\ algorithm, the mean support for the \algo\ algorithm is greater than that of the Apriori algorithm by a factor of approximately $2.2$.
+\noindent We can see that while the mean confidence and lift scores from the Apriori algorithm are only marginally higher those from the \algo\ algorithm, the mean support for the \algo\ algorithm is significantly greater than that of the Apriori algorithm by a factor of approximately $2.2$, indicating that the composition of the rules generated by the \algo\ algorithm is far more concentric in high-value rules than the Apriori generated ruleset.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{confsupp}
+\caption{Relationship between confidence and support for \algo}
+\label{fig:confsupp}
+\end{figure}
+Figure \ref{fig:confsupp} illustrates the relationship between the confidence and support for the rules generated by the \algo\ algorithm.
+The majority of rules generated are concentric around the support and confidence constraints of $0.001$ and $0.25$ respectively. The outliers indicate a negative relationship between the two metrics: the rules with the highest confidence had a relatively low support, and vice versa.
 
-Additionally, whereas the rules with the highest support scores tend to be single-element rules (i.e. the antecedent and consequent each only have one item), the \algo\ algorithm did also produce multi-element association rules - an improvement over the methodology proposed by \pcite{mst_paper}. The first five multi-element rules generated and ranked by support scores have been outlined below:
+As \pcite{lift} argued, the \textit{lift} score may be a better metric to assess the value of a rule than support. Figure \ref{fig:rule_lift} illustrates the lift values for the $x^{th}$ rule for both the \algo\ and Apriori when they are sorted by the highest lift score to the lowest. The image has been zoomed to illustrate only the first $183$ rules (the length of the \algo\ ruleset) to further illustrate the disparity at the elbows of the curves.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{ruleset_lift_zoom}
+\caption{Ranked lift scores for both the \algo\ and Apriori Algorithm}
+\label{fig:rule_lift}
+\end{figure}
+The figure is similar to the ranked support scores in Figure \ref{fig:rule_support}, however the disparity at the elbow of the curves is much greater. This may indicate that the antecedent may give a higher rise to the confidence of a rule when the composition of the antecedent and/or the consequent consists of items from multiple clusters. To illustrate the high lift rules our algorithm has failed to capture, the first five multi-element rules generated by both algorithms and ranked by lift scores have been detailed below:
+
 \begin{longtable}
-{@{}llllll@{}}\toprule Antecedent& Consequent& Supp.& Conf.& Lift& Type\\*\midrule\endfirsthead\endhead
+{@{}llllll@{}}\toprule Antecedent& Consequent& Support& Confidence& Lift& Type\\*\midrule\endfirsthead\endhead
+\{canisters,lubricant\} & \{filters\} & 0.0014 & 0.8128 & 16.3071 & Apriori\\
+\{canisters\} & \{filters,lubricant\} & 0.0014 & 0.7250 & 15.5054 & Apriori\\
+\{canisters\} & \{filters\} & 0.0014 & 0.7308 & 14.6611 & Apriori\\
+\{chips,filters\} & \{juices and soft drinks,lubricant\} & 0.0011 & 0.3528 & 9.6487 & Apriori\\
+\{filters,the bakery\} & \{juices and soft drinks,lubricant\} & 0.0011 & 0.3515 & 9.6143 & Apriori\\
+\midrule\caption{Apriori Rules ranked by Lift}\label{tab:apri_lift}\end{longtable}
+
+\begin{longtable}
+{@{}llllll@{}}\toprule Antecedent& Consequent& Support& Confidence& Lift& Type\\*\midrule\endfirsthead\endhead
+\{lubricant,canisters\} & \{filters\} & 0.0014 & 0.8128 & 16.3071 & intra-cluster\\
+\{canisters\} & \{lubricant,filters\} & 0.0014 & 0.7250 & 15.5054 & intra-cluster\\
+\{canisters\} & \{filters\} & 0.0014 & 0.7308 & 14.6611 & intra-cluster\\
 \{filters,water\} & \{lubricant,chewing gum and candy\} & 0.0020 & 0.3525 & 6.0734 & intra-cluster\\
-\{filters,cold alcoholic beverages\} & \{lubricant,chewing gum and candy\} & 0.0013 & 0.3266 & 5.6264 & intra-cluster\\
-\midrule\end{longtable}
+\{lubricant,pickets\} & \{filters\} & 0.0013 & 0.2844 & 5.7052 & intra-cluster\\
+\midrule\caption{\algo\ Rules ranked by Lift}\end{longtable}
+The first three rules with the highest lift are present in the rulesets of both algorithms, however the \algo\ did not capture the fourth and fifth rule in Table \ref{tab:apri_lift}. 

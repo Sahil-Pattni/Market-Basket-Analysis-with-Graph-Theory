@@ -33,7 +33,7 @@ $t_3$ &  1    & 0    & 0     & 0      & 1       \\ \bottomrule
 \caption{Binary Purchase Vectors}
 \label{tab:binary_vectors}
 \end{table}
-\section{Product Association}
+\subsection{Product Association}
 The association between products pairs across all transactions can be ascertained from the binary purchase vectors using the Pearson's Correlation Coefficient \pcite{pearson}. Since the correlations are of two binary variables, the Pearson's Correlation Coefficient is equivalent to the Phi-Coefficient $\phi$ \pcite{phi}, where for $n$ observations:
 \[
 \phi = \sqrt{\frac{\chi^2}{n}}
@@ -225,4 +225,4 @@ However, while these papers only based the interestingness of an association rul
 \[
 \text{lift}(i_k \rightarrow i_j) = \frac{\text{confidence}(i_k \rightarrow i_j)}{\text{support}(i_j)}
 \] 
-All the research conducted above has served as the inspiration for this project.
+All the research conducted above has served as the inspiration for this project. We will be implementing an affinity from transactional data in a fashion inspired by \pcite{mst_paper}, and will be using the algorithm proposed by \pcite{kruskal} to derive a minimum spanning tree from the affinity graph. We will also be using the metrics such as support and confidence described in \pcite{mine} and rule pruning techniques similar to those they have mentioned. Lastly, our algorithm will be benchmarked against the Apriori algorithm \pcite{apriori} to evaluate its usefulness.
