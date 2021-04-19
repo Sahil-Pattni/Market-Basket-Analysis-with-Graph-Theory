@@ -1,3 +1,8 @@
+"""
+Writes out the string representation of the binary purchase vectors for the Apriori algorithm
+to use.
+"""
+
 import os
 import csv
 import time
