@@ -1,4 +1,4 @@
-\chapter{Experiments and Analysis}
+\chapter{Implementation and Analysis}
 
 \section{Environment}
 All the code for this algorithm was written in Python \pcite{py} and Rust \pcite{rust}. Python was used to read and sanitize the initial dataset, and Rust was used to generate the binary purchase vectors. We opted to use Rust instead of Python for this task because the generation of this vectors has a time complexity of $O(N^2)$ at worst, and therefore may take an order of magnitude longer to run on a slower language such as Python. Python was used for the rest of the tasks, which included the graph generation and clustering, as well as the itemset generation and rule pruning. The following external Python libraries were used to aid development:
@@ -8,7 +8,7 @@ All the code for this algorithm was written in Python \pcite{py} and Rust \pcite
 \item \texttt{matplotlib}: Plotting library.
 \item \texttt{seaborn}: Plotting library.
 \item \texttt{networkx}: Graph generation and plotting.
-\item \texttt{markov\_clustering}: Markov Clustering Algorithm.
+\item \texttt{markov\_clustering}: Markov Clustering Algorithm from \pcite{mcl_code}.
 \end{itemize}
 
 \section{Data Transformation}
@@ -32,7 +32,7 @@ allowing us to capture both positive and negative associations alike. Figure \re
 \label{fig:distance_function}
 \caption{The effect of the distance function $\sqrt{2(1-|x|)}$}
 \end{figure}
-\noindent Once the correlation matrix has been transformed via this function, the graph $G=(V,E)$ can be constructed.
+\noindent Once the correlation matrix has been transformed via this function, the graph $G=(V,E)$ can be constructed with the transformed data as the weights.
 
 
 
@@ -62,7 +62,7 @@ This could be due to the stores maintaining their own order numbers, and also be
 A unique transaction identifier - named \texttt{basket\_id} - was created by concatenating the order number and the date, thereby mitigating the occurrence of a identifier that references multiple transactions.
 
 \item \textbf{Binary Purchase Vector transformation}\\
-The dataset was then transformed such that each transaction was represented by a binary purchase vector - as described in Section \ref{sec:algo_data} - wherein each column represents a product category. The product categories were chosen for the graph representation over the products themselves as it would give a more generalized view on the associations between them, and the categories themselves were deemed specific enough that they would not be parent to children of significant variance.
+The dataset was then transformed such that each transaction was represented by a binary purchase vector - as described in Section \ref{sec:algo_data} - wherein each column represents a product category. The product categories were chosen for the graph representation over the products themselves as it would give a more generalized view of the associations\footnote{as supported by \pcite{market_ass} in Section \ref{sec:subjective}}, and the categories themselves were deemed specific enough that they would not be parent to children of significant variance.
 \end{enumerate} 
 \begin{figure}[H]
 \centering
@@ -96,7 +96,7 @@ As described in \ref{sec:distance}, the distance function $\sqrt{2(1-|\phi_{ij}|
 \caption{MST before and after Markov Clustering}
 \label{fig:clustered}
 \end{figure}
-The MST was then clustered using the Markov Clustering algorithm. To identify the most modular clustering configuration, we implemented the algorithm several times with inflation scores between 1.5 and 2.5 (inclusive) at increments of 0.1. In doing so, we discovered that an inflation score of 1.6 resulted in the most optimal modularity. The Markov Clustering configuration produced using this inflation score was therefore chosen, and the results of this clustering are illustrated in Figure \ref{fig:clustered}. Note that while the disposition of nodes differs from that illustrated in Figure \ref{fig:graph_mst}, the nodes and the edge weights are the same.
+The MST was then clustered using the Markov Clustering (MCL) algorithm. To identify the most modular clustering configuration, we implemented the MCL algorithm several times with inflation scores between 1.5 and 2.5 (inclusive) at increments of 0.1. In doing so, we discovered that an inflation score of 1.6 resulted in the most optimal modularity. The Markov Clustering configuration produced using this inflation score was therefore chosen, and the results of this clustering are illustrated in Figure \ref{fig:clustered}. Note that while the disposition of nodes differs from that illustrated in Figure \ref{fig:graph_mst}, the nodes and the edge weights are the same.
 The Markov Clustering algorithm segmented the nodes into 8 distinct clusters.
 Figure \ref{fig:cluster_named} illustrates the names of the product categories in each cluster, color-coded in accordance with the MSTs in Figure \ref{fig:clustered}. Observing the groupings produced by the MCL algorithm, we can see that with the exception of the largest cluster in blue, the groupings do have an underlying similarity (e.g. \texttt{\{biscuits and wafer, salted biscuit, tea juice cafe in powder\}}).
 
@@ -155,7 +155,7 @@ To further reinforce this theory, we present the averages of the support, confid
 Apriori & 0.0034& 0.3737& 1.9096\\
 \algo\ & 0.0075& 0.3683& 1.8855\\
 \midrule\caption{Averages for both algorithms}\end{longtable}
-\noindent We can see that while the mean confidence and lift scores from the Apriori algorithm are only marginally higher those from the \algo\ algorithm, the mean support for the \algo\ algorithm is significantly greater than that of the Apriori algorithm by a factor of approximately $2.2$, indicating that the composition of the rules generated by the \algo\ algorithm is far more concentric in high-value rules than the Apriori generated ruleset.
+\noindent We can see that while the mean confidence and lift scores from the Apriori algorithm are only marginally higher those from the \algo\ algorithm, the mean support for the \algo\ algorithm is significantly greater than that of the Apriori algorithm by a factor of approximately $2.2$, indicating that the composition of the rules generated by the \algo\ algorithm is far more concentric in high-value rules than the Apriori generated ruleset. This is contradicted to a degree by the lack of mid-value rules in the \algo\ ruleset that were present in the Apriori ruleset at the elbow of the curve in Figure \ref{fig:rule_support}.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.65]{confsupp}
@@ -172,7 +172,7 @@ As \pcite{lift} argued, the \textit{lift} score may be a better metric to assess
 \caption{Ranked lift scores for both the \algo\ and Apriori Algorithm}
 \label{fig:rule_lift}
 \end{figure}
-The figure is similar to the ranked support scores in Figure \ref{fig:rule_support}, however the disparity at the elbow of the curves is much greater. This may indicate that the antecedent may give a higher rise to the confidence of a rule when the composition of the antecedent and/or the consequent consists of items from multiple clusters. To illustrate the high lift rules our algorithm has failed to capture, the first five multi-element rules generated by both algorithms and ranked by lift scores have been detailed below:
+The figure is similar to the ranked support scores in Figure \ref{fig:rule_support}, however the disparity at the elbow of the curves is much greater. This may indicate that the antecedent may give a higher rise to the confidence of a rule when the composition of the antecedent and/or the consequent consists of items from multiple clusters. To illustrate the high lift rules our algorithm has failed to capture, the first five rules generated by both algorithms and ranked by lift scores have been detailed below:
 
 \begin{longtable}
 {@{}llllll@{}}\toprule Antecedent& Consequent& Support& Confidence& Lift& Type\\*\midrule\endfirsthead\endhead
@@ -191,4 +191,4 @@ The figure is similar to the ranked support scores in Figure \ref{fig:rule_suppo
 \{filters,water\} & \{lubricant,chewing gum and candy\} & 0.0020 & 0.3525 & 6.0734 & intra-cluster\\
 \{lubricant,pickets\} & \{filters\} & 0.0013 & 0.2844 & 5.7052 & intra-cluster\\
 \midrule\caption{\algo\ Rules ranked by Lift}\end{longtable}
-The first three rules with the highest lift are present in the rulesets of both algorithms, however the \algo\ did not capture the fourth and fifth rule in Table \ref{tab:apri_lift}. This further reinforces our belief that the structural constraints of the rules the \algo\ algorithm produces impedes the algorithm from generating the rules such as those present in the Table \ref{tab:apri_lift}.
+The first three rules with the highest lift are present in the rulesets of both algorithms, however the \algo\ did not capture the fourth and fifth rule in Table \ref{tab:apri_lift}. This further reinforces our belief that the structural constraints of the rules the \algo\ algorithm produces impedes the algorithm from generating the rules such as those present in the Table \ref{tab:apri_lift}. We can therefore conclude that while the \algo\ algorithm produces a smaller albeit higher value ruleset compared to the Apriori algorithm, it also fails to generate the mid-value rules that were present in the Apriori algorithm.
