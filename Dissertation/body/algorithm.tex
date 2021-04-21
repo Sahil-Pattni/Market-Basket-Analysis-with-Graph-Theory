@@ -117,5 +117,5 @@ Listing \ref{lst:prune} presents the pseudo-code for rule pruning, employing the
 We first sort the rules in ascending order by the number of items in the antecedent of each rule, so that if any itemsets with only a few items are found to be below our constraints, we can ignore any larger itemsets where those same items are present.
 When iterating through the rules, if the support of either the antecedent or consequent is found to be below the user specified support constraint, it is added \texttt{below\_threshold} - the set of itemsets found to be below our constraint. For every subsequent iteration, if it is found that any set from \texttt{below\_threshold} is a subset of the current rule, we can discard the rule and avoid having to calculate its support as we know it will be below our support constraint. Our final rules are those that remain after pruning.
 
-\section{Overview}
+\section{Summary}
 To recap, the \algo\ algorithm segments the regions of the minimum spanning tree into distinct clusters by identifying dense clusters within the tree, and then produces rules where the antecedent and consequent of the rules originate from a cluster. The rules are then pruned to only include rules that satisfy our support and confidence constraints. Figure \ref{fig:algorithm_flow} outlines the steps in achieving the final rules.
