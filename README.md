@@ -1,7 +1,5 @@
-# Fourth Year Dissertation
-
-This is my fourth year dissertation repository. The goal of this paper is to further research the field of Market Basket Research (MBA), with the use of Minimum Spanning Trees. 
-
+# Market Basket Analysis with Graph Theory
+This is my fourth year dissertation repository. The goal of this paper is to introduce the Clustered-Graph Rule Generation (CGRG) algorithm, which extracts multi-class association rules from a transactional database by leveraging the use of Minimum Spanning Trees and Markov Clustering.
 ### Paper
 The pdf and the .tex files can be found under the `LaTeX` folder. 
 
