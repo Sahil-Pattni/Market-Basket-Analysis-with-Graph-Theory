@@ -1,7 +1,8 @@
 # Market Basket Analysis with Graph Theory
 This is my fourth year dissertation repository. The goal of this paper is to introduce the Clustered-Graph Rule Generation (CGRG) algorithm, which extracts multi-class association rules from a transactional database by leveraging the use of Minimum Spanning Trees and Markov Clustering.
+
 ### Paper
-The pdf and the .tex files can be found under the `LaTeX` folder. 
+[Click here to view the paper](Dissertation/dissertation.pdf), or navigate to the `Dissertation` directory, where you'll find the file as `dissertation.pdf`.
 
 ### Code
 The code can be found under the `code` folder. Currently, all the code is written in Python3, but the files are in the `iPython Notebook (.ipynb)` format, and therefore you will need the Jupyter Notebook package installed to run it.
